@@ -4,9 +4,9 @@ import { useLocation } from 'react-router-dom';
 const siteConfig = {
   name: 'A2Z Aaradhya Pvt. Ltd.',
   legalName: 'A2Z Aaradhya Pvt. Ltd.',
-  siteUrl: 'https://a2zaaradhya.com',
-  logoUrl: 'https://a2zaaradhya.com/logo/a2z-aaradhya-logo.svg',
-  defaultOgImage: 'https://a2zaaradhya.com/logo/a2z-aaradhya-logo.svg',
+  siteUrl: 'https://a2z-aaradhya.com',
+  logoUrl: 'https://a2z-aaradhya.com/logo/a2z-aaradhya-logo.svg',
+  defaultOgImage: 'https://a2z-aaradhya.com/logo/a2z-aaradhya-logo.svg',
   phone: '+91-7802077444',
   email: 'info@a2zaaradhya.com',
   branches: [
