@@ -1,0 +1,338 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================
+   TYPOGRAPHY SYSTEM
+   Primary heading font  → Space Grotesk (geometric, premium)
+   Body / UI font        → Inter (legible, industry-standard)
+   Logo colors:  
+     Primary   #166B82  (deep ocean teal)
+     Secondary #9ED6CD  (soft mint teal)
+     Dark ink  #0B3B48  (near-black heading color)
+   ===================================================== */
+
+@layer base {
+  /* Root font variables */
+  :root {
+    --font-heading:  'Space Grotesk', sans-serif;
+    --font-body:     'Inter', sans-serif;
+    --brand-primary: #166B82;
+    --brand-secondary: #9ED6CD;
+    --brand-dark:    #0B3B48;
+    --brand-mid:     #0F5265;
+    --brand-deeper:  #07242D;
+    --brand-light:   #EBF7F6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F8FAFC;
+    color: var(--brand-dark);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Headings → Space Grotesk with brand dark ink */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--brand-dark);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  /* Body elements → Inter */
+  p, span, li, a, label, input, select, textarea, button {
+    font-family: var(--font-body);
+  }
+
+  /* Link defaults */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+/* =====================================================
+   SCROLLBAR (brand teal)
+   ===================================================== */
+::-webkit-scrollbar       { width: 8px; }
+::-webkit-scrollbar-track { background: #F1F5F9; }
+::-webkit-scrollbar-thumb { background: var(--brand-primary); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-mid); }
+
+/* =====================================================
+   GLASSMORPHISM — LIGHT (GPU OPTIMIZED)
+   ===================================================== */
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 24px rgba(22, 107, 130, 0.07);
+  transform: translateZ(0);
+}
+
+.glass-card-light-hover {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.glass-card-light-hover:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(22, 107, 130, 0.3);
+  transform: translateY(-4px) translateZ(0);
+  box-shadow: 0 16px 40px rgba(22, 107, 130, 0.14);
+}
+
+.glass-nav-light {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  transform: translateZ(0);
+}
+
+/* =====================================================
+   GRADIENT TEXT UTILITIES
+   ===================================================== */
+.text-gradient-brand {
+  background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-primary) 55%, var(--brand-mid) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-teal {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, #1E8FA8 50%, var(--brand-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =====================================================
+   HERO BACKGROUND — teal brand theme + subtle grid
+   ===================================================== */
+.hero-light-bg {
+  background-color: #F8FAFC;
+  background-image:
+    radial-gradient(ellipse at 50% 0%,   rgba(22, 107, 130, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse at 90% 30%,  rgba(158, 214, 205, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 80%,  rgba(15, 82, 101, 0.06)  0%, transparent 50%),
+    linear-gradient(to right, rgba(148, 163, 184, 0.10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.10) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+}
+
+/* =====================================================
+   BUTTON UTILITIES
+   ===================================================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-mid));
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  border-radius: 0.875rem;
+  box-shadow: 0 6px 24px rgba(22,107,130,0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: none;
+  cursor: pointer;
+  will-change: transform;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--brand-mid), var(--brand-deeper));
+  transform: translateY(-2px) translateZ(0);
+  box-shadow: 0 10px 32px rgba(22,107,130,0.28);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: #fff;
+  color: var(--brand-dark);
+  font-family: var(--font-body);
+  font-weight: 700;
+  border-radius: 0.875rem;
+  border: 1.5px solid #CBD5E1;
+  box-shadow: 0 2px 10px rgba(15,23,42,0.06);
+  transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+  will-change: transform;
+}
+.btn-secondary:hover {
+  background: #F8FAFC;
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+  transform: translateY(-2px) translateZ(0);
+}
+
+/* =====================================================
+   GPU HARDWARE ACCELERATED ANIMATIONS (60 FPS SMOOTH)
+   ===================================================== */
+@keyframes floatSlow {
+  0%, 100% { transform: translate3d(0, 0px, 0) rotate(0deg); }
+  50%       { transform: translate3d(0, -18px, 0) rotate(1.5deg); }
+}
+@keyframes floatMedium {
+  0%, 100% { transform: translate3d(0, 0px, 0) rotate(0deg); }
+  50%       { transform: translate3d(0, -14px, 0) rotate(-1.5deg); }
+}
+@keyframes floatFast {
+  0%, 100% { transform: translate3d(0, 0px, 0) rotate(0deg); }
+  50%       { transform: translate3d(0, -10px, 0) rotate(1deg); }
+}
+@keyframes floatReverse {
+  0%, 100% { transform: translate3d(0, 0px, 0) rotate(0deg); }
+  50%       { transform: translate3d(0, 16px, 0) rotate(-1.2deg); }
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.35; transform: scale(1) translateZ(0); }
+  50%       { opacity: 0.75; transform: scale(1.05) translateZ(0); }
+}
+@keyframes slideInUp {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translate3d(-20px, 0, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translate3d(20px, 0, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes marqueeInfinite {
+  0%   { transform: translate3d(0%, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marqueeInfiniteReverse {
+  0%   { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0%, 0, 0); }
+}
+
+@keyframes marqueeTrackScrollLeft {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+@keyframes marqueeTrackScrollRight {
+  0%   { transform: translate3d(-100%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.marquee-track-left {
+  display: flex;
+  flex-shrink: 0;
+  animation: marqueeTrackScrollLeft 45s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track-right {
+  display: flex;
+  flex-shrink: 0;
+  animation: marqueeTrackScrollRight 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-float-slow    { animation: floatSlow 3.5s ease-in-out infinite; will-change: transform; backface-visibility: hidden; }
+.animate-float-medium  { animation: floatMedium 2.8s ease-in-out infinite; will-change: transform; backface-visibility: hidden; }
+.animate-float-fast    { animation: floatFast 2.2s ease-in-out infinite; }
+.animate-float-reverse { animation: floatReverse 4s ease-in-out infinite; }
+.animate-pulse-glow    { animation: pulseGlow 4s ease-in-out infinite; }
+.animate-slide-in-up   { animation: slideInUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fade-in-left  { animation: fadeInLeft 0.65s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fade-in-right { animation: fadeInRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+.animate-marquee       { 
+  display: flex; 
+  width: max-content;
+  animation: marqueeInfinite 24s linear infinite; 
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.animate-marquee-reverse { 
+  display: flex; 
+  width: max-content;
+  animation: marqueeInfiniteReverse 24s linear infinite; 
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+.animate-delay-600 { animation-delay: 600ms; }
+
+/* =====================================================
+   SCROLL-TRIGGERED ANIMATIONS (AnimateOnScroll system)
+   ===================================================== */
+
+/* Base transition — shared by all animation types */
+.aos-fade-up,
+.aos-fade-down,
+.aos-fade-left,
+.aos-fade-right,
+.aos-scale-in,
+.aos-fade-in {
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
+
+/* Initial hidden states */
+.aos-fade-up    { opacity: 0; transform: translate3d(0,  36px, 0); }
+.aos-fade-down  { opacity: 0; transform: translate3d(0, -36px, 0); }
+.aos-fade-left  { opacity: 0; transform: translate3d(-36px, 0, 0); }
+.aos-fade-right { opacity: 0; transform: translate3d( 36px, 0, 0); }
+.aos-scale-in   { opacity: 0; transform: scale3d(0.88, 0.88, 1);   }
+.aos-fade-in    { opacity: 0; transform: translate3d(0, 0, 0);     }
+
+/* Visible state — triggered by .aos-visible class added via JS */
+.aos-visible {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1) !important;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .aos-fade-up,
+  .aos-fade-down,
+  .aos-fade-left,
+  .aos-fade-right,
+  .aos-scale-in,
+  .aos-fade-in {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
