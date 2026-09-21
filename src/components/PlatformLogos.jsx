@@ -1,14 +1,15 @@
 import React from 'react';
 
-// Platform Logos from src/images/platforms
 import amazonLogoPng from '../images/platforms/amazon-official-partner-logo.webp';
 import flipkartLogoPng from '../images/platforms/flipkart-growth-specialist-logo.webp';
 import meeshoLogoPng from '../images/platforms/meesho-high-volume-partner-logo.webp';
+import myntraLogoPng from '../images/platforms/myntra-official-partner-logo.png';
 
 // Platform Icons from src/images/platforms
 import amazonIconPng from '../images/platforms/amazon-seller-central-icon.webp';
 import flipkartIconPng from '../images/platforms/flipkart-seller-hub-icon.webp';
 import meeshoIconPng from '../images/platforms/meesho-supplier-panel-icon.webp';
+import myntraIconPng from '../images/platforms/myntra-seller-partner-icon.png';
 
 // ── WORDMARK LOGOS ──────────────────────────────────────────
 export function AmazonLogo({ className = 'h-8 w-auto', style, ...props }) {
@@ -44,6 +45,20 @@ export function MeeshoLogo({ className = 'h-8 w-auto', style, ...props }) {
     <img
       src={meeshoLogoPng}
       alt="Meesho High Volume Scaling Partner Logo - A2Z Aaradhya"
+      className={`${className} object-contain`}
+      style={style}
+      draggable={false}
+      loading="lazy"
+      {...props}
+    />
+  );
+}
+
+export function MyntraLogo({ className = 'h-8 w-auto', style, ...props }) {
+  return (
+    <img
+      src={myntraLogoPng}
+      alt="Myntra Official Fashion Partner Logo - A2Z Aaradhya"
       className={`${className} object-contain`}
       style={style}
       draggable={false}
@@ -95,4 +110,19 @@ export function MeeshoIcon({ className = 'w-8 h-8', style, ...props }) {
     />
   );
 }
+
+export function MyntraIcon({ className = 'w-8 h-8', style, ...props }) {
+  return (
+    <img
+      src={myntraIconPng}
+      alt="Myntra Fashion Partner Account Management Icon"
+      className={`${className} rounded-xl object-contain shadow-sm bg-white p-0.5`}
+      style={style}
+      draggable={false}
+      loading="lazy"
+      {...props}
+    />
+  );
+}
+
 

@@ -12,7 +12,7 @@ import EcommerceDashboardImg from '../images/dashboard/ecommerce-growth-dashboar
 import {
   ArrowRight, Building2, Layers, ChevronRight
 } from 'lucide-react';
-import { AmazonIcon, FlipkartIcon, MeeshoIcon } from '../components/PlatformLogos';
+import { AmazonIcon, FlipkartIcon, MeeshoIcon, MyntraIcon } from '../components/PlatformLogos';
 
 export default function HomePage({ onOpenModal }) {
   const quickLinks = [
@@ -22,6 +22,14 @@ export default function HomePage({ onOpenModal }) {
       desc: 'PPC Ads, FBA, A+ Content, Brand Storefront',
       color: 'bg-amber-500',
       shadow: 'shadow-amber-500/20',
+      href: '/services',
+    },
+    {
+      icon: MyntraIcon,
+      label: 'Myntra Management',
+      desc: 'Fashion Onboarding, Catalog Upload, Orders & Ads',
+      color: 'bg-gradient-to-br from-[#FF3F6C] to-[#d6004b]',
+      shadow: 'shadow-pink-500/20',
       href: '/services',
     },
     {
@@ -53,9 +61,9 @@ export default function HomePage({ onOpenModal }) {
   return (
     <div className="space-y-0">
       <SEO
-        title="A2Z Aaradhya Pvt. Ltd. | India's #1 E-Commerce Growth Partner (Amazon, Flipkart, Meesho)"
-        description="Scale your Amazon, Flipkart & Meesho sales with India's premier marketplace management agency. 7 Branches, 70+ Specialists, 3000+ Brands Scaled. Authorized Amazon Partner."
-        keywords="Amazon account management, Flipkart account management, Meesho sales scaling, e-commerce agency India, Amazon authorized partner, A2Z Aaradhya"
+        title="A2Z Aaradhya Pvt. Ltd. | India's #1 E-Commerce Growth Partner (Amazon, Myntra, Flipkart, Meesho)"
+        description="Scale your Amazon, Myntra, Flipkart & Meesho sales with India's premier marketplace management agency. 7 Branches, 70+ Specialists, 3000+ Brands Scaled. Authorized Amazon Partner."
+        keywords="Amazon account management, Myntra account management, Flipkart account management, Meesho sales scaling, e-commerce agency India, Amazon authorized partner, A2Z Aaradhya"
         canonicalPath="/"
         breadcrumbs={[
           { name: 'Home', path: '/' },
@@ -75,7 +83,7 @@ export default function HomePage({ onOpenModal }) {
             <div className="overflow-hidden rounded-2xl sm:rounded-[28px] border border-slate-200 bg-slate-100 shadow-xl shadow-slate-200/60 group">
               <img
                 src={EcommerceDashboardImg}
-                alt="A2Z Aaradhya E-commerce Growth Dashboard across Amazon, Flipkart & Meesho"
+                alt="A2Z Aaradhya E-commerce Growth Dashboard across Amazon, Myntra, Flipkart & Meesho"
                 className="w-full aspect-[16/10] sm:aspect-auto sm:h-[420px] object-cover object-[38%_center] lg:object-center group-hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -88,7 +96,7 @@ export default function HomePage({ onOpenModal }) {
                 We Provide Account Management Services
               </h2>
               <p className="text-base leading-7 text-slate-600 font-medium">
-                We provide professional account management services for <span className="font-bold text-[#166B82]">Amazon, Flipkart, Meesho</span> and more.
+                We provide professional account management services for <span className="font-bold text-[#166B82]">Amazon, Myntra, Flipkart, Meesho</span> and more.
               </p>
               <p className="text-base leading-7 text-slate-600 font-medium">
                 Our transparent approach and quality service have earned the trust of our customers, many of whom recommend us to others.
@@ -124,7 +132,7 @@ export default function HomePage({ onOpenModal }) {
             </p>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
             {quickLinks.map((item, i) => {
               const IconComp = item.icon;
               const LucideIcon = item.lucideIcon;

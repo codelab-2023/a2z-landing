@@ -20,14 +20,14 @@ export default function CategoryShowcase({ onOpenModal }) {
       name: "Home & Kitchen",
       icon: Home,
       growth: "+240% Sales Surge",
-      topPlatforms: "Amazon / Flipkart / Meesho",
+      topPlatforms: "Amazon / Myntra / Flipkart / Meesho",
       desc: "Cookware, appliances, organizers, decor, and smart home solutions."
     },
     {
       name: "Clothing & Fashion",
       icon: Shirt,
       growth: "+310% Order Volume",
-      topPlatforms: "Meesho / Flipkart / Amazon",
+      topPlatforms: "Amazon / Myntra / Flipkart / Meesho",
       desc: "Ethnic wear, western apparel, kids fashion, and seasonal collections."
     },
     {
@@ -41,7 +41,7 @@ export default function CategoryShowcase({ onOpenModal }) {
       name: "Jewellery & Accessories",
       icon: Gem,
       growth: "+290% High Margin Sales",
-      topPlatforms: "Meesho / Amazon",
+      topPlatforms: "Amazon / Myntra / Meesho",
       desc: "Imitation jewellery, silver ornaments, fashion accessories, and gifts."
     },
     {

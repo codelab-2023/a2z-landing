@@ -76,7 +76,7 @@ export default function WhyChooseUs({ onOpenModal }) {
             </h2>
 
             <p className="text-slate-600 text-base leading-relaxed font-medium">
-              Managing Amazon, Flipkart, and Meesho accounts internally requires hiring multiple specialists. With A2Z Aaradhya, you get an entire team of 70+ certified platform managers, designers, and ad experts for a fraction of the cost.
+              Managing Amazon, Myntra, Flipkart, and Meesho accounts internally requires hiring multiple specialists. With A2Z Aaradhya, you get an entire team of 70+ certified platform managers, designers, and ad experts for a fraction of the cost.
             </p>
 
             {/* Highlights */}

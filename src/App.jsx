@@ -17,7 +17,6 @@ import PrivacyPage from './pages/PrivacyPage';
 import BranchesPage from './pages/BranchesPage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
-
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
@@ -50,11 +49,12 @@ export default function App() {
             <Route path="/about/team" element={<TeamPage />} />
             <Route path="/about/awards" element={<AwardsPage />} />
             <Route path="/about/gallery" element={<GalleryPage />} />
-            <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/branches" element={<BranchesPage />} />
             <Route path="/careers" element={<CareersPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
 
+            {/* 404 Catch-All */}
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

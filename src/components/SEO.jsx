@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 const siteConfig = {
   name: 'A2Z Aaradhya Pvt. Ltd.',
+  shortName: 'A2Z Aaradhya',
   legalName: 'A2Z Aaradhya Pvt. Ltd.',
   siteUrl: 'https://a2z-aaradhya.com',
   logoUrl: 'https://a2z-aaradhya.com/logo/a2z-aaradhya-logo.svg',
@@ -77,19 +78,26 @@ export default function SEO({
   ogType = 'website',
   ogImage,
   breadcrumbs = [],
+  noindex = false,
 }) {
   const location = useLocation();
   const currentPath = canonicalPath || location.pathname;
-  const canonicalUrl = `${siteConfig.siteUrl}${currentPath}`;
-  const fullTitle = title.includes(siteConfig.name) ? title : `${title} | ${siteConfig.name}`;
+  const canonicalUrl = `${siteConfig.siteUrl}${currentPath === '/' ? '' : currentPath}`;
+  
+  // Prevent duplicate branding (e.g. "Title | A2Z Aaradhya | A2Z Aaradhya Pvt. Ltd.")
+  const fullTitle = title.includes('A2Z Aaradhya')
+    ? title
+    : `${title} | ${siteConfig.name}`;
+    
   const image = ogImage || siteConfig.defaultOgImage;
 
   useEffect(() => {
-    // 1. Update Title
+    // 1. Update Document Title
     document.title = fullTitle;
 
-    // 2. Helper to set/update meta tag
+    // 2. Helper to set/update meta tags safely
     const setMetaTag = (attrName, attrValue, content) => {
+      if (!content && content !== '') return;
       let element = document.querySelector(`meta[${attrName}="${attrValue}"]`);
       if (!element) {
         element = document.createElement('meta');
@@ -99,9 +107,17 @@ export default function SEO({
       element.setAttribute('content', content);
     };
 
+    // Robots Directive
+    if (noindex) {
+      setMetaTag('name', 'robots', 'noindex, nofollow');
+    } else {
+      setMetaTag('name', 'robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+    }
+
     // Description & Keywords
     if (description) setMetaTag('name', 'description', description);
     if (keywords) setMetaTag('name', 'keywords', keywords);
+    setMetaTag('name', 'author', siteConfig.name);
 
     // OpenGraph
     setMetaTag('property', 'og:title', fullTitle);
@@ -109,7 +125,9 @@ export default function SEO({
     setMetaTag('property', 'og:url', canonicalUrl);
     setMetaTag('property', 'og:type', ogType);
     setMetaTag('property', 'og:image', image);
+    setMetaTag('property', 'og:image:alt', `${fullTitle} - A2Z Aaradhya`);
     setMetaTag('property', 'og:site_name', siteConfig.name);
+    setMetaTag('property', 'og:locale', 'en_IN');
 
     // Twitter Card
     setMetaTag('name', 'twitter:card', 'summary_large_image');
@@ -126,83 +144,126 @@ export default function SEO({
     }
     canonicalTag.setAttribute('href', canonicalUrl);
 
-    // 3. Schema.org JSON-LD Structured Data for Google Search
-    const schemaData = {
-      '@context': 'https://schema.org',
-      '@graph': [
-        // Organization Schema
-        {
-          '@type': 'Organization',
-          '@id': `${siteConfig.siteUrl}/#organization`,
-          name: siteConfig.legalName,
-          url: siteConfig.siteUrl,
-          logo: siteConfig.logoUrl,
-          contactPoint: {
-            '@type': 'ContactPoint',
-            telephone: siteConfig.phone,
-            contactType: 'customer service',
-            areaServed: 'IN',
-            availableLanguage: ['en', 'hi', 'gu'],
-          },
-          sameAs: [
-            'https://www.instagram.com/a2z_aaradhya_pvt.ltd',
-            'https://www.facebook.com/a2zaaradhya',
-            'https://www.linkedin.com/company/a2z-aaradhya-pvt-ltd',
-            'https://www.youtube.com/@a2zaaradhya',
-          ],
+    // 3. Schema.org JSON-LD Structured Data for Google Search Rich Results
+    const schemaGraph = [
+      // Organization Schema
+      {
+        '@type': 'Organization',
+        '@id': `${siteConfig.siteUrl}/#organization`,
+        name: siteConfig.legalName,
+        alternateName: siteConfig.shortName,
+        url: siteConfig.siteUrl,
+        logo: {
+          '@type': 'ImageObject',
+          url: siteConfig.logoUrl,
+          caption: 'A2Z Aaradhya Pvt. Ltd.',
         },
-        // ProfessionalService / LocalBusiness Schema with 7 Branches
-        {
-          '@type': 'ProfessionalService',
-          '@id': `${siteConfig.siteUrl}/#localbusiness`,
-          name: siteConfig.legalName,
-          image: siteConfig.logoUrl,
+        contactPoint: {
+          '@type': 'ContactPoint',
           telephone: siteConfig.phone,
-          email: siteConfig.email,
-          url: siteConfig.siteUrl,
-          priceRange: '₹₹',
+          contactType: 'customer service',
+          areaServed: 'IN',
+          availableLanguage: ['en', 'hi', 'gu'],
+        },
+        sameAs: [
+          'https://www.instagram.com/a2z_aaradhya_pvt.ltd',
+          'https://www.facebook.com/a2zaaradhya',
+          'https://www.linkedin.com/company/a2z-aaradhya-pvt-ltd',
+          'https://www.youtube.com/@a2zaaradhya',
+        ],
+      },
+      // WebSite Schema with SearchAction
+      {
+        '@type': 'WebSite',
+        '@id': `${siteConfig.siteUrl}/#website`,
+        url: siteConfig.siteUrl,
+        name: siteConfig.legalName,
+        description: "India's premier marketplace management agency for Amazon, Flipkart, Myntra & Meesho.",
+        publisher: {
+          '@id': `${siteConfig.siteUrl}/#organization`,
+        },
+        inLanguage: 'en-IN',
+      },
+      // ProfessionalService / LocalBusiness Schema with 7 Branches & 4.9 Star Rating
+      {
+        '@type': 'ProfessionalService',
+        '@id': `${siteConfig.siteUrl}/#localbusiness`,
+        name: siteConfig.legalName,
+        image: siteConfig.logoUrl,
+        telephone: siteConfig.phone,
+        email: siteConfig.email,
+        url: siteConfig.siteUrl,
+        priceRange: '₹₹',
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: '3000',
+          bestRating: '5',
+          worstRating: '1',
+        },
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: siteConfig.branches[0].address,
+          addressLocality: siteConfig.branches[0].city,
+          addressRegion: siteConfig.branches[0].state,
+          postalCode: siteConfig.branches[0].postalCode,
+          addressCountry: 'IN',
+        },
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            opens: '09:00',
+            closes: '18:00',
+          },
+        ],
+        department: siteConfig.branches.map((b) => ({
+          '@type': 'LocalBusiness',
+          name: b.name,
+          telephone: b.phone,
           address: {
             '@type': 'PostalAddress',
-            streetAddress: siteConfig.branches[0].address,
-            addressLocality: siteConfig.branches[0].city,
-            addressRegion: siteConfig.branches[0].state,
-            postalCode: siteConfig.branches[0].postalCode,
+            streetAddress: b.address,
+            addressLocality: b.city,
+            addressRegion: b.state,
+            postalCode: b.postalCode,
             addressCountry: 'IN',
           },
-          openingHoursSpecification: [
-            {
-              '@type': 'OpeningHoursSpecification',
-              dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-              opens: '09:00',
-              closes: '18:00',
-            },
-          ],
+        })),
+      },
+      // WebPage Schema
+      {
+        '@type': 'WebPage',
+        '@id': `${canonicalUrl}#webpage`,
+        url: canonicalUrl,
+        name: fullTitle,
+        description: description,
+        isPartOf: {
+          '@id': `${siteConfig.siteUrl}/#website`,
         },
-        // WebPage Schema
-        {
-          '@type': 'WebPage',
-          '@id': `${canonicalUrl}#webpage`,
-          url: canonicalUrl,
-          name: fullTitle,
-          description: description,
-          isPartOf: {
-            '@id': `${siteConfig.siteUrl}/#organization`,
-          },
+        about: {
+          '@id': `${siteConfig.siteUrl}/#organization`,
         },
-      ],
-    };
+        inLanguage: 'en-IN',
+      },
+    ];
 
     if (breadcrumbs && breadcrumbs.length > 0) {
-      schemaData['@graph'].push({
+      schemaGraph.push({
         '@type': 'BreadcrumbList',
         itemListElement: breadcrumbs.map((crumb, idx) => ({
           '@type': 'ListItem',
           position: idx + 1,
           name: crumb.name,
-          item: `${siteConfig.siteUrl}${crumb.path}`,
+          item: `${siteConfig.siteUrl}${crumb.path === '/' ? '' : crumb.path}`,
         })),
       });
     }
+
+    const schemaData = {
+      '@context': 'https://schema.org',
+      '@graph': schemaGraph,
+    };
 
     let scriptTag = document.getElementById('seo-structured-data');
     if (!scriptTag) {
@@ -213,7 +274,7 @@ export default function SEO({
     }
     scriptTag.textContent = JSON.stringify(schemaData);
 
-  }, [fullTitle, description, keywords, canonicalUrl, ogType, image, currentPath, breadcrumbs]);
+  }, [fullTitle, description, keywords, canonicalUrl, ogType, image, currentPath, breadcrumbs, noindex]);
 
   return null;
 }

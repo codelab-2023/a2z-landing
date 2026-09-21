@@ -199,7 +199,7 @@ export default function CareersPage() {
     <div className="pt-28 pb-20">
       <SEO
         title="Careers & Job Openings in E-Commerce Management | A2Z Aaradhya"
-        description="Explore current career opportunities at A2Z Aaradhya Pvt. Ltd. Apply for Key Account Manager (Amazon, Flipkart, Meesho), BDE, and Sales Head roles in Surat, Gujarat."
+        description="Explore current career opportunities at A2Z Aaradhya Pvt. Ltd. Apply for Key Account Manager (Amazon, Myntra, Flipkart, Meesho), BDE, and Sales Head roles in Surat, Gujarat."
         keywords="A2Z Aaradhya careers, e-commerce jobs Surat, Amazon account manager jobs, Flipkart manager jobs, sales head hiring"
         canonicalPath="/careers"
         breadcrumbs={[

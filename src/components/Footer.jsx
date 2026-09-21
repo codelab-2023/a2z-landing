@@ -26,7 +26,7 @@ export default function Footer({ onOpenModal }) {
             </Link>
 
             <p className="text-slate-400 text-xs leading-relaxed font-medium">
-              India's premier marketplace management agency. Official Amazon Authorized Partner, Flipkart Growth Specialist &amp; Meesho Scaling Expert with 7 regional branches across India.
+              India's premier marketplace management agency. Official Amazon Authorized Partner, Myntra Fashion Specialist, Flipkart Growth Specialist &amp; Meesho Scaling Expert with 7 regional branches across India.
             </p>
 
             <div className="flex items-center gap-2 text-[#9ED6CD] font-bold text-xs">
@@ -99,6 +99,7 @@ export default function Footer({ onOpenModal }) {
             <h4 className="text-sm font-extrabold text-white uppercase tracking-wider">Services</h4>
             <ul className="space-y-2.5">
               <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">Amazon Account Management</Link></li>
+              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">Myntra Account Management</Link></li>
               <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">Flipkart Account Management</Link></li>
               <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">Meesho Sales Scaling</Link></li>
               <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">New Seller Registration</Link></li>

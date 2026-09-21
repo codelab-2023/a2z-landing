@@ -9,11 +9,11 @@ import {
   ArrowRight,
   Zap
 } from 'lucide-react';
-import { AmazonIcon, FlipkartIcon, MeeshoIcon } from './PlatformLogos';
+import { AmazonIcon, FlipkartIcon, MeeshoIcon, MyntraIcon } from './PlatformLogos';
 import AnimateOnScroll from './AnimateOnScroll';
 
 export default function ServicesSection({ onOpenModal }) {
-  const tabOrder = ['amazon', 'flipkart', 'meesho', 'registration', 'recovery'];
+  const tabOrder = ['amazon', 'myntra', 'flipkart', 'meesho', 'registration', 'recovery'];
   const [activeTab, setActiveTab] = useState('amazon');
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef(null);
@@ -95,6 +95,23 @@ export default function ServicesSection({ onOpenModal }) {
         "Fast Settlement & Payment Reconciliation"
       ]
     },
+    myntra: {
+      title: "Myntra Account Management & Onboarding",
+      badge: "Myntra Fashion Partner",
+      description: "Scale your fashion brand on Myntra with end-to-end account management. From Standard to Premium onboarding — Good Listing → Right Price → Stock Available → Promotions → Visibility → Orders → More Sales.",
+      features: [
+        "Product Listing & SEO Title/Description Optimization",
+        "Professional Images & Myntra-Compliant Catalog Upload",
+        "Competitive Pricing Strategy & Market Analysis",
+        "Inventory Management & Size/Variant Stock Updates",
+        "Catalog Optimization & Regular Quality Checks",
+        "Promotions & Offers — Sale Events Preparation",
+        "Product Visibility via Category & Attribute Improvement",
+        "Order Processing & On-Time Dispatch Management",
+        "Returns & Cancellation Monitoring & Issue Resolution",
+        "Daily Performance Analysis & Sales Optimization"
+      ]
+    },
     registration: {
       title: "New Seller Setup & 3 Months Free Management",
       badge: "🎁 Special Offer: 3 Months Free Management",
@@ -150,20 +167,23 @@ export default function ServicesSection({ onOpenModal }) {
         </AnimateOnScroll>
 
         {/* Platform Selector Tabs */}
-        <AnimateOnScroll animation="fade-up" delay={100} className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-10 sm:mb-12">
+        <AnimateOnScroll animation="fade-up" delay={100} className="grid grid-cols-3 gap-2.5 sm:gap-3.5 mb-10 sm:mb-12 max-w-2xl mx-auto">
 
           {/* Amazon */}
           <button
             onClick={() => resetTimer('amazon')}
-            className={`relative px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex flex-col items-center gap-2 overflow-hidden ${
+            className={`relative px-2 sm:px-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center overflow-hidden ${
               activeTab === 'amazon'
-                ? 'bg-amber-500 text-white shadow-lg shadow-amber-500/25 scale-105'
-                : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 shadow-sm'
+                ? 'bg-amber-500 text-white shadow-lg shadow-amber-500/25 scale-[1.02]'
+                : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 shadow-sm hover:border-slate-300'
             }`}
           >
-            <span className="flex items-center gap-2 sm:gap-2.5">
-              <AmazonIcon className="w-4 h-4 sm:w-5 sm:h-5 rounded-md shrink-0 shadow-sm" />
-              Amazon Management
+            <span className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 text-center sm:text-left">
+              <AmazonIcon className="w-5 h-5 sm:w-6 sm:h-6 rounded-md shrink-0 shadow-sm" />
+              <span className="leading-tight">
+                <span className="block">Amazon</span>
+                <span className="block">Management</span>
+              </span>
             </span>
             {/* Progress line */}
             <span className="absolute bottom-0 left-0 h-[3px] w-full bg-black/10 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
@@ -173,18 +193,44 @@ export default function ServicesSection({ onOpenModal }) {
             </span>
           </button>
 
+          {/* Myntra */}
+          <button
+            onClick={() => resetTimer('myntra')}
+            className={`relative px-2 sm:px-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center overflow-hidden ${
+              activeTab === 'myntra'
+                ? 'bg-[#FF3F6C] text-white shadow-lg shadow-pink-500/25 scale-[1.02]'
+                : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 shadow-sm hover:border-slate-300'
+            }`}
+          >
+            <span className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 text-center sm:text-left">
+              <MyntraIcon className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
+              <span className="leading-tight">
+                <span className="block">Myntra</span>
+                <span className="block">Management</span>
+              </span>
+            </span>
+            <span className="absolute bottom-0 left-0 h-[3px] w-full bg-black/10 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
+              {activeTab === 'myntra' && (
+                <span className="absolute top-0 left-0 h-full bg-white/70 rounded-full" style={{ width: `${progress}%` }} />
+              )}
+            </span>
+          </button>
+
           {/* Flipkart */}
           <button
             onClick={() => resetTimer('flipkart')}
-            className={`relative px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex flex-col items-center gap-2 overflow-hidden ${
+            className={`relative px-2 sm:px-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center overflow-hidden ${
               activeTab === 'flipkart'
-                ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25 scale-105'
-                : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 shadow-sm'
+                ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25 scale-[1.02]'
+                : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 shadow-sm hover:border-slate-300'
             }`}
           >
-            <span className="flex items-center gap-2 sm:gap-2.5">
-              <FlipkartIcon className="w-4 h-4 sm:w-5 sm:h-5 rounded-md shrink-0 shadow-sm" />
-              Flipkart Management
+            <span className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 text-center sm:text-left">
+              <FlipkartIcon className="w-5 h-5 sm:w-6 sm:h-6 rounded-md shrink-0 shadow-sm" />
+              <span className="leading-tight">
+                <span className="block">Flipkart</span>
+                <span className="block">Management</span>
+              </span>
             </span>
             <span className="absolute bottom-0 left-0 h-[3px] w-full bg-black/10 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
               {activeTab === 'flipkart' && (
@@ -196,15 +242,18 @@ export default function ServicesSection({ onOpenModal }) {
           {/* Meesho */}
           <button
             onClick={() => resetTimer('meesho')}
-            className={`relative px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex flex-col items-center gap-2 overflow-hidden ${
+            className={`relative px-2 sm:px-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center overflow-hidden ${
               activeTab === 'meesho'
-                ? 'bg-pink-600 text-white shadow-lg shadow-pink-500/25 scale-105'
-                : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 shadow-sm'
+                ? 'bg-pink-600 text-white shadow-lg shadow-pink-500/25 scale-[1.02]'
+                : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 shadow-sm hover:border-slate-300'
             }`}
           >
-            <span className="flex items-center gap-2 sm:gap-2.5">
-              <MeeshoIcon className="w-4 h-4 sm:w-5 sm:h-5 rounded-md shrink-0 shadow-sm" />
-              Meesho Growth
+            <span className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 text-center sm:text-left">
+              <MeeshoIcon className="w-5 h-5 sm:w-6 sm:h-6 rounded-md shrink-0 shadow-sm" />
+              <span className="leading-tight">
+                <span className="block">Meesho</span>
+                <span className="block">Growth</span>
+              </span>
             </span>
             <span className="absolute bottom-0 left-0 h-[3px] w-full bg-black/10 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
               {activeTab === 'meesho' && (
@@ -216,15 +265,18 @@ export default function ServicesSection({ onOpenModal }) {
           {/* New Seller */}
           <button
             onClick={() => resetTimer('registration')}
-            className={`relative px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex flex-col items-center gap-2 overflow-hidden ${
+            className={`relative px-2 sm:px-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center overflow-hidden ${
               activeTab === 'registration'
-                ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/25 scale-105'
-                : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 shadow-sm'
+                ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/25 scale-[1.02]'
+                : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 shadow-sm hover:border-slate-300'
             }`}
           >
-            <span className="flex items-center gap-2 sm:gap-2.5">
-              <UserPlus className="w-4 h-4" />
-              New Seller Setup
+            <span className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 text-center sm:text-left">
+              <UserPlus className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
+              <span className="leading-tight">
+                <span className="block">New Seller</span>
+                <span className="block">Setup</span>
+              </span>
             </span>
             <span className="absolute bottom-0 left-0 h-[3px] w-full bg-black/10 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
               {activeTab === 'registration' && (
@@ -236,15 +288,18 @@ export default function ServicesSection({ onOpenModal }) {
           {/* Account Reinstatement */}
           <button
             onClick={() => resetTimer('recovery')}
-            className={`relative px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex flex-col items-center gap-2 overflow-hidden ${
+            className={`relative px-2 sm:px-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center overflow-hidden ${
               activeTab === 'recovery'
-                ? 'bg-red-600 text-white shadow-lg shadow-red-500/25 scale-105'
-                : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 shadow-sm'
+                ? 'bg-red-600 text-white shadow-lg shadow-red-500/25 scale-[1.02]'
+                : 'bg-white text-slate-700 hover:text-slate-900 border border-slate-200 shadow-sm hover:border-slate-300'
             }`}
           >
-            <span className="flex items-center gap-2 sm:gap-2.5">
-              <ShieldAlert className="w-4 h-4" />
-              Account Reinstatement
+            <span className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 text-center sm:text-left">
+              <ShieldAlert className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
+              <span className="leading-tight">
+                <span className="block">Account</span>
+                <span className="block">Reinstatement</span>
+              </span>
             </span>
             <span className="absolute bottom-0 left-0 h-[3px] w-full bg-black/10 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
               {activeTab === 'recovery' && (

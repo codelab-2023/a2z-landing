@@ -36,10 +36,10 @@ export default function ContactPage() {
       return;
     }
 
-    const cleanName = sanitizeText(formData.name);
-    const cleanPhone = sanitizeText(formData.phone).replace(/\s+/g, '');
-    const cleanCity = sanitizeText(formData.city);
-    const cleanMsg = sanitizeText(formData.message);
+    const cleanName = sanitizeText(formData.name).slice(0, 80);
+    const cleanPhone = sanitizeText(formData.phone).replace(/[\s\-()]+/g, '').slice(0, 16);
+    const cleanCity = sanitizeText(formData.city).slice(0, 80);
+    const cleanMsg = sanitizeText(formData.message).slice(0, 1000);
 
     if (!cleanName || cleanName.length < 2) {
       setErrorMsg('Please enter your full name (at least 2 characters).');
@@ -69,7 +69,7 @@ export default function ContactPage() {
     <div className="pt-28 pb-20 space-y-16">
       <SEO
         title="Contact Us & Book Free Marketplace Account Audit | A2Z Aaradhya"
-        description="Get in touch with A2Z Aaradhya senior marketplace consultants. Call +91-7802077444 or schedule a free account growth audit for Amazon, Flipkart & Meesho."
+        description="Get in touch with A2Z Aaradhya senior marketplace consultants. Call +91-7802077444 or schedule a free account growth audit for Amazon, Myntra, Flipkart & Meesho."
         keywords="Contact A2Z Aaradhya, free account audit, Amazon consultation, marketplace support helpline, e-commerce agency contact"
         canonicalPath="/contact"
         breadcrumbs={[
@@ -292,6 +292,7 @@ export default function ContactPage() {
                     <input
                       type="text"
                       required
+                      maxLength={80}
                       placeholder="e.g. Vikram Mehta"
                       value={formData.name}
                       onChange={(e) => {
@@ -308,6 +309,7 @@ export default function ContactPage() {
                       <input
                         type="tel"
                         required
+                        maxLength={16}
                         placeholder="e.g. 7802077444"
                         value={formData.phone}
                         onChange={(e) => {
@@ -323,6 +325,7 @@ export default function ContactPage() {
                       <input
                         type="text"
                         required
+                        maxLength={80}
                         placeholder="e.g. Surat / Ahmedabad"
                         value={formData.city}
                         onChange={(e) => {
@@ -342,6 +345,7 @@ export default function ContactPage() {
                       className="w-full py-3 px-4 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm font-bold focus:outline-none focus:border-[#166B82]"
                     >
                       <option value="Amazon">Amazon India Account Management</option>
+                      <option value="Myntra">Myntra Account Management &amp; Onboarding</option>
                       <option value="Flipkart">Flipkart Management</option>
                       <option value="Meesho">Meesho Sales Scaling</option>
                       <option value="New Seller (3 Months Free)">New Seller Registration (3 Months FREE Offer)</option>
@@ -353,6 +357,7 @@ export default function ContactPage() {
                     <label className="text-xs font-bold text-slate-700">Message / Current Seller Challenges</label>
                     <textarea
                       rows={3}
+                      maxLength={1000}
                       placeholder="Tell us about your brand, current monthly sales, or any specific account issues..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}

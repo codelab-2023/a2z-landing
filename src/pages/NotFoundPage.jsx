@@ -11,6 +11,7 @@ export default function NotFoundPage() {
       <SEO
         title="404 - Page Not Found | A2Z Aaradhya"
         description="The requested page could not be found. Return to A2Z Aaradhya homepage."
+        noindex={true}
       />
       <img src={LogoSvg} alt="A2Z Aaradhya Logo" className="h-20 w-auto" />
       

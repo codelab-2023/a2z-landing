@@ -7,12 +7,12 @@ export default function SecuritySection() {
     {
       icon: Lock,
       title: "Your Data is Completely Safe",
-      desc: "Your Amazon, Flipkart & Meesho login details, API keys and sales reports are stored on our secure servers. We never share your data with anyone."
+      desc: "Your Amazon, Myntra, Flipkart & Meesho login details, API keys and sales reports are stored on our secure servers. We never share your data with anyone."
     },
     {
       icon: Key,
       title: "No Password Sharing Required",
-      desc: "We connect via official Amazon SP-API, Flipkart API & Meesho Auth — you never need to hand over your master password. Fully secure and compliant."
+      desc: "We connect via official Amazon SP-API, Myntra Partner Portal, Flipkart API & Meesho Auth — you never need to hand over your master password. Fully secure and compliant."
     },
     {
       icon: FileCheck,
@@ -45,7 +45,7 @@ export default function SecuritySection() {
               </h2>
 
               <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                We know your seller account represents years of hard work. That's why we follow strict security protocols set by Amazon, Flipkart and Meesho. Your business information stays completely confidential — always.
+                We know your seller account represents years of hard work. That's why we follow strict security protocols set by Amazon, Myntra, Flipkart and Meesho. Your business information stays completely confidential — always.
               </p>
 
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-extrabold uppercase tracking-wider w-fit">

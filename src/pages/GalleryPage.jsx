@@ -37,7 +37,7 @@ const galleryItems = [
     title: 'Seller Growth & Cataloging Training',
     category: 'Culture',
     image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80',
-    desc: 'Continuous skill enrichment programs covering Amazon, Flipkart & Meesho algorithm updates.',
+    desc: 'Continuous skill enrichment programs covering Amazon, Myntra, Flipkart & Meesho algorithm updates.',
   },
   {
     id: 6,

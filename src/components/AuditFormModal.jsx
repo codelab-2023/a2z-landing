@@ -34,9 +34,9 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
       return false;
     }
 
-    const cleanName = sanitizeText(formData.name);
-    const cleanPhone = sanitizeText(formData.phone).replace(/\s+/g, '');
-    const cleanCity = sanitizeText(formData.city);
+    const cleanName = sanitizeText(formData.name).slice(0, 80);
+    const cleanPhone = sanitizeText(formData.phone).replace(/[\s\-()]+/g, '').slice(0, 16);
+    const cleanCity = sanitizeText(formData.city).slice(0, 80);
 
     if (!cleanName || cleanName.length < 2) {
       setErrorMsg('Please enter a valid Full Name (at least 2 characters).');
@@ -164,6 +164,7 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
                 <input
                   type="text"
                   required
+                  maxLength={80}
                   placeholder="e.g. Rahul Sharma"
                   value={formData.name}
                   onChange={(e) => {
@@ -184,6 +185,7 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
                   <input
                     type="tel"
                     required
+                    maxLength={16}
                     placeholder="e.g. 7802077444"
                     value={formData.phone}
                     onChange={(e) => {
@@ -202,6 +204,7 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
                   <input
                     type="text"
                     required
+                    maxLength={80}
                     placeholder="e.g. Ahmedabad / Surat"
                     value={formData.city}
                     onChange={(e) => {

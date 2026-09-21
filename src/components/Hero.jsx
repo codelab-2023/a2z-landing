@@ -10,8 +10,8 @@ import {
   Activity,
 } from 'lucide-react';
 import {
-  AmazonIcon, FlipkartIcon, MeeshoIcon,
-  AmazonLogo, FlipkartLogo, MeeshoLogo,
+  AmazonIcon, FlipkartIcon, MeeshoIcon, MyntraIcon,
+  AmazonLogo, FlipkartLogo, MeeshoLogo, MyntraLogo,
 } from './PlatformLogos';
 
 export default function Hero({ onOpenModal }) {
@@ -66,22 +66,60 @@ export default function Hero({ onOpenModal }) {
 
             {/* Short subtext */}
             <p className="text-base sm:text-lg text-slate-500 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-slide-in-up animate-delay-200">
-              Expert e-commerce management on Amazon, Flipkart &amp; Meesho — so you sell more while we handle the rest.
+              Expert e-commerce management on Amazon, Myntra, Flipkart &amp; Meesho — so you sell more while we handle the rest.
             </p>
 
-            {/* 3 Main Brand Logo Cards */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 animate-slide-in-up animate-delay-300">
+            {/* 4 Main Brand Logo Cards - Uniform Pill Shapes & Prominent Logos */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-3.5 animate-slide-in-up animate-delay-300">
               {/* Amazon Card */}
-              <div className="bg-white rounded-full px-6 shadow-md border border-slate-100/90 flex items-center justify-center min-w-[145px] h-[56px] hover:shadow-lg transition-all duration-300 overflow-hidden">
-                <AmazonLogo className="object-contain" style={{ height: '62px', width: 'auto', maxWidth: '160px', transform: 'scale(1.68) translateY(5px)' }} />
+              <div className="bg-white rounded-full border border-slate-200/90 shadow-sm hover:shadow-md flex items-center justify-center w-[140px] sm:w-[152px] h-[50px] sm:h-[54px] transition-all duration-300 overflow-hidden shrink-0">
+                <AmazonLogo
+                  className="object-contain"
+                  style={{
+                    height: '56px',
+                    width: 'auto',
+                    maxWidth: '130px',
+                    transform: 'scale(1.75) translateY(3px)',
+                  }}
+                />
               </div>
+
+              {/* Myntra Card */}
+              <div className="bg-white rounded-full border border-slate-200/90 shadow-sm hover:shadow-md flex items-center justify-center w-[140px] sm:w-[152px] h-[50px] sm:h-[54px] transition-all duration-300 overflow-hidden shrink-0">
+                <MyntraLogo
+                  className="object-contain"
+                  style={{
+                    height: '28px',
+                    width: 'auto',
+                    maxWidth: '108px',
+                  }}
+                />
+              </div>
+
               {/* Flipkart Card */}
-              <div className="bg-white rounded-full px-6 shadow-md border border-slate-100/90 flex items-center justify-center min-w-[145px] h-[56px] hover:shadow-lg transition-all duration-300 overflow-hidden">
-                <FlipkartLogo className="object-contain" style={{ height: '62px', width: 'auto', maxWidth: '160px', transform: 'scale(1.68)' }} />
+              <div className="bg-white rounded-full border border-slate-200/90 shadow-sm hover:shadow-md flex items-center justify-center w-[140px] sm:w-[152px] h-[50px] sm:h-[54px] transition-all duration-300 overflow-hidden shrink-0">
+                <FlipkartLogo
+                  className="object-contain"
+                  style={{
+                    height: '56px',
+                    width: 'auto',
+                    maxWidth: '130px',
+                    transform: 'scale(1.75)',
+                  }}
+                />
               </div>
+
               {/* Meesho Card */}
-              <div className="bg-white rounded-full px-6 shadow-md border border-slate-100/90 flex items-center justify-center min-w-[145px] h-[56px] hover:shadow-lg transition-all duration-300 overflow-hidden">
-                <MeeshoLogo className="object-contain" style={{ height: '62px', width: 'auto', maxWidth: '160px', transform: 'scale(1.68)' }} />
+              <div className="bg-white rounded-full border border-slate-200/90 shadow-sm hover:shadow-md flex items-center justify-center w-[140px] sm:w-[152px] h-[50px] sm:h-[54px] transition-all duration-300 overflow-hidden shrink-0">
+                <MeeshoLogo
+                  className="object-contain"
+                  style={{
+                    height: '56px',
+                    width: 'auto',
+                    maxWidth: '130px',
+                    transform: 'scale(1.75)',
+                  }}
+                />
               </div>
             </div>
 
@@ -252,6 +290,9 @@ export default function Hero({ onOpenModal }) {
               {[0, 1, 2, 3].flatMap((i) => [
                 <div key={`a-${set}-${i}`} className="flex items-center justify-center rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm shrink-0 overflow-hidden" style={{ height: '44px', minWidth: '120px', padding: '0 14px' }}>
                   <AmazonLogo className="object-contain" style={{ height: '60px', width: 'auto', maxWidth: '150px', transform: 'scale(1.6) translateY(4px)' }} />
+                </div>,
+                <div key={`my-${set}-${i}`} className="flex items-center justify-center rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm shrink-0 overflow-hidden" style={{ height: '44px', minWidth: '120px', padding: '0 14px' }}>
+                  <MyntraLogo className="object-contain" style={{ height: '28px', width: 'auto', maxWidth: '130px' }} />
                 </div>,
                 <div key={`f-${set}-${i}`} className="flex items-center justify-center rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm shrink-0 overflow-hidden" style={{ height: '44px', minWidth: '120px', padding: '0 14px' }}>
                   <FlipkartLogo className="object-contain" style={{ height: '58px', width: 'auto', maxWidth: '150px', transform: 'scale(1.6)' }} />
