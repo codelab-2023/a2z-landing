@@ -121,28 +121,28 @@ export default function AwardsSection() {
   ];
 
   return (
-    <section id="awards" className="py-16 sm:py-24 relative bg-[#F8FAFC] border-t border-slate-200">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="awards" className="py-10 sm:py-24 relative bg-[#F8FAFC] border-t border-slate-200">
+      <div className="max-w-6xl mx-auto px-2.5 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <AnimateOnScroll animation="fade-up" className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-700 text-xs font-extrabold uppercase tracking-wider mb-1">
-            <Trophy className="w-4 h-4 text-amber-500" />
+        <AnimateOnScroll animation="fade-up" className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 space-y-2 sm:space-y-3">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-700 text-[11px] sm:text-xs font-extrabold uppercase tracking-wider mb-1">
+            <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500" />
             <span>Official Industry Recognitions</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-[#0B3B48] font-outfit tracking-tight">
+          <h2 className="text-2xl sm:text-5xl font-black text-[#0B3B48] font-outfit tracking-tight">
             Award-Winning Excellence
           </h2>
-          <p className="text-base sm:text-lg font-bold text-[#166B82]">
+          <p className="text-xs sm:text-lg font-bold text-[#166B82]">
             Recognized by Amazon &amp; National E-Commerce Leaders
           </p>
-          <p className="text-sm sm:text-base text-slate-600 font-medium">
+          <p className="text-[11px] sm:text-base text-slate-600 font-medium">
             Explore our official awards, honors, and partner certifications.
           </p>
         </AnimateOnScroll>
 
         {/* 7 Clean 1920x1080 Award Boxes */}
-        <div className="space-y-12">
+        <div className="space-y-6 sm:space-y-12">
           {awards.map((a, i) => {
             const Icon = a.icon;
 
@@ -151,32 +151,33 @@ export default function AwardsSection() {
                 key={a.id}
                 animation="fade-up"
                 delay={i * 30}
-                className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-[0_6px_30px_rgba(0,0,0,0.04)] space-y-6"
+                className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-8 border border-slate-200/90 shadow-[0_6px_30px_rgba(0,0,0,0.04)] space-y-3 sm:space-y-6"
               >
-                {/* Box Top: Icon + Year Tag + Title + Org */}
-                <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                  <div className="flex items-center gap-4">
-                    <div className={`w-14 h-14 rounded-2xl ${a.iconBg} border ${a.iconBorder} flex items-center justify-center shadow-xs shrink-0`}>
+                {/* Box Top: Icon (desktop only) + Year Tag + Title + Org */}
+                <div className="flex items-center justify-between pb-2.5 sm:pb-4 border-b border-slate-100">
+                  <div className="flex items-center gap-3 sm:gap-4 w-full">
+                    {/* Icon: Hidden on mobile to maximize space, shown on desktop */}
+                    <div className={`hidden sm:flex w-14 h-14 rounded-2xl ${a.iconBg} border ${a.iconBorder} items-center justify-center shadow-xs shrink-0`}>
                       <Icon className={`w-7 h-7 ${a.iconColor}`} />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className={`text-xs font-extrabold px-3 py-0.5 rounded-full ${a.tagBg} ${a.tagText}`}>
+                        <span className={`text-[10px] sm:text-xs font-extrabold px-2.5 sm:px-3 py-0.5 rounded-full ${a.tagBg} ${a.tagText}`}>
                           {a.tag}
                         </span>
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-black text-[#0B3B48] font-outfit">
+                      <h3 className="text-base sm:text-2xl font-black text-[#0B3B48] font-outfit truncate sm:whitespace-normal">
                         {a.title}
                       </h3>
-                      <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                      <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider truncate sm:whitespace-normal">
                         {a.org}
                       </p>
                     </div>
                   </div>
                 </div>
 
-                {/* 1920x1080 Horizontal Image Box (No Blur, No Hover Overlay, No Modal Trigger) */}
-                <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-md">
+                {/* 1920x1080 Horizontal Image Box - Maximized on Mobile */}
+                <div className="relative w-full aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-md">
                   <img
                     src={a.image}
                     alt={a.title}
