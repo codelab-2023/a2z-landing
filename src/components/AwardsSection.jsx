@@ -121,11 +121,11 @@ export default function AwardsSection() {
   ];
 
   return (
-    <section id="awards" className="py-8 sm:py-24 relative bg-[#F8FAFC] border-t border-slate-200">
-      <div className="max-w-6xl mx-auto px-1.5 sm:px-6 lg:px-8">
+    <section id="awards" className="py-10 sm:py-24 relative bg-[#F8FAFC] border-t border-slate-200">
+      <div className="max-w-6xl mx-auto px-2.5 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <AnimateOnScroll animation="fade-up" className="text-center max-w-3xl mx-auto mb-6 sm:mb-16 space-y-2 sm:space-y-3 px-2">
+        <AnimateOnScroll animation="fade-up" className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 space-y-2 sm:space-y-3">
           <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-700 text-[11px] sm:text-xs font-extrabold uppercase tracking-wider mb-1">
             <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500" />
             <span>Official Industry Recognitions</span>
@@ -142,7 +142,7 @@ export default function AwardsSection() {
         </AnimateOnScroll>
 
         {/* 7 Clean 1920x1080 Award Boxes */}
-        <div className="space-y-5 sm:space-y-12">
+        <div className="space-y-6 sm:space-y-12">
           {awards.map((a, i) => {
             const Icon = a.icon;
 
@@ -151,35 +151,35 @@ export default function AwardsSection() {
                 key={a.id}
                 animation="fade-up"
                 delay={i * 30}
-                className="bg-white rounded-2xl sm:rounded-3xl p-2 sm:p-8 border border-slate-200/90 shadow-[0_6px_30px_rgba(0,0,0,0.04)] space-y-2.5 sm:space-y-6"
+                className="bg-white rounded-2xl sm:rounded-3xl p-3 sm:p-8 border border-slate-200/90 shadow-[0_6px_30px_rgba(0,0,0,0.04)] space-y-3 sm:space-y-6"
               >
-                {/* Box Top: Icon + Title/Org (Left) & Year Tag (Right Side) */}
-                <div className="flex items-center justify-between gap-2 px-1 sm:px-0 pb-2 sm:pb-4 border-b border-slate-100">
-                  <div className="flex items-center gap-2.5 sm:gap-4 min-w-0 flex-1">
-                    {/* Icon: Desktop only */}
+                {/* Box Top: Title + Org on left | Year badge on right */}
+                <div className="flex items-start justify-between pb-2.5 sm:pb-4 border-b border-slate-100 gap-2">
+                  
+                  {/* Left: Icon (desktop) + Title + Org */}
+                  <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
+                    {/* Icon: Hidden on mobile, shown on desktop */}
                     <div className={`hidden sm:flex w-14 h-14 rounded-2xl ${a.iconBg} border ${a.iconBorder} items-center justify-center shadow-xs shrink-0`}>
                       <Icon className={`w-7 h-7 ${a.iconColor}`} />
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="text-[13px] sm:text-2xl font-black text-[#0B3B48] font-outfit truncate sm:whitespace-normal">
+                    <div className="min-w-0">
+                      <h3 className="text-base sm:text-2xl font-black text-[#0B3B48] font-outfit leading-tight">
                         {a.title}
                       </h3>
-                      <p className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider truncate sm:whitespace-normal">
+                      <p className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider mt-0.5 truncate sm:whitespace-normal">
                         {a.org}
                       </p>
                     </div>
                   </div>
 
-                  {/* Year Tag: Right Side */}
-                  <div className="shrink-0">
-                    <span className={`text-[10px] sm:text-xs font-extrabold px-2.5 sm:px-3 py-1 rounded-full ${a.tagBg} ${a.tagText} shadow-xs`}>
-                      {a.tag}
-                    </span>
-                  </div>
+                  {/* Right: Year badge always on right */}
+                  <span className={`shrink-0 text-[10px] sm:text-xs font-extrabold px-2.5 sm:px-3 py-0.5 rounded-full ${a.tagBg} ${a.tagText} whitespace-nowrap`}>
+                    {a.tag}
+                  </span>
                 </div>
 
-                {/* 1920x1080 Horizontal Image Box - Maximized for Mobile */}
-                <div className="relative w-full aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-md">
+                {/* Image - bigger aspect ratio on mobile (4:3 instead of 16:9) */}
+                <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/90 shadow-md">
                   <img
                     src={a.image}
                     alt={a.title}
