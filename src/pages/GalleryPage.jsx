@@ -59,7 +59,7 @@ export default function GalleryPage() {
     : galleryItems.filter(item => item.category === activeCategory);
 
   return (
-    <div className="pt-28 pb-20 space-y-12">
+    <div className="pt-20 sm:pt-28 pb-10 sm:pb-20 space-y-8 sm:space-y-12">
       <SEO
         title="Company Gallery & Regional Workspace Tour | A2Z Aaradhya"
         description="Take a visual tour of A2Z Aaradhya Pvt. Ltd. offices, team culture, strategy meetings, seller masterclasses, and national award ceremonies."

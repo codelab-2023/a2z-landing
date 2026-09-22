@@ -66,7 +66,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-28 pb-20 space-y-16">
+    <div className="pt-20 sm:pt-28 pb-10 sm:pb-20 space-y-10 sm:space-y-16">
       <SEO
         title="Contact Us & Book Free Marketplace Account Audit | A2Z Aaradhya"
         description="Get in touch with A2Z Aaradhya senior marketplace consultants. Call +91-7802077444 or schedule a free account growth audit for Amazon, Myntra, Flipkart & Meesho."

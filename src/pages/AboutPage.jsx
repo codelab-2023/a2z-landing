@@ -8,7 +8,7 @@ import { Users, Award, ShieldCheck } from 'lucide-react';
 
 export default function AboutPage({ onOpenModal }) {
   return (
-    <div className="pt-28 pb-20 space-y-16">
+    <div className="pt-20 sm:pt-28 pb-10 sm:pb-20 space-y-10 sm:space-y-16">
       <SEO
         title="About Us - India's Premier Marketplace Growth Agency | A2Z Aaradhya"
         description="Learn about A2Z Aaradhya Pvt. Ltd., an ISO-certified and Amazon Unnati Gold Partner with 70+ specialists and 7 branches helping 3,000+ brands grow on Amazon, Myntra, Flipkart & Meesho."

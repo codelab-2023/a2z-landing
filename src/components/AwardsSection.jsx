@@ -121,22 +121,23 @@ export default function AwardsSection() {
   ];
 
   return (
-    <section id="awards" className="py-10 sm:py-24 relative bg-[#F8FAFC] border-t border-slate-200">
+    <section id="awards" className="py-4 sm:py-24 relative bg-[#F8FAFC] border-t border-slate-200">
       <div className="max-w-6xl mx-auto px-2.5 sm:px-6 lg:px-8">
         
         {/* Header Section */}
-        <AnimateOnScroll animation="fade-up" className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 space-y-2 sm:space-y-3">
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-700 text-[11px] sm:text-xs font-extrabold uppercase tracking-wider mb-1">
+        <AnimateOnScroll animation="fade-up" className="text-center max-w-3xl mx-auto mb-5 sm:mb-16 space-y-1 sm:space-y-3">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-700 text-[11px] sm:text-xs font-extrabold uppercase tracking-wider mb-0.5">
             <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500" />
             <span>Official Industry Recognitions</span>
           </div>
-          <h2 className="text-2xl sm:text-5xl font-black text-[#0B3B48] font-outfit tracking-tight">
+          <h2 className="text-xl sm:text-5xl font-black text-[#0B3B48] font-outfit tracking-tight">
             Award-Winning Excellence
           </h2>
-          <p className="text-xs sm:text-lg font-bold text-[#166B82]">
+          {/* Hide subtitle text on mobile to reduce top space */}
+          <p className="hidden sm:block text-xs sm:text-lg font-bold text-[#166B82]">
             Recognized by Amazon &amp; National E-Commerce Leaders
           </p>
-          <p className="text-[11px] sm:text-base text-slate-600 font-medium">
+          <p className="hidden sm:block text-[11px] sm:text-base text-slate-600 font-medium">
             Explore our official awards, honors, and partner certifications.
           </p>
         </AnimateOnScroll>

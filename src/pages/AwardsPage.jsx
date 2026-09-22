@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 
 export default function AwardsPage() {
   return (
-    <div className="pt-28 pb-20">
+    <div className="pt-20 sm:pt-28 pb-10 sm:pb-20">
       <SEO
         title="Awards & Certifications - Amazon Unnati Gold Partner | A2Z Aaradhya"
         description="Explore national achievements and certifications awarded to A2Z Aaradhya, including Amazon SOA Champion South & West Winner, Unnati Gold Partner, and Pragati League Winners."

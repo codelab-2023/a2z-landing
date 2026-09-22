@@ -108,7 +108,7 @@ const teamMembers = [
 
 export default function TeamPage() {
   return (
-    <div className="pt-28 pb-20">
+    <div className="pt-20 sm:pt-28 pb-10 sm:pb-20">
       <SEO
         title="Executive Leadership & Branch Managers Team | A2Z Aaradhya"
         description="Meet the leadership team and branch managers of A2Z Aaradhya Pvt. Ltd., guiding 70+ certified e-commerce specialists across 7 regional branches in India."
