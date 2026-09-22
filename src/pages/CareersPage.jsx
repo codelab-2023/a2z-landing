@@ -196,7 +196,7 @@ export default function CareersPage() {
   };
 
   return (
-    <div className="pt-20 sm:pt-28 pb-10 sm:pb-20">
+    <div className="pt-16 sm:pt-28 pb-10 sm:pb-20">
       <SEO
         title="Careers & Job Openings in E-Commerce Management | A2Z Aaradhya"
         description="Explore current career opportunities at A2Z Aaradhya Pvt. Ltd. Apply for Key Account Manager (Amazon, Myntra, Flipkart, Meesho), BDE, and Sales Head roles in Surat, Gujarat."
@@ -226,7 +226,7 @@ export default function CareersPage() {
       </section>
 
       {/* Job Listings */}
-      <section className="py-16">
+      <section className="py-5 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {jobRoles.map((job, idx) => (

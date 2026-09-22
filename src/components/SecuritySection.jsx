@@ -27,7 +27,7 @@ export default function SecuritySection() {
   ];
 
   return (
-    <section className="py-20 relative bg-slate-50 border-t border-slate-200">
+    <section className="py-6 sm:py-20 relative bg-slate-50 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl relative overflow-hidden">

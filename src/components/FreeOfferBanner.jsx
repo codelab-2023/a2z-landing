@@ -4,7 +4,7 @@ import AnimateOnScroll from './AnimateOnScroll';
 
 export default function FreeOfferBanner({ onOpenModal }) {
   return (
-    <section id="offer" className="py-14 relative overflow-hidden">
+    <section id="offer" className="py-6 sm:py-14 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <AnimateOnScroll animation="scale-in">

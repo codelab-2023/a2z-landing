@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 
 export default function PrivacyPage() {
   return (
-    <div className="pt-20 sm:pt-28 pb-10 sm:pb-20 space-y-8 sm:space-y-12">
+    <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 space-y-8 sm:space-y-12">
       <SEO
         title="Privacy Policy, Security & NDA Compliance | A2Z Aaradhya"
         description="Review A2Z Aaradhya's ISO 27001 and DPDP-compliant privacy policy, seller credential protection protocols, and NDA terms."

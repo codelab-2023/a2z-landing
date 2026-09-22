@@ -8,7 +8,7 @@ import { Users, Award, ShieldCheck } from 'lucide-react';
 
 export default function AboutPage({ onOpenModal }) {
   return (
-    <div className="pt-20 sm:pt-28 pb-10 sm:pb-20 space-y-10 sm:space-y-16">
+    <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 space-y-10 sm:space-y-16">
       <SEO
         title="About Us - India's Premier Marketplace Growth Agency | A2Z Aaradhya"
         description="Learn about A2Z Aaradhya Pvt. Ltd., an ISO-certified and Amazon Unnati Gold Partner with 70+ specialists and 7 branches helping 3,000+ brands grow on Amazon, Myntra, Flipkart & Meesho."
@@ -35,7 +35,7 @@ export default function AboutPage({ onOpenModal }) {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
+      <section className="py-5 sm:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <AnimateOnScroll animation="fade-up" delay={0} className="bg-slate-50 rounded-3xl p-8 border border-slate-200 space-y-3">

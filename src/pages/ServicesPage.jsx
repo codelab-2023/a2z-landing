@@ -9,7 +9,7 @@ import { AmazonIcon, MyntraIcon, FlipkartIcon, MeeshoIcon } from '../components/
 
 export default function ServicesPage({ onOpenModal }) {
   return (
-    <div className="pt-20 sm:pt-28 pb-10 sm:pb-20 space-y-10 sm:space-y-16">
+    <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 space-y-10 sm:space-y-16">
       <SEO
         title="Marketplace Account Management Services (Amazon, Flipkart, Meesho, Myntra) | A2Z Aaradhya"
         description="Comprehensive marketplace management services: Amazon FBA & PPC Ads, Flipkart PLA campaigns, Meesho high-volume scaling, Myntra fashion onboarding, product cataloging, and account reinstatement. 3 Months Free for New Sellers."
@@ -28,7 +28,7 @@ export default function ServicesPage({ onOpenModal }) {
       <FreeOfferBanner onOpenModal={onOpenModal} />
 
       {/* Deep-Dive Service Matrix Grid */}
-      <section className="py-12 bg-white">
+      <section className="py-5 sm:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <AnimateOnScroll animation="fade-up" className="text-center max-w-2xl mx-auto space-y-2">

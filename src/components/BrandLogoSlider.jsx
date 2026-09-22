@@ -81,7 +81,7 @@ export default function BrandLogoSlider() {
   );
 
   return (
-    <section className="py-14 sm:py-20 bg-gradient-to-b from-white via-slate-50 to-white border-y border-slate-200 overflow-hidden relative">
+    <section className="py-5 sm:py-20 bg-gradient-to-b from-white via-slate-50 to-white border-y border-slate-200 overflow-hidden relative">
       
       {/* Subtle ambient glows */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-[#166B82]/5 rounded-full blur-3xl pointer-events-none" />

@@ -72,7 +72,7 @@ export default function BranchesPage() {
   ];
 
   return (
-    <div className="pt-20 sm:pt-28 pb-10 sm:pb-20 bg-white">
+    <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 bg-white">
       <SEO
         title="7 Regional Branches & Offices Across India | A2Z Aaradhya"
         description="Find our regional branch offices in Surat (Simada, Katargam, Adajan, Bhatar), Ahmedabad, Rajkot, and Delhi for localized seller account management."
