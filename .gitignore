@@ -31,3 +31,4 @@ start-dev.bat
 
 .vercel
 bun.lock
+package-lock.json
