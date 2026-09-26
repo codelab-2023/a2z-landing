@@ -11,7 +11,7 @@ export default function AboutPage({ onOpenModal }) {
     <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 space-y-10 sm:space-y-16">
       <SEO
         title="About Us - India's Premier Marketplace Growth Agency | A2Z Aaradhya"
-        description="Learn about A2Z Aaradhya Pvt. Ltd., an ISO-certified and Amazon Unnati Gold Partner with 70+ specialists and 7 branches helping 3,000+ brands grow on Amazon, Myntra, Flipkart & Meesho."
+        description="Learn about A2Z Aaradhya, an ISO-certified and Amazon Unnati Gold Partner with 70+ specialists and 7 branches helping 3,000+ brands grow on Amazon, Myntra, Flipkart & Meesho."
         keywords="About A2Z Aaradhya, e-commerce management agency, Amazon partner agency, marketplace consultants India, e-commerce company Surat"
         canonicalPath="/about"
         breadcrumbs={[
@@ -26,7 +26,7 @@ export default function AboutPage({ onOpenModal }) {
           </AnimateOnScroll>
 
           <AnimateOnScroll animation="fade-up" delay={50} as="h1" className="text-4xl sm:text-5xl font-extrabold text-[#0B3B48] font-outfit">
-            About A2Z Aaradhya Pvt. Ltd.®
+            About A2Z Aaradhya®
           </AnimateOnScroll>
 
           <AnimateOnScroll animation="fade-up" delay={100} as="p" className="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto font-medium">

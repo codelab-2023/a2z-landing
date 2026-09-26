@@ -130,7 +130,7 @@ export default function ContactPage() {
                   <div>
                     <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Official Email</span>
                     <div className="text-sm font-extrabold text-[#0B3B48] font-outfit">
-                      a2zaaradhyalalitbhai444@gmai.com
+                      support@a2z-aaradhya.com
                     </div>
                   </div>
                 </div>
@@ -175,7 +175,7 @@ export default function ContactPage() {
                   </div>
                   <div className="min-w-0 flex-1">
                     <span className="text-xs font-extrabold text-slate-900 block truncate">Instagram</span>
-                    <span className="text-[10px] text-pink-600 font-bold block truncate">@a2z_aaradhya_pvt.ltd</span>
+                    <span className="text-[10px] text-pink-600 font-bold block truncate">A2Z Aaradhya</span>
                   </div>
                 </a>
 

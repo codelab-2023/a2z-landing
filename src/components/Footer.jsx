@@ -20,7 +20,7 @@ export default function Footer({ onOpenModal }) {
                 className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
               />
               <div className="flex flex-col">
-                <span className="font-extrabold text-base text-white font-outfit">A2Z AARADHYA PVT LTD®</span>
+                <span className="font-extrabold text-base text-white font-outfit">A2Z AARADHYA®</span>
                 <span className="text-[10px] text-[#9ED6CD] uppercase tracking-wider font-bold">E-Commerce Growth Partner</span>
               </div>
             </Link>
@@ -140,8 +140,8 @@ export default function Footer({ onOpenModal }) {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-[#9ED6CD] shrink-0" />
-                <a href="mailto:a2zaaradhyalalitbhai444@gmai.com" className="text-slate-300 hover:text-white text-xs">
-                  a2zaaradhyalalitbhai444@gmai.com
+                <a href="mailto:support@a2z-aaradhya.com" className="text-slate-300 hover:text-white text-xs">
+                  support@a2z-aaradhya.com
                 </a>
               </li>
               <li className="flex items-start gap-2">
@@ -156,7 +156,7 @@ export default function Footer({ onOpenModal }) {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-center sm:text-left">
           <p className="text-slate-500">
-            © {new Date().getFullYear()} A2Z Aaradhya Pvt. Ltd. All rights reserved.
+            © {new Date().getFullYear()} A2Z Aaradhya. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-slate-400">
             <Link to="/privacy" className="hover:text-[#9ED6CD] transition-colors">Privacy Policy</Link>

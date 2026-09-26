@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const siteConfig = {
-  name: 'A2Z Aaradhya Pvt. Ltd.',
+  name: 'A2Z Aaradhya',
   shortName: 'A2Z Aaradhya',
-  legalName: 'A2Z Aaradhya Pvt. Ltd.',
+  legalName: 'A2Z Aaradhya',
   siteUrl: 'https://a2z-aaradhya.com',
   logoUrl: 'https://a2z-aaradhya.com/logo/a2z-aaradhya-logo.svg',
   defaultOgImage: 'https://a2z-aaradhya.com/logo/a2z-aaradhya-logo.svg',
   phone: '+91-7802077444',
-  email: 'a2zaaradhyalalitbhai444@gmai.com',
+  email: 'support@a2z-aaradhya.com',
   branches: [
     {
       name: 'A2Z Aaradhya Head Office Surat',
@@ -84,7 +84,7 @@ export default function SEO({
   const currentPath = canonicalPath || location.pathname;
   const canonicalUrl = `${siteConfig.siteUrl}${currentPath === '/' ? '' : currentPath}`;
 
-  // Prevent duplicate branding (e.g. "Title | A2Z Aaradhya | A2Z Aaradhya Pvt. Ltd.")
+  // Prevent duplicate branding (e.g. "Title | A2Z Aaradhya")
   const fullTitle = title.includes('A2Z Aaradhya')
     ? title
     : `${title} | ${siteConfig.name}`;
@@ -156,7 +156,7 @@ export default function SEO({
         logo: {
           '@type': 'ImageObject',
           url: siteConfig.logoUrl,
-          caption: 'A2Z Aaradhya Pvt. Ltd.',
+          caption: 'A2Z Aaradhya',
         },
         contactPoint: {
           '@type': 'ContactPoint',

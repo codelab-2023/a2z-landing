@@ -20,7 +20,7 @@ const teamMembers = [
     role: 'Managing Director (MD)',
     initials: 'PG',
     image: purvegGajeraImg,
-    alt: 'Purveg Gajera - Managing Director (MD) at A2Z Aaradhya Pvt. Ltd.',
+    alt: 'Purveg Gajera - Managing Director (MD) at A2Z Aaradhya',
     tone: 'from-slate-700 via-slate-600 to-slate-500',
     accent: 'bg-slate-200 text-slate-800',
   },
@@ -30,7 +30,7 @@ const teamMembers = [
     role: 'Operations Head',
     initials: 'PK',
     image: pinalKakadiyaImg,
-    alt: 'Pinal Kakadiya - Operations Head at A2Z Aaradhya Pvt. Ltd.',
+    alt: 'Pinal Kakadiya - Operations Head at A2Z Aaradhya',
     tone: 'from-emerald-700 via-emerald-600 to-emerald-500',
     accent: 'bg-emerald-100 text-emerald-800',
   },
@@ -40,7 +40,7 @@ const teamMembers = [
     role: 'HR Head ',
     initials: 'DP',
     image: drashtiPatelImg,
-    alt: 'Drashti Patel - Head HR at A2Z Aaradhya Pvt. Ltd.',
+    alt: 'Drashti Patel - Head HR at A2Z Aaradhya',
     tone: 'from-zinc-700 via-zinc-600 to-zinc-500',
     accent: 'bg-zinc-100 text-zinc-800',
   },
@@ -111,7 +111,7 @@ export default function TeamPage() {
     <div className="pt-16 sm:pt-28 pb-10 sm:pb-20">
       <SEO
         title="Executive Leadership & Branch Managers Team | A2Z Aaradhya"
-        description="Meet the leadership team and branch managers of A2Z Aaradhya Pvt. Ltd., guiding 70+ certified e-commerce specialists across 7 regional branches in India."
+        description="Meet the leadership team and branch managers of A2Z Aaradhya, guiding 70+ certified e-commerce specialists across 7 regional branches in India."
         keywords="A2Z Aaradhya team, Purveg Gajera, Pinal Kakadiya, e-commerce account managers, marketplace specialists"
         canonicalPath="/about/team"
         breadcrumbs={[

@@ -62,7 +62,7 @@ export default function GalleryPage() {
     <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 space-y-8 sm:space-y-12">
       <SEO
         title="Company Gallery & Regional Workspace Tour | A2Z Aaradhya"
-        description="Take a visual tour of A2Z Aaradhya Pvt. Ltd. offices, team culture, strategy meetings, seller masterclasses, and national award ceremonies."
+        description="Take a visual tour of A2Z Aaradhya offices, team culture, strategy meetings, seller masterclasses, and national award ceremonies."
         keywords="A2Z Aaradhya gallery, Surat office, company workspace, team culture, e-commerce company photos"
         canonicalPath="/about/gallery"
         breadcrumbs={[

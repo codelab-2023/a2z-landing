@@ -27,7 +27,7 @@ export default function PrivacyPage() {
             Privacy Policy &amp; Security Commitment
           </h1>
           <p className="text-slate-600 text-sm sm:text-base font-medium max-w-2xl mx-auto leading-relaxed">
-            A2Z Aaradhya Pvt. Ltd.® is committed to safeguarding your business data, seller account credentials, customer lists, and financial information.
+            A2Z Aaradhya® is committed to safeguarding your business data, seller account credentials, customer lists, and financial information.
           </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
               </h2>
             </div>
             <p>
-              Every client engagement with <strong>A2Z Aaradhya Pvt. Ltd.</strong> is protected by our legally binding Non-Disclosure Agreement (NDA). All product sourcing prices, supplier contacts, sales volumes, advertising ROI, and business strategies are treated as strictly confidential trade secrets.
+              Every client engagement with <strong>A2Z Aaradhya</strong> is protected by our legally binding Non-Disclosure Agreement (NDA). All product sourcing prices, supplier contacts, sales volumes, advertising ROI, and business strategies are treated as strictly confidential trade secrets.
             </p>
             <ul className="space-y-2 pl-4">
               <li className="flex items-start gap-2">
@@ -128,9 +128,9 @@ export default function PrivacyPage() {
               If you have any questions regarding our security protocols, NDA documentation, or data privacy rights, please reach out to our legal team:
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2 text-xs font-bold">
-              <a href="mailto:a2zaaradhyalalitbhai444@gmai.com" className="inline-flex items-center gap-1.5 text-[#166B82] hover:underline">
+              <a href="mailto:support@a2z-aaradhya.com" className="inline-flex items-center gap-1.5 text-[#166B82] hover:underline">
                 <Mail className="w-4 h-4" />
-                <span>a2zaaradhyalalitbhai444@gmai.com</span>
+                <span>support@a2z-aaradhya.com</span>
               </a>
               <a href="tel:7802077444" className="inline-flex items-center gap-1.5 text-[#166B82] hover:underline">
                 <Phone className="w-4 h-4" />
