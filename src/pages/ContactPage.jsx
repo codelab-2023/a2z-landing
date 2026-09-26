@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { 
-  Phone, Mail, Send, CheckCircle2, ShieldCheck, Clock, 
-  AlertCircle, Instagram, Facebook, Linkedin, Youtube, MessageCircle, ExternalLink, Share2 
+import {
+  Phone, Mail, Send, CheckCircle2, ShieldCheck, Clock,
+  AlertCircle, Instagram, Facebook, Linkedin, Youtube, MessageCircle, ExternalLink, Share2
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import confetti from 'canvas-confetti';
@@ -61,7 +61,7 @@ export default function ContactPage() {
     window.open(`https://wa.me/917802077444?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
     try {
       confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-    } catch (err) {}
+    } catch (err) { }
     setSubmitted(true);
   };
 
@@ -77,7 +77,7 @@ export default function ContactPage() {
           { name: 'Contact Us', path: '/contact' },
         ]}
       />
-      
+
       {/* Page Header */}
       <section className="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
@@ -99,17 +99,17 @@ export default function ContactPage() {
       {/* Main Form & Contact Info */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-          
+
           {/* Left Column: Direct Helpline & Social Media Cards with balanced spacing */}
           <div className="lg:col-span-5 flex flex-col justify-between gap-6 order-2 lg:order-1">
-            
+
             {/* Card 1: Official Support Hotline */}
             <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-lg space-y-4">
               <h2 className="text-2xl font-extrabold text-[#0B3B48] font-outfit">Official Support Hotline</h2>
-              
+
               <div className="space-y-3">
-                <a 
-                  href="tel:7802077444" 
+                <a
+                  href="tel:7802077444"
                   className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#166B82] transition-all group"
                 >
                   <div className="w-11 h-11 rounded-xl bg-[#166B82] text-white flex items-center justify-center font-bold shrink-0">
@@ -130,7 +130,7 @@ export default function ContactPage() {
                   <div>
                     <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Official Email</span>
                     <div className="text-sm font-extrabold text-[#0B3B48] font-outfit">
-                      info@a2zaaradhya.com
+                      a2zaaradhyalalitbhai444@gmai.com
                     </div>
                   </div>
                 </div>
@@ -162,7 +162,7 @@ export default function ContactPage() {
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                
+
                 {/* Instagram */}
                 <a
                   href="https://www.instagram.com/a2z_aaradhya_pvt.ltd?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
@@ -253,7 +253,7 @@ export default function ContactPage() {
 
           {/* Right Column: Interactive Form (Top on mobile) */}
           <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl space-y-6 flex flex-col justify-between order-1 lg:order-2">
-            
+
             {!submitted ? (
               <form onSubmit={handleWhatsAppSubmit} className="space-y-5">
                 <div>

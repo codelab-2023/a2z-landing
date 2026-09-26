@@ -35,7 +35,7 @@ export default function PrivacyPage() {
       {/* Main Content */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl space-y-10 text-slate-700 leading-relaxed text-sm">
-          
+
           {/* Section 1: Overview */}
           <div className="space-y-3">
             <div className="flex items-center gap-3">
@@ -128,9 +128,9 @@ export default function PrivacyPage() {
               If you have any questions regarding our security protocols, NDA documentation, or data privacy rights, please reach out to our legal team:
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2 text-xs font-bold">
-              <a href="mailto:info@a2zaaradhya.com" className="inline-flex items-center gap-1.5 text-[#166B82] hover:underline">
+              <a href="mailto:a2zaaradhyalalitbhai444@gmai.com" className="inline-flex items-center gap-1.5 text-[#166B82] hover:underline">
                 <Mail className="w-4 h-4" />
-                <span>info@a2zaaradhya.com</span>
+                <span>a2zaaradhyalalitbhai444@gmai.com</span>
               </a>
               <a href="tel:7802077444" className="inline-flex items-center gap-1.5 text-[#166B82] hover:underline">
                 <Phone className="w-4 h-4" />

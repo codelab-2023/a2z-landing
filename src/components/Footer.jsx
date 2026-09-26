@@ -8,15 +8,15 @@ export default function Footer({ onOpenModal }) {
   return (
     <footer className="bg-[#07242D] text-slate-400 text-xs relative pt-16 pb-10 border-t border-[#166B82]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          
+
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-5">
             <Link to="/" className="flex items-center gap-3 group">
-              <img 
-                src={LogoSvg} 
-                alt="A2Z Aaradhya Logo" 
+              <img
+                src={LogoSvg}
+                alt="A2Z Aaradhya Logo"
                 className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
               />
               <div className="flex flex-col">
@@ -36,8 +36,8 @@ export default function Footer({ onOpenModal }) {
 
             {/* Helpline & Social Links */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
-              <a 
-                href="tel:7802077444" 
+              <a
+                href="tel:7802077444"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#166B82] hover:bg-[#0F5265] text-white font-extrabold text-xs transition-all shadow-md"
               >
                 <Phone className="w-3.5 h-3.5" />
@@ -112,8 +112,8 @@ export default function Footer({ onOpenModal }) {
             <h4 className="text-sm font-extrabold text-white uppercase tracking-wider">Company</h4>
             <ul className="space-y-2.5">
               <li>
-                <button 
-                  onClick={() => onOpenModal('3months')} 
+                <button
+                  onClick={() => onOpenModal('3months')}
                   className="hover:text-amber-400 transition-colors text-amber-300 font-extrabold text-left"
                 >
                   3 Months Free Offer
@@ -140,8 +140,8 @@ export default function Footer({ onOpenModal }) {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-[#9ED6CD] shrink-0" />
-                <a href="mailto:info@a2zaaradhya.com" className="text-slate-300 hover:text-white text-xs">
-                  info@a2zaaradhya.com
+                <a href="mailto:a2zaaradhyalalitbhai444@gmai.com" className="text-slate-300 hover:text-white text-xs">
+                  a2zaaradhyalalitbhai444@gmai.com
                 </a>
               </li>
               <li className="flex items-start gap-2">

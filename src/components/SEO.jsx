@@ -9,7 +9,7 @@ const siteConfig = {
   logoUrl: 'https://a2z-aaradhya.com/logo/a2z-aaradhya-logo.svg',
   defaultOgImage: 'https://a2z-aaradhya.com/logo/a2z-aaradhya-logo.svg',
   phone: '+91-7802077444',
-  email: 'info@a2zaaradhya.com',
+  email: 'a2zaaradhyalalitbhai444@gmai.com',
   branches: [
     {
       name: 'A2Z Aaradhya Head Office Surat',
@@ -83,12 +83,12 @@ export default function SEO({
   const location = useLocation();
   const currentPath = canonicalPath || location.pathname;
   const canonicalUrl = `${siteConfig.siteUrl}${currentPath === '/' ? '' : currentPath}`;
-  
+
   // Prevent duplicate branding (e.g. "Title | A2Z Aaradhya | A2Z Aaradhya Pvt. Ltd.")
   const fullTitle = title.includes('A2Z Aaradhya')
     ? title
     : `${title} | ${siteConfig.name}`;
-    
+
   const image = ogImage || siteConfig.defaultOgImage;
 
   useEffect(() => {
