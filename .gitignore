@@ -30,3 +30,4 @@ dev.ps1
 start-dev.bat
 
 .vercel
+bun.lock
