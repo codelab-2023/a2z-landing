@@ -24,8 +24,6 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
   const [submittedMedium, setSubmittedMedium] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
 
-  if (!isOpen) return null;
-
   const validateForm = () => {
     setErrorMsg('');
 
@@ -68,11 +66,11 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
     const valid = validateForm();
     if (!valid) return;
     const { cleanName, cleanPhone, cleanCity } = valid;
-    
+
     setIsProcessing(true);
     fireConfetti();
     const msg = `Hello A2Z Aaradhya,\nI would like to enquire about your ${modalType === '3months' ? '3 Months Free Amazon Management offer' : 'Account Management / Audit service'}.\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}${formData.marketplace ? `\n• Marketplace: ${formData.marketplace}` : ''}\n\nPlease get in touch with me.`;
-    
+
     window.open(`https://wa.me/917802077444?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
     setSubmittedMedium('WhatsApp');
     setSubmitted(true);
@@ -107,13 +105,15 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
     };
   }, [isOpen]);
 
+  if (!isOpen) return null;
+
   return (
-    <div 
+    <div
       className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-300"
       onClick={handleReset}
     >
 
-      <div 
+      <div
         className="relative w-full max-w-xl bg-white rounded-3xl p-5 sm:p-8 border border-slate-200 shadow-2xl overflow-hidden max-h-[92vh] overflow-y-auto text-slate-900"
         onClick={(e) => e.stopPropagation()}
       >
