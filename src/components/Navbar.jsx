@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sparkles, Menu, X, ArrowRight } from 'lucide-react';
+import { Sparkles, Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 
 const LogoSvg = '/logo/a2z-aaradhya-logo.svg';
 
@@ -8,6 +8,7 @@ export default function Navbar({ onOpenModal }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const aboutMenuTimer = useRef(null);
   const location = useLocation();
 
@@ -18,6 +19,24 @@ export default function Navbar({ onOpenModal }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Lock background scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
+  // Close mobile menu on page navigation
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setMobileAboutOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     return () => {
@@ -200,9 +219,18 @@ export default function Navbar({ onOpenModal }) {
         </div>
       </div>
 
+      {/* Mobile Menu Backdrop */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 top-16 sm:top-20 bg-slate-900/40 backdrop-blur-xs z-40 lg:hidden animate-in fade-in duration-200"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
       {/* Mobile Menu Drawer (Drops down full-width below navbar) */}
       {mobileMenuOpen && (
-        <div className="lg:hidden w-full bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-2xl max-h-[85vh] overflow-y-auto animate-in slide-in-from-top duration-200">
+        <div className="relative z-50 lg:hidden w-full bg-white border-t border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-2xl max-h-[85vh] overflow-y-auto animate-in slide-in-from-top duration-200">
           <nav className="flex flex-col space-y-2">
             <Link
               to="/"
@@ -220,20 +248,44 @@ export default function Navbar({ onOpenModal }) {
               Marketplace Services
             </Link>
 
-            <div className="space-y-2">
-              <div className="px-3 py-2 text-sm font-bold text-slate-800">About</div>
-              <div className="ml-3 space-y-1">
-                {aboutMenuItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`block px-3 py-2 rounded-lg font-bold text-sm ${isActive(item.path) ? 'bg-[#166B82]/10 text-[#166B82]' : 'text-slate-800'}`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
+            {/* Mobile About Accordion with Arrow toggle */}
+            <div className="space-y-1">
+              <button
+                type="button"
+                onClick={() => setMobileAboutOpen((prev) => !prev)}
+                className={`w-full flex items-center justify-between px-3 py-2 rounded-lg font-bold text-sm transition-all ${
+                  isActive('/about')
+                    ? 'bg-[#166B82]/10 text-[#166B82]'
+                    : 'text-slate-800 hover:bg-slate-50'
+                }`}
+                aria-expanded={mobileAboutOpen}
+              >
+                <span>About</span>
+                <ChevronDown
+                  className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${
+                    mobileAboutOpen ? 'rotate-180 text-[#166B82]' : ''
+                  }`}
+                />
+              </button>
+
+              {mobileAboutOpen && (
+                <div className="ml-3 pl-3 border-l-2 border-[#166B82]/20 space-y-1 py-1 animate-in slide-in-from-top-1 duration-150">
+                  {aboutMenuItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block px-3 py-2 rounded-lg font-semibold text-sm transition-colors ${
+                        isActive(item.path)
+                          ? 'bg-[#166B82]/15 text-[#166B82] font-bold'
+                          : 'text-slate-700 hover:text-[#166B82] hover:bg-slate-100'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
             <Link

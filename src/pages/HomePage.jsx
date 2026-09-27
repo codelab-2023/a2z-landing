@@ -12,48 +12,54 @@ import EcommerceDashboardImg from '../images/dashboard/ecommerce-growth-dashboar
 import {
   ArrowRight, Building2, Layers, ChevronRight
 } from 'lucide-react';
-import { AmazonIcon, FlipkartIcon, MeeshoIcon, MyntraIcon } from '../components/PlatformLogos';
+import {
+  AmazonLogo, FlipkartLogo, MeeshoLogo, MyntraLogo,
+} from '../components/PlatformLogos';
 
 export default function HomePage({ onOpenModal }) {
   const quickLinks = [
     {
-      icon: AmazonIcon,
+      logo: AmazonLogo,
+      logoStyle: { height: '52px', width: 'auto', maxWidth: '120px', transform: 'scale(1.6) translateY(3px)' },
       label: 'Amazon Management',
       desc: 'PPC Ads, FBA, A+ Content, Brand Storefront',
-      color: 'bg-amber-500',
-      shadow: 'shadow-amber-500/20',
+      bg: 'bg-amber-50',
+      border: 'border-amber-100',
       href: '/services',
     },
     {
-      icon: MyntraIcon,
+      logo: MyntraLogo,
+      logoStyle: { height: '26px', width: 'auto', maxWidth: '104px' },
       label: 'Myntra Management',
       desc: 'Fashion Onboarding, Catalog Upload, Orders & Ads',
-      color: 'bg-gradient-to-br from-[#FF3F6C] to-[#d6004b]',
-      shadow: 'shadow-pink-500/20',
+      bg: 'bg-pink-50',
+      border: 'border-pink-100',
       href: '/services',
     },
     {
-      icon: FlipkartIcon,
+      logo: FlipkartLogo,
+      logoStyle: { height: '54px', width: 'auto', maxWidth: '130px', transform: 'scale(1.75)' },
       label: 'Flipkart Growth',
       desc: 'PLA Campaigns, Smart Fulfillment, Tier Upgrade',
-      color: 'bg-blue-600',
-      shadow: 'shadow-blue-500/20',
+      bg: 'bg-blue-50',
+      border: 'border-blue-100',
       href: '/services',
     },
     {
-      icon: MeeshoIcon,
+      logo: MeeshoLogo,
+      logoStyle: { height: '24px', width: 'auto', maxWidth: '96px' },
       label: 'Meesho Scaling',
       desc: 'Bulk Catalog, Zero Commission, RTO Mitigation',
-      color: 'bg-pink-600',
-      shadow: 'shadow-pink-500/20',
+      bg: 'bg-purple-50',
+      border: 'border-purple-100',
       href: '/services',
     },
     {
       lucideIcon: Building2,
       label: 'About A2Z Aaradhya',
       desc: '7 Branches, 70+ Specialists, 3000+ Brands Scaled',
-      color: 'bg-[#166B82]',
-      shadow: 'shadow-[#166B82]/20',
+      bg: 'bg-[#EBF7F6]',
+      border: 'border-[#166B82]/20',
       href: '/about',
     },
   ];
@@ -134,7 +140,7 @@ export default function HomePage({ onOpenModal }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
             {quickLinks.map((item, i) => {
-              const IconComp = item.icon;
+              const LogoComp = item.logo;
               const LucideIcon = item.lucideIcon;
               return (
                 <AnimateOnScroll
@@ -145,12 +151,18 @@ export default function HomePage({ onOpenModal }) {
                   to={item.href}
                   className="group bg-white rounded-2xl p-6 border border-slate-200 shadow-md shadow-slate-200/50 flex flex-col justify-between gap-5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="space-y-3">
-                    <div className={`w-12 h-12 rounded-2xl ${item.color} flex items-center justify-center shadow-lg overflow-hidden`}>
-                      {IconComp
-                        ? <IconComp className="w-9 h-9 object-contain" />
-                        : <LucideIcon className="w-6 h-6 text-white" />
-                      }
+                  <div className="space-y-4">
+                    {/* Logo pill — same style as Hero section pills */}
+                    <div className={`h-[54px] rounded-xl ${item.bg} border ${item.border} flex items-center justify-center overflow-hidden px-3 w-full`}>
+                      {LogoComp ? (
+                        <LogoComp
+                          className="object-contain"
+                          style={item.logoStyle}
+                          draggable={false}
+                        />
+                      ) : (
+                        <LucideIcon className="w-7 h-7 text-[#166B82]" />
+                      )}
                     </div>
                     <div>
                       <h3 className="font-extrabold text-[#0B3B48] text-sm leading-tight font-body">{item.label}</h3>
@@ -189,7 +201,7 @@ export default function HomePage({ onOpenModal }) {
       {/* Security / Trust Footer Strip */}
       <SecuritySection />
 
-      {/* Brands & Marketplaces We Have Scaled Slider */}
+      {/* Brand & Marketplaces We Have Scaled Slider */}
       <BrandLogoSlider />
 
       {/* Client Reviews Slider — just above footer */}

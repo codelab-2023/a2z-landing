@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { 
-  FileText, 
-  ShieldCheck, 
-  Search, 
-  Wrench, 
-  Layers, 
-  CheckCircle, 
-  LineChart, 
-  Sparkles, 
-  Target, 
+import {
+  FileText,
+  ShieldCheck,
+  Search,
+  Wrench,
+  Layers,
+  CheckCircle,
+  LineChart,
+  Sparkles,
+  Target,
   TrendingUp,
   ChevronRight
 } from 'lucide-react';
@@ -70,7 +70,7 @@ export default function ProcessTimeline() {
       num: "09",
       title: "Ads Management",
       icon: Target,
-      desc: "Designing targeted Sponsored Products, Sponsored Brands, and Display PPC campaigns with ACoS / ROAS tracking."
+      desc: "Designing targeted Sponsored Products, Sponsored Brand, and Display PPC campaigns with ACoS / ROAS tracking."
     },
     {
       num: "10",
@@ -83,17 +83,17 @@ export default function ProcessTimeline() {
   return (
     <section id="process" className="py-6 sm:py-24 relative bg-white border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <AnimateOnScroll animation="fade-up" className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-100 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider">
             <span>Standard Operating Procedure</span>
           </div>
-          
+
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-outfit">
             Our Proven 10-Step Growth SOP
           </h2>
-          
+
           <p className="text-slate-600 text-base sm:text-lg">
             Every client account follows a rigorous 10-stage execution plan to ensure zero policy errors and maximum sales conversion.
           </p>
@@ -108,15 +108,13 @@ export default function ProcessTimeline() {
               <button
                 key={index}
                 onClick={() => setActiveStep(index)}
-                className={`p-3.5 rounded-2xl border text-left transition-all duration-300 flex items-center gap-3 ${
-                  isActive
+                className={`p-3.5 rounded-2xl border text-left transition-all duration-300 flex items-center gap-3 ${isActive
                     ? 'bg-cyan-600 text-white border-cyan-600 shadow-md scale-105'
                     : 'bg-slate-50 border-slate-200 hover:bg-slate-100 text-slate-700'
-                }`}
+                  }`}
               >
-                <div className={`w-8 h-8 rounded-xl flex items-center justify-center font-extrabold text-xs shrink-0 ${
-                  isActive ? 'bg-white text-cyan-700' : 'bg-slate-200 text-slate-700'
-                }`}>
+                <div className={`w-8 h-8 rounded-xl flex items-center justify-center font-extrabold text-xs shrink-0 ${isActive ? 'bg-white text-cyan-700' : 'bg-slate-200 text-slate-700'
+                  }`}>
                   {step.num}
                 </div>
                 <div className="truncate">
@@ -132,9 +130,9 @@ export default function ProcessTimeline() {
         {/* Active Step Detail Card */}
         <AnimateOnScroll animation="scale-in" delay={200}>
           <div className="bg-slate-50 rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-lg relative overflow-hidden">
-            
+
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              
+
               <div className="flex items-center gap-5">
                 <div className="w-16 h-16 rounded-2xl bg-cyan-600 text-white shadow-lg flex items-center justify-center shrink-0">
                   {React.createElement(steps[activeStep].icon, { className: "w-8 h-8" })}

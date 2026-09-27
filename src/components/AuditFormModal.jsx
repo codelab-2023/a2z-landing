@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, Sparkles, MessageCircle, Phone, User, Building, ShoppingBag, AlertCircle } from 'lucide-react';
+import { X, CheckCircle2, Sparkles, Phone, User, Building, ShoppingBag, AlertCircle } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import confetti from 'canvas-confetti';
 
 // Sanitize user text inputs to prevent XSS / malicious injection
@@ -94,10 +95,28 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
     onClose();
   };
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-300">
+  // Lock background scroll when modal is open
+  React.useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
 
-      <div className="relative w-full max-w-xl bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto text-slate-900">
+  return (
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-300"
+      onClick={handleReset}
+    >
+
+      <div 
+        className="relative w-full max-w-xl bg-white rounded-3xl p-5 sm:p-8 border border-slate-200 shadow-2xl overflow-hidden max-h-[92vh] overflow-y-auto text-slate-900"
+        onClick={(e) => e.stopPropagation()}
+      >
 
         {/* Close Button */}
         <button
@@ -245,7 +264,7 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
                   disabled={isProcessing}
                   className="w-full py-4 px-6 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-extrabold rounded-xl shadow-lg shadow-emerald-600/25 transition-all duration-300 flex items-center justify-center gap-2.5 text-base transform hover:-translate-y-0.5 disabled:opacity-75 cursor-pointer"
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <WhatsAppIcon className="w-5 h-5 fill-white" />
                   <span>Submit &amp; Connect on WhatsApp</span>
                 </button>
 
@@ -275,8 +294,8 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-700 space-y-1.5 font-semibold text-left max-w-sm mx-auto">
               <div className="flex justify-between items-center">
                 <span className="text-slate-500">Submitted Via:</span>
-                <span className="text-emerald-700 font-extrabold flex items-center gap-1">
-                  <MessageCircle className="w-3.5 h-3.5 text-emerald-600" /> WhatsApp
+                <span className="text-emerald-700 font-extrabold flex items-center gap-1.5">
+                  <WhatsAppIcon className="w-3.5 h-3.5 fill-emerald-600" /> WhatsApp
                 </span>
               </div>
               <div className="flex justify-between">

@@ -131,11 +131,11 @@ export default function CategoryShowcase({ onOpenModal }) {
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
-                  <span>Platforms: <strong className="text-slate-800">{cat.topPlatforms}</strong></span>
+                <div className="pt-3 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-slate-500">
+                  <span className="truncate">Platforms: <strong className="text-slate-800">{cat.topPlatforms}</strong></span>
                   <button 
                     onClick={() => onOpenModal('audit')}
-                    className="text-cyan-700 hover:text-cyan-600 font-bold flex items-center gap-0.5"
+                    className="text-cyan-700 hover:text-cyan-600 font-bold flex items-center gap-1 self-start sm:self-auto"
                   >
                     <span>Scale Category</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />

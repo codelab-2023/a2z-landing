@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, CheckCircle2, Instagram, Facebook, Linkedin, Youtube, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, CheckCircle2, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 const LogoSvg = '/logo/a2z-aaradhya-logo.svg';
 
@@ -88,7 +89,7 @@ export default function Footer({ onOpenModal }) {
                   aria-label="WhatsApp"
                   className="w-9 h-9 rounded-xl bg-white/10 hover:bg-emerald-600 text-white flex items-center justify-center transition-all"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <WhatsAppIcon className="w-4 h-4 fill-current" />
                 </a>
               </div>
             </div>

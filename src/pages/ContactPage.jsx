@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import {
   Phone, Mail, Send, CheckCircle2, ShieldCheck, Clock,
-  AlertCircle, Instagram, Facebook, Linkedin, Youtube, MessageCircle, ExternalLink, Share2
+  AlertCircle, Instagram, Facebook, Linkedin, Youtube, ExternalLink
 } from 'lucide-react';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 import SEO from '../components/SEO';
 import confetti from 'canvas-confetti';
 
@@ -151,14 +152,9 @@ export default function ContactPage() {
 
             {/* Card 2: Official Social Media & Community Channels */}
             <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-lg space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-2xl font-extrabold text-[#0B3B48] font-outfit">Connect on Social</h3>
-                  <p className="text-xs text-slate-500 font-medium mt-0.5">Daily marketplace tips &amp; seller updates</p>
-                </div>
-                <div className="w-9 h-9 rounded-xl bg-[#166B82]/10 text-[#166B82] flex items-center justify-center font-bold shrink-0">
-                  <Share2 className="w-4 h-4" />
-                </div>
+              <div>
+                <h3 className="text-2xl font-extrabold text-[#0B3B48] font-outfit">Connect on Social</h3>
+                <p className="text-xs text-slate-500 font-medium mt-0.5">Daily marketplace tips &amp; seller updates</p>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
@@ -238,7 +234,7 @@ export default function ContactPage() {
               >
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
-                    <MessageCircle className="w-4 h-4" />
+                    <WhatsAppIcon className="w-4 h-4 fill-white" />
                   </div>
                   <div className="text-left">
                     <div className="text-xs font-extrabold font-outfit">WhatsApp Seller Community</div>
@@ -371,7 +367,7 @@ export default function ContactPage() {
                   type="submit"
                   className="w-full py-4 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-extrabold text-base rounded-2xl shadow-lg shadow-emerald-600/25 transition-all flex items-center justify-center gap-2.5 transform hover:-translate-y-0.5 cursor-pointer"
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <WhatsAppIcon className="w-5 h-5 fill-white" />
                   <span>Submit Strategy Request on WhatsApp</span>
                 </button>
 

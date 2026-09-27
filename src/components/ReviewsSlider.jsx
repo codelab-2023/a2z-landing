@@ -96,6 +96,30 @@ export default function ReviewsSlider() {
   const prev = () => goTo((current - 1 + reviews.length) % reviews.length);
   const next = () => goTo((current + 1) % reviews.length);
 
+  // Mobile Touch Swipe support
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    if (distance > 45) {
+      next();
+    } else if (distance < -45) {
+      prev();
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   // 3 visible cards: left, center, right
   const indices = [
     (current - 1 + reviews.length) % reviews.length,
@@ -117,7 +141,7 @@ export default function ReviewsSlider() {
             What Our Sellers Say About Us
           </h2>
           <p className="text-slate-500 text-sm font-medium">
-            Real success stories from 3,000+ brands who scaled their e-commerce business with A2Z Aaradhya.
+            Real success stories from 3,000+ Brand who scaled their e-commerce business with A2Z Aaradhya.
           </p>
         </AnimateOnScroll>
 
@@ -130,11 +154,10 @@ export default function ReviewsSlider() {
               <div
                 key={`${rev.id}-${pos}`}
                 style={{ transition: 'all 0.5s cubic-bezier(0.16,1,0.3,1)' }}
-                className={`rounded-3xl p-7 border ${
-                  isCenter
+                className={`rounded-3xl p-7 border ${isCenter
                     ? 'bg-white border-[#166B82]/25 shadow-2xl shadow-[#166B82]/10 scale-105'
                     : 'bg-slate-50 border-slate-200 shadow-sm opacity-60 scale-95'
-                }`}
+                  }`}
               >
                 <ReviewCard rev={rev} />
               </div>
@@ -142,11 +165,16 @@ export default function ReviewsSlider() {
           })}
         </div>
 
-        {/* Mobile: single card */}
-        <div className="lg:hidden mb-10">
+        {/* Mobile: single card with touch swipe */}
+        <div 
+          className="lg:hidden mb-10 select-none touch-pan-y"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <div
             key={current}
-            className="bg-white rounded-3xl p-7 border border-[#166B82]/25 shadow-xl animate-fade-in"
+            className="bg-white rounded-3xl p-5 sm:p-7 border border-[#166B82]/25 shadow-xl animate-fade-in"
           >
             <ReviewCard rev={reviews[current]} />
           </div>
@@ -169,11 +197,10 @@ export default function ReviewsSlider() {
                 key={idx}
                 onClick={() => goTo(idx)}
                 style={{ transition: 'all 0.3s ease' }}
-                className={`rounded-full ${
-                  idx === current
+                className={`rounded-full ${idx === current
                     ? 'w-7 h-2.5 bg-[#166B82]'
                     : 'w-2.5 h-2.5 bg-slate-300 hover:bg-slate-400'
-                }`}
+                  }`}
                 aria-label={`Go to review ${idx + 1}`}
               />
             ))}

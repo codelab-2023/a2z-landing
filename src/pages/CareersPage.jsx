@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { 
   Briefcase, MapPin, DollarSign, X, Upload, CheckCircle2, 
-  ArrowRight, MessageCircle, AlertCircle 
+  ArrowRight, AlertCircle 
 } from 'lucide-react';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 import SEO from '../components/SEO';
 import confetti from 'canvas-confetti';
@@ -23,6 +24,18 @@ export default function CareersPage() {
     resume: null,
     botTrap: '',
   });
+
+  // Lock body scroll when modal is open
+  React.useEffect(() => {
+    if (selectedJob) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedJob]);
 
   const jobRoles = [
     {
@@ -290,8 +303,14 @@ export default function CareersPage() {
 
       {/* Application Modal */}
       {selectedJob && (
-        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-in fade-in duration-200">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto border border-slate-200 shadow-2xl relative">
+        <div 
+          className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 z-50 animate-in fade-in duration-200"
+          onClick={handleCloseModal}
+        >
+          <div 
+            className="bg-white rounded-3xl p-5 sm:p-8 max-w-lg w-full max-h-[92vh] overflow-y-auto border border-slate-200 shadow-2xl relative"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
               <div>
                 <h2 className="text-2xl font-extrabold text-[#0B3B48] font-outfit">
@@ -397,7 +416,7 @@ export default function CareersPage() {
                     type="submit"
                     className="w-full py-4 px-5 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-extrabold rounded-2xl shadow-lg shadow-emerald-600/25 transition-all duration-300 flex items-center justify-center gap-2.5 text-sm transform hover:-translate-y-0.5 cursor-pointer"
                   >
-                    <MessageCircle className="w-5 h-5" />
+                    <WhatsAppIcon className="w-5 h-5 fill-white" />
                     <span>Apply on WhatsApp (+91 84859 73835)</span>
                   </button>
 
@@ -438,8 +457,8 @@ export default function CareersPage() {
                   )}
                   <div className="flex justify-between items-center">
                     <span className="text-slate-500 font-medium">Status:</span>
-                    <span className="text-emerald-600 font-bold uppercase flex items-center gap-1">
-                      <MessageCircle className="w-3.5 h-3.5" /> Sent via WhatsApp
+                    <span className="text-emerald-600 font-bold uppercase flex items-center gap-1.5">
+                      <WhatsAppIcon className="w-3.5 h-3.5 fill-emerald-600" /> Sent via WhatsApp
                     </span>
                   </div>
                 </div>

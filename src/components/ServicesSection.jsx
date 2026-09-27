@@ -312,21 +312,21 @@ export default function ServicesSection({ onOpenModal }) {
 
         {/* Active Tab Card */}
         <AnimateOnScroll animation="scale-in" delay={200}>
-          <div className="bg-white rounded-3xl p-6 sm:p-12 border border-slate-200 shadow-xl relative">
+          <div className="bg-white rounded-3xl p-5 sm:p-12 border border-slate-200 shadow-xl relative">
             
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
               
               {/* Left Column */}
-              <div className="lg:col-span-5 space-y-6">
+              <div className="lg:col-span-5 space-y-5 sm:space-y-6">
                 <span className="inline-block text-xs font-bold px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 border border-cyan-200">
                   {activeData.badge}
                 </span>
 
-                <h3 className="text-3xl font-extrabold text-slate-900 font-outfit">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-outfit">
                   {activeData.title}
                 </h3>
 
-                <p className="text-slate-600 text-base leading-relaxed">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                   {activeData.description}
                 </p>
 
@@ -343,10 +343,11 @@ export default function ServicesSection({ onOpenModal }) {
                 <div className="pt-2">
                   <button
                     onClick={() => onOpenModal('service')}
-                    className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded-2xl shadow-md transition-all flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-5 sm:px-7 py-3.5 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
                   >
-                    <span>Request Custom Strategy for {activeData.title}</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <span className="sm:hidden">Request Custom Strategy</span>
+                    <span className="hidden sm:inline">Request Custom Strategy for {activeData.title}</span>
+                    <ArrowRight className="w-4 h-4 shrink-0" />
                   </button>
                 </div>
               </div>

@@ -82,7 +82,7 @@ export default function BrandLogoSlider() {
 
   return (
     <section className="py-5 sm:py-20 bg-gradient-to-b from-white via-slate-50 to-white border-y border-slate-200 overflow-hidden relative">
-      
+
       {/* Subtle ambient glows */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-[#166B82]/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
@@ -94,11 +94,11 @@ export default function BrandLogoSlider() {
         </AnimateOnScroll>
 
         <AnimateOnScroll animation="fade-up" delay={50} as="h2" className="text-2xl sm:text-4xl font-extrabold text-[#0B3B48] font-outfit">
-          Brands &amp; Marketplaces We Have Scaled
+          Brand &amp; Marketplaces We Have Scaled
         </AnimateOnScroll>
 
         <AnimateOnScroll animation="fade-up" delay={100} as="p" className="text-slate-600 text-xs sm:text-base max-w-2xl mx-auto font-medium">
-          Trusted by <span className="font-bold text-[#166B82]">3,000+ Indian brands and marketplace sellers</span> across all major e-commerce categories.
+          Trusted by <span className="font-bold text-[#166B82]">3,000+ Indian Brand and marketplace sellers</span> across all major e-commerce categories.
         </AnimateOnScroll>
       </div>
 
