@@ -13,6 +13,7 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
     name: '',
     phone: '',
     city: '',
+    product: '',
     marketplace: 'Amazon',
     monthlySales: 'Under ₹1 Lakh',
     serviceNeeded: 'Full Account Management',
@@ -69,7 +70,9 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
 
     setIsProcessing(true);
     fireConfetti();
-    const msg = `Hello A2Z Aaradhya,\nI would like to enquire about your ${modalType === '3months' ? '3 Months Free Amazon Management offer' : 'Account Management / Audit service'}.\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}${formData.marketplace ? `\n• Marketplace: ${formData.marketplace}` : ''}\n\nPlease get in touch with me.`;
+    const msg = `Hello A2Z Aaradhya,\n${modalType === '3months'
+      ? 'I would like to open a new Amazon Seller Account through A2Z Aaradhya and apply for the 3 Months FREE Management offer.'
+      : 'I would like to enquire about your Account Management / Audit service.'}\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}${formData.product ? `\n• Product / Category: ${formData.product}` : ''}${formData.marketplace && modalType !== '3months' ? `\n• Marketplace: ${formData.marketplace}` : ''}\n\nKindly get in touch with me at your earliest convenience.`;
 
     window.open(`https://wa.me/917802077444?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
     setSubmittedMedium('WhatsApp');
@@ -85,6 +88,7 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
       name: '',
       phone: '',
       city: '',
+      product: '',
       marketplace: 'Amazon',
       monthlySales: 'Under ₹1 Lakh',
       serviceNeeded: 'Full Account Management',
@@ -130,25 +134,35 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
         {!submitted ? (
           <div className="space-y-6">
 
-            <div className="space-y-2">
+            <div className="space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 border border-cyan-200 text-cyan-800 text-xs font-extrabold">
                 <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
                 <span>
-                  {modalType === '3months' ? 'Claim 3 Months Free Management' : 'Get Free Account Audit'}
+                  {modalType === '3months' ? 'Register via A2Z · Get 3 Months FREE Management' : 'Free Account Audit'}
                 </span>
               </div>
 
               <h3 className="text-2xl font-extrabold text-slate-900 font-outfit">
                 {modalType === '3months'
-                  ? 'Activate 3 Months FREE Management for New Accounts'
-                  : 'Get Instant Marketplace Growth Plan'}
+                  ? 'Apply for 3 Months FREE Amazon Management'
+                  : 'Get Your Instant Marketplace Growth Plan'}
               </h3>
 
-              <p className="text-xs text-slate-600 font-medium">
+              <p className="text-xs text-slate-500 font-medium leading-relaxed">
                 {modalType === '3months'
-                  ? 'Launching a new seller account? Get 3 months 100% free management support by our certified team.'
+                  ? 'This offer is valid only for sellers who register their new Amazon Seller Account through A2Z Aaradhya. Complete setup + 3 months management — absolutely free.'
                   : 'Fill in your details below. Our senior platform manager will contact you within 15 minutes.'}
               </p>
+
+              {/* Eligibility Notice */}
+              {modalType === '3months' && (
+                <div className="flex items-start gap-2.5 p-3.5 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 font-semibold">
+                  <span className="text-base leading-none mt-0.5">&#9888;&#65039;</span>
+                  <span>
+                    <strong className="font-extrabold">Eligibility Condition:</strong> This 3-month FREE offer applies only when your new Amazon Seller Account is opened through A2Z Aaradhya. Existing accounts are not eligible for this offer.
+                  </span>
+                </div>
+              )}
             </div>
 
             {/* In-line Validation Error Banner */}
@@ -235,6 +249,24 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
                 </div>
               </div>
 
+              {/* Product / Category - Only for 3months form */}
+              {modalType === '3months' && (
+                <div className="space-y-1">
+                  <label className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                    <ShoppingBag className="w-3.5 h-3.5 text-cyan-600" />
+                    What Do You Plan to Sell? (Product / Category)
+                  </label>
+                  <input
+                    type="text"
+                    maxLength={100}
+                    placeholder="e.g. Clothing, Electronics, Handicrafts..."
+                    value={formData.product}
+                    onChange={(e) => setFormData({ ...formData, product: e.target.value })}
+                    className="w-full py-3 px-4 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm font-semibold focus:outline-none focus:border-cyan-600"
+                  />
+                </div>
+              )}
+
               {/* Primary Marketplace - Only for Audit form */}
               {modalType !== '3months' && (
                 <div className="space-y-1">
@@ -265,7 +297,7 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
                   className="w-full py-4 px-6 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-extrabold rounded-xl shadow-lg shadow-emerald-600/25 transition-all duration-300 flex items-center justify-center gap-2.5 text-base transform hover:-translate-y-0.5 disabled:opacity-75 cursor-pointer"
                 >
                   <WhatsAppIcon className="w-5 h-5 fill-white" />
-                  <span>Submit &amp; Connect on WhatsApp</span>
+                  <span>{modalType === '3months' ? 'Apply Now — Connect via WhatsApp' : 'Submit & Connect on WhatsApp'}</span>
                 </button>
 
                 <p className="text-[11px] text-slate-500 text-center font-medium">
