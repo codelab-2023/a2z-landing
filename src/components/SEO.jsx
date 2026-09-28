@@ -7,7 +7,7 @@ const siteConfig = {
   legalName: 'A2Z Aaradhya',
   siteUrl: 'https://a2z-aaradhya.com',
   logoUrl: 'https://a2z-aaradhya.com/logo/a2z-aaradhya-logo.svg',
-  defaultOgImage: 'https://a2z-aaradhya.com/logo/a2z-aaradhya-logo.svg',
+  defaultOgImage: 'https://a2z-aaradhya.com/og-image.png',
   phone: '+91-7802077444',
   email: 'support@a2z-aaradhya.com',
   branches: [
@@ -189,7 +189,7 @@ export default function SEO({
         '@type': 'ProfessionalService',
         '@id': `${siteConfig.siteUrl}/#localbusiness`,
         name: siteConfig.legalName,
-        image: siteConfig.logoUrl,
+        image: siteConfig.defaultOgImage,
         telephone: siteConfig.phone,
         email: siteConfig.email,
         url: siteConfig.siteUrl,

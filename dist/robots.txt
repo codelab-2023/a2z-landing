@@ -1,10 +1,8 @@
 User-agent: *
 Allow: /
 
-# Disallow build map files or private queries
-Disallow: /*.json$
+# Disallow source maps from crawling
 Disallow: /*.map$
 
-# Crawl Delay & Host Specification
-Host: https://a2z-aaradhya.com
+# Sitemap index
 Sitemap: https://a2z-aaradhya.com/sitemap.xml

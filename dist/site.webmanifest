@@ -1,0 +1,17 @@
+{
+  "name": "A2Z Aaradhya - E-commerce Growth Partner",
+  "short_name": "A2Z Aaradhya",
+  "description": "India's #1 E-commerce Account Management agency across Amazon, Flipkart, Myntra & Meesho.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#166B82",
+  "icons": [
+    {
+      "src": "/logo/Group 253.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
