@@ -22,13 +22,18 @@ export default defineConfig({
     // Improve chunk splitting for faster page loads
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Vendor split: React + React-DOM in own chunk (cached longer)
-          'vendor-react': ['react', 'react-dom'],
-          // Router in own chunk
-          'vendor-router': ['react-router-dom'],
-          // Icons in own chunk
-          'vendor-icons': ['lucide-react'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('lucide-react')) {
+              return 'vendor-icons';
+            }
+            if (id.includes('react-router-dom') || id.includes('react-router') || id.includes('@remix-run')) {
+              return 'vendor-router';
+            }
+            if (/\/node_modules\/(react|react-dom|scheduler)\//.test(id)) {
+              return 'vendor-react';
+            }
+          }
         },
       },
     },

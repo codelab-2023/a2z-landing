@@ -8,7 +8,7 @@
   "theme_color": "#166B82",
   "icons": [
     {
-      "src": "/logo/Group 253.svg",
+      "src": "/logo/Group%20253.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

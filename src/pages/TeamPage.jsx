@@ -39,7 +39,7 @@ const teamMembers = [
   {
     id: 3,
     name: 'Drashti Patel',
-    role: 'HR Head ',
+    role: 'HR Head',
     initials: 'DP',
     image: drashtiPatelImg,
     alt: 'Drashti Patel - Head HR at A2Z Aaradhya',
@@ -90,7 +90,7 @@ const teamMembers = [
     id: 6,
     name: 'Parth Chavda',
     role: 'Branch Manager (Rajkot)',
-    initials: 'AC',
+    initials: 'PC',
     image: anjaliChauhanImg,
     alt: 'Parth Chavda - Branch Manager Rajkot Office at A2Z Aaradhya',
     tone: 'from-stone-300 via-slate-200 to-slate-100',
