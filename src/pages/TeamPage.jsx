@@ -88,11 +88,11 @@ const teamMembers = [
   },
   {
     id: 6,
-    name: 'Anjali Chauhan',
+    name: 'Parth Chavda',
     role: 'Branch Manager (Rajkot)',
     initials: 'AC',
     image: anjaliChauhanImg,
-    alt: 'Anjali Chauhan - Branch Manager Rajkot Office at A2Z Aaradhya',
+    alt: 'Parth Chavda - Branch Manager Rajkot Office at A2Z Aaradhya',
     tone: 'from-stone-300 via-slate-200 to-slate-100',
     accent: 'bg-stone-100 text-stone-700',
   },
