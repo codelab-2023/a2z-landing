@@ -141,7 +141,7 @@ export default function ReviewsSlider() {
             What Our Sellers Say About Us
           </h2>
           <p className="text-slate-500 text-sm font-medium">
-            Real success stories from 3,000+ Brand who scaled their e-commerce business with A2Z Aaradhya.
+            Real success stories from 3,000+ Brands who scaled their e-commerce business with A2Z Aaradhya.
           </p>
         </AnimateOnScroll>
 

@@ -82,7 +82,7 @@ export default function SEO({
 }) {
   const location = useLocation();
   const currentPath = canonicalPath || location.pathname;
-  const canonicalUrl = `${siteConfig.siteUrl}${currentPath === '/' ? '' : currentPath}`;
+  const canonicalUrl = `${siteConfig.siteUrl}${currentPath === '/' ? '/' : currentPath}`;
 
   // Prevent duplicate branding (e.g. "Title | A2Z Aaradhya")
   const fullTitle = title.includes('A2Z Aaradhya')

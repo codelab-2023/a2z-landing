@@ -29,8 +29,6 @@ export default defineConfig({
           'vendor-router': ['react-router-dom'],
           // Icons in own chunk
           'vendor-icons': ['lucide-react'],
-          // Animation in own chunk
-          'vendor-motion': ['framer-motion'],
         },
       },
     },

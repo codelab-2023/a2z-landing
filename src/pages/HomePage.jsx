@@ -83,7 +83,7 @@ export default function HomePage({ onOpenModal }) {
       <TrustStats />
 
       {/* About Company / Services Split Section */}
-      <section className="py-6 sm:py-20 bg-white border-b border-slate-200">
+      <section className="py-10 sm:py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div className="overflow-hidden rounded-2xl sm:rounded-[28px] border border-slate-200 bg-slate-100 shadow-xl shadow-slate-200/60 group">
@@ -122,7 +122,7 @@ export default function HomePage({ onOpenModal }) {
       <FreeOfferBanner onOpenModal={onOpenModal} />
 
       {/* ── Quick Navigation Cards ── */}
-      <section className="py-6 sm:py-20 bg-slate-50 border-y border-slate-200">
+      <section className="py-10 sm:py-20 bg-slate-50 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <AnimateOnScroll animation="fade-up" className="text-center max-w-2xl mx-auto mb-12 space-y-3">

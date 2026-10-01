@@ -12,6 +12,8 @@ import anjaliChauhanImg from '../images/team/anjali-chauhan-branch-manager-rajko
 import abhishekPatelImg from '../images/team/abhishek-patel-branch-manager-ahmedabad.webp';
 import jhalakJainImg from '../images/team/jhalak-jain-branch-manager-delhi.webp';
 import naitriBarotImg from '../images/team/naitri-barot-brand-ambassador.webp';
+import garimaAgrawalImg from '../images/team/garima-agrawal-branch-manager-adajan.webp';
+import janviSojitraImg from '../images/team/janvi-sojitra-branch-manager-simada.webp';
 
 const teamMembers = [
   {
@@ -53,6 +55,26 @@ const teamMembers = [
     alt: 'Sonal Kaklotar - Branch Manager Katargam Office at A2Z Aaradhya',
     tone: 'from-amber-700 via-orange-600 to-rose-500',
     accent: 'bg-amber-100 text-amber-800',
+  },
+  {
+    id: 52,
+    name: 'Janvi Sojitra',
+    role: 'Branch Manager (Simada)',
+    initials: 'JS',
+    image: janviSojitraImg,
+    alt: 'Janvi Sojitra - Branch Manager Simada Office at A2Z Aaradhya',
+    tone: 'from-slate-600 via-slate-500 to-slate-400',
+    accent: 'bg-slate-100 text-slate-800',
+  },
+  {
+    id: 51,
+    name: 'Garima Agrawal',
+    role: 'Branch Manager (Adajan)',
+    initials: 'GA',
+    image: garimaAgrawalImg,
+    alt: 'Garima Agrawal - Branch Manager Adajan Office at A2Z Aaradhya',
+    tone: 'from-sky-500 via-cyan-400 to-cyan-300',
+    accent: 'bg-sky-100 text-sky-800',
   },
   {
     id: 5,
@@ -167,10 +189,10 @@ export default function TeamPage() {
 
                 <div className="flex min-h-[102px] items-center justify-center px-4 py-4 text-center">
                   <div>
-                    <h3 className="text-[1.08rem] font-bold text-[#0B3B48] font-outfit leading-relaxed">
+                    <h3 className="text-[1.3rem] font-bold text-[#0B3B48] font-outfit leading-relaxed">
                       {member.name}
                     </h3>
-                    <p className="mt-1 text-sm font-medium text-[#1f6f86] leading-relaxed">
+                    <p className="mt-1 text-[1rem] font-medium text-[#1f6f86] leading-relaxed">
                       {member.role}
                     </p>
                   </div>
