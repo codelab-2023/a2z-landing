@@ -1,6 +1,5 @@
 import React from 'react';
 import ServicesSection from '../components/ServicesSection';
-import CategoryShowcase from '../components/CategoryShowcase';
 import FreeOfferBanner from '../components/FreeOfferBanner';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 import SEO from '../components/SEO';
@@ -124,7 +123,6 @@ export default function ServicesPage({ onOpenModal }) {
         </div>
       </section>
 
-      <CategoryShowcase onOpenModal={onOpenModal} />
 
     </div>
   );

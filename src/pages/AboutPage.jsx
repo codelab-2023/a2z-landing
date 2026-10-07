@@ -30,7 +30,7 @@ export default function AboutPage({ onOpenModal }) {
           </AnimateOnScroll>
 
           <AnimateOnScroll animation="fade-up" delay={100} as="p" className="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto font-medium">
-            India's most trusted e-commerce growth partner with 3,000+ Brands scaled, 70+ certified platform managers, and local support across the nation.
+            India's most trusted e-commerce growth partner with 20K+ Accounts managed, 70+ certified platform managers, and local support across the nation.
           </AnimateOnScroll>
         </div>
       </section>

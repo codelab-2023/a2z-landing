@@ -57,7 +57,7 @@ export default function HomePage({ onOpenModal }) {
     {
       lucideIcon: Building2,
       label: 'About A2Z Aaradhya',
-      desc: '7 Branches, 70+ Specialists, 3000+ Brands Scaled',
+      desc: '7 Branches, 70+ Specialists, 20K+ Accounts Managed',
       bg: 'bg-[#EBF7F6]',
       border: 'border-[#166B82]/20',
       href: '/about',
@@ -68,7 +68,7 @@ export default function HomePage({ onOpenModal }) {
     <div className="space-y-0">
       <SEO
         title="A2Z Aaradhya | India's #1 E-Commerce Growth Partner (Amazon, Myntra, Flipkart, Meesho)"
-        description="Scale your Amazon, Myntra, Flipkart & Meesho sales with India's premier marketplace management agency. 7 Branches, 70+ Specialists, 3000+ Brands Scaled. Authorized Amazon Partner."
+        description="Scale your Amazon, Myntra, Flipkart & Meesho sales with India's premier marketplace management agency. 7 Branches, 70+ Specialists, 20K+ Accounts Managed. Authorized Amazon Partner."
         keywords="Amazon account management, Myntra account management, Flipkart account management, Meesho sales scaling, e-commerce agency India, Amazon authorized partner, A2Z Aaradhya"
         canonicalPath="/"
         breadcrumbs={[
