@@ -13,7 +13,7 @@ export default function NotFoundPage() {
         description="The requested page could not be found. Return to A2Z Aaradhya homepage."
         noindex={true}
       />
-      <img src={LogoSvg} alt="A2Z Aaradhya Logo" className="h-20 w-auto" />
+      <img src={LogoSvg} alt="A2Z Aaradhya Logo" loading="lazy" className="h-20 w-auto" />
       
       <div className="space-y-3">
         <h1 className="text-8xl font-extrabold text-[#166B82] font-outfit">404</h1>

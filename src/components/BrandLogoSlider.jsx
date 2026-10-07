@@ -98,7 +98,7 @@ export default function BrandLogoSlider() {
         </AnimateOnScroll>
 
         <AnimateOnScroll animation="fade-up" delay={100} as="p" className="text-slate-600 text-xs sm:text-base max-w-2xl mx-auto font-medium">
-          Trusted by <span className="font-bold text-[#166B82]">3,000+ Indian Brand and marketplace sellers</span> across all major e-commerce categories.
+          Trusted by <span className="font-bold text-[#166B82]">20,000+ Indian sellers and marketplace brands</span> across all major e-commerce categories.
         </AnimateOnScroll>
       </div>
 

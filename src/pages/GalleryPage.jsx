@@ -30,7 +30,7 @@ const galleryItems = [
     title: 'Dedicated Account Managers at Work',
     category: 'Workspace',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80',
-    desc: '70+ platform specialists managing over 3000+ seller accounts daily.',
+    desc: '70+ platform specialists managing over 20,000+ seller accounts daily.',
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const galleryItems = [
     title: 'Annual Team Celebration & Milestones',
     category: 'Culture',
     image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80',
-    desc: 'Celebrating 3,000+ happy seller partners scaled across 7 nationwide branches.',
+    desc: 'Celebrating 20,000+ happy seller partners scaled across 7 nationwide branches.',
   }
 ];
 
@@ -169,6 +169,7 @@ export default function GalleryPage() {
             <img
               src={activePreview.image}
               alt={activePreview.title}
+              loading="lazy"
               className="w-full h-80 sm:h-96 object-cover"
             />
 

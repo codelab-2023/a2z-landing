@@ -90,6 +90,7 @@ export default function HomePage({ onOpenModal }) {
               <img
                 src={EcommerceDashboardImg}
                 alt="A2Z Aaradhya E-commerce Growth Dashboard across Amazon, Myntra, Flipkart & Meesho"
+                loading="lazy"
                 className="w-full aspect-[16/10] sm:aspect-auto sm:h-[420px] object-cover object-[38%_center] lg:object-center group-hover:scale-105 transition-transform duration-500"
               />
             </div>

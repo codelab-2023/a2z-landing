@@ -197,7 +197,7 @@ export default function SEO({
         aggregateRating: {
           '@type': 'AggregateRating',
           ratingValue: '4.9',
-          reviewCount: '3000',
+          reviewCount: '3500',
           bestRating: '5',
           worstRating: '1',
         },

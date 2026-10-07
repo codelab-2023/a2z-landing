@@ -87,6 +87,7 @@ export default function Navbar({ onOpenModal }) {
             <img
               src={LogoSvg}
               alt="A2Z Aaradhya Official Logo"
+              loading="eager"
               className="h-11 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <span className="absolute top-1 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-white animate-ping" />

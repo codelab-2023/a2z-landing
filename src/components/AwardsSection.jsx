@@ -130,9 +130,9 @@ export default function AwardsSection() {
             <Trophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500" />
             <span>Official Industry Recognitions</span>
           </div>
-          <h2 className="text-xl sm:text-5xl font-black text-[#0B3B48] font-outfit tracking-tight">
+          <h1 className="text-xl sm:text-5xl font-black text-[#0B3B48] font-outfit tracking-tight">
             Award-Winning Excellence
-          </h2>
+          </h1>
           {/* Hide subtitle text on mobile to reduce top space */}
           <p className="hidden sm:block text-xs sm:text-lg font-bold text-[#166B82]">
             Recognized by Amazon &amp; National E-Commerce Leaders

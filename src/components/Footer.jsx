@@ -18,6 +18,7 @@ export default function Footer({ onOpenModal }) {
               <img
                 src={LogoSvg}
                 alt="A2Z Aaradhya Logo"
+                loading="lazy"
                 className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
               />
               <div className="flex flex-col">
