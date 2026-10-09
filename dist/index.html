@@ -2,6 +2,27 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
+  <!-- Canonical & Legacy URL Sanitizer (Redirect cgi-bin and www to clean root) -->
+  <script>
+    (function () {
+      try {
+        var h = window.location.hostname;
+        var p = window.location.pathname;
+        var s = window.location.search || "";
+        var hash = window.location.hash || "";
+        var isCgi = p.toLowerCase().indexOf("/cgi-bin") !== -1;
+        var isWww = h.toLowerCase() === "www.a2z-aaradhya.com";
+
+        if (isCgi || isWww) {
+          var cleanPath = p.replace(/\/cgi-bin\/?/gi, "/") || "/";
+          if (cleanPath === "") cleanPath = "/";
+          var target = "https://a2z-aaradhya.com" + cleanPath + s + hash;
+          window.location.replace(target);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4Y0N86KZ4"></script>
   <script>
@@ -100,9 +121,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
-  <script type="module" crossorigin src="/assets/index-BP-H3Qnw.js"></script>
+  <script type="module" crossorigin src="/assets/index-aS9xWoT_.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/vendor-react-SaLnwSRd.js">
-  <link rel="modulepreload" crossorigin href="/assets/vendor-router-r_-u7tfg.js">
+  <link rel="modulepreload" crossorigin href="/assets/vendor-router-DUWUK7V1.js">
   <link rel="modulepreload" crossorigin href="/assets/vendor-icons-CrwyDCQy.js">
   <link rel="stylesheet" crossorigin href="/assets/index-lJEQXFgd.css">
 </head>

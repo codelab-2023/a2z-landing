@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -53,6 +53,11 @@ export default function App() {
             <Route path="/careers" element={<CareersPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
+
+            {/* 404 Catch-All */}
+            {/* Redirect /cgi-bin legacy URLs to root */}
+            <Route path="/cgi-bin" element={<Navigate to="/" replace />} />
+            <Route path="/cgi-bin/*" element={<Navigate to="/" replace />} />
 
             {/* 404 Catch-All */}
             <Route path="*" element={<NotFoundPage />} />

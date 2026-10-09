@@ -1,8 +1,8 @@
 User-agent: *
-Allow: /
-
-# Disallow source maps from crawling
+Disallow: /cgi-bin/
+Disallow: /cgi-bin
 Disallow: /*.map$
+Allow: /
 
 # Sitemap index
 Sitemap: https://a2z-aaradhya.com/sitemap.xml

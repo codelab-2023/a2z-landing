@@ -4,12 +4,18 @@
   RewriteEngine On
   RewriteBase /
 
-  # Enforce HTTPS (optional on host, but recommended)
-  RewriteCond %{HTTPS} off
-  RewriteCond %{HTTP_HOST} ^(www\.)?a2z-aaradhya\.com$ [NC]
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # 1. Permanent 301 Redirect /cgi-bin/ to Root Clean URL
+  RewriteRule ^cgi-bin(/.*)?$ https://a2z-aaradhya.com/ [R=301,L]
 
-  # Route all requests to index.html for Single Page Application
+  # 2. Enforce Non-WWW & HTTPS Canonical Domain
+  RewriteCond %{HTTP_HOST} ^www\.a2z-aaradhya\.com$ [NC]
+  RewriteRule ^(.*)$ https://a2z-aaradhya.com/$1 [R=301,L]
+
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP_HOST} ^a2z-aaradhya\.com$ [NC]
+  RewriteRule ^(.*)$ https://a2z-aaradhya.com/$1 [R=301,L]
+
+  # 3. Route all requests to index.html for Single Page Application
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

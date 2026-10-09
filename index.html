@@ -2,6 +2,27 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
+  <!-- Canonical & Legacy URL Sanitizer (Redirect cgi-bin and www to clean root) -->
+  <script>
+    (function () {
+      try {
+        var h = window.location.hostname;
+        var p = window.location.pathname;
+        var s = window.location.search || "";
+        var hash = window.location.hash || "";
+        var isCgi = p.toLowerCase().indexOf("/cgi-bin") !== -1;
+        var isWww = h.toLowerCase() === "www.a2z-aaradhya.com";
+
+        if (isCgi || isWww) {
+          var cleanPath = p.replace(/\/cgi-bin\/?/gi, "/") || "/";
+          if (cleanPath === "") cleanPath = "/";
+          var target = "https://a2z-aaradhya.com" + cleanPath + s + hash;
+          window.location.replace(target);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4Y0N86KZ4"></script>
   <script>
