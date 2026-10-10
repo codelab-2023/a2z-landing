@@ -32,10 +32,10 @@ export default function NotFoundPage() {
           Back to Homepage
         </Link>
         <a 
-          href="tel:7802077444"
+          href="tel:9601055508"
           className="flex items-center gap-2 px-6 py-3 bg-white border border-slate-300 text-slate-800 font-extrabold rounded-xl shadow-sm hover:bg-slate-50 transition-all text-sm"
         >
-          Call Helpline: +91 78020 77444
+          Call Helpline: +91 96010 55508
         </a>
       </div>
     </div>

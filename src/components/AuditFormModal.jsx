@@ -74,7 +74,7 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
       ? 'I would like to open a new Amazon Seller Account through A2Z Aaradhya and apply for the 3 Months FREE Management offer.'
       : 'I would like to enquire about your Account Management / Audit service.'}\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}${formData.product ? `\n• Product / Category: ${formData.product}` : ''}${formData.marketplace && modalType !== '3months' ? `\n• Marketplace: ${formData.marketplace}` : ''}\n\nKindly get in touch with me at your earliest convenience.`;
 
-    window.open(`https://wa.me/917802077444?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/919601055508?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
     setSubmittedMedium('WhatsApp');
     setSubmitted(true);
     setIsProcessing(false);
@@ -219,7 +219,7 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
                     type="tel"
                     required
                     maxLength={16}
-                    placeholder="e.g. 7802077444"
+                    placeholder="e.g. 9601055508"
                     value={formData.phone}
                     onChange={(e) => {
                       setErrorMsg('');

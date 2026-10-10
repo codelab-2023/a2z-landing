@@ -62,11 +62,11 @@ export default class ErrorBoundary extends React.Component {
 
             <div className="pt-2 border-t border-slate-100">
               <a
-                href="tel:7802077444"
+                href="tel:9601055508"
                 className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#166B82] hover:underline"
               >
                 <Phone className="w-3 h-3" />
-                <span>Need immediate support? Call +91 78020 77444</span>
+                <span>Need immediate support? Call +91 96010 55508</span>
               </a>
             </div>
           </div>

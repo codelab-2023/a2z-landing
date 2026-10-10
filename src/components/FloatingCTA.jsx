@@ -9,10 +9,10 @@ export default function FloatingCTA({ onOpenModal }) {
 
   return (
     <div className="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-2.5 sm:gap-3 pointer-events-none">
-      
+
       {/* WhatsApp Chat Button */}
       <a
-        href="https://wa.me/917802077444?text=Hello%20A2Z%20Aaradhya%20Team,%20I%20want%20to%20grow%20my%20e-commerce%20sales!"
+        href="https://wa.me/919601055508?text=Hello%20A2Z%20Aaradhya%20Team,%20I%20want%20to%20grow%20my%20e-commerce%20sales!"
         target="_blank"
         rel="noopener noreferrer"
         className="pointer-events-auto group relative flex items-center justify-center w-12 h-12 sm:w-auto sm:px-4 bg-emerald-500 hover:bg-emerald-600 !text-white hover:!text-white rounded-full shadow-xl shadow-emerald-500/40 hover:shadow-emerald-500/60 transition-all duration-300 ease-out hover:-translate-y-0.5"
@@ -28,13 +28,13 @@ export default function FloatingCTA({ onOpenModal }) {
 
       {/* Direct Call Button */}
       <a
-        href="tel:7802077444"
+        href="tel:9601055508"
         className="pointer-events-auto group relative flex items-center justify-center w-12 h-12 sm:w-auto sm:px-4 bg-gradient-to-r from-[#166B82] to-[#0F5265] hover:from-[#0F5265] hover:to-[#0B3B48] !text-white hover:!text-white rounded-full shadow-xl shadow-[#166B82]/35 hover:shadow-[#166B82]/50 transition-all duration-300 ease-out hover:-translate-y-0.5"
         aria-label="Call Now"
       >
         <Phone className="w-5 h-5 !text-white shrink-0 group-hover:scale-110 transition-transform duration-300" />
         <span className="hidden sm:inline-block max-w-0 opacity-0 group-hover:max-w-[190px] group-hover:opacity-100 group-hover:ml-2.5 overflow-hidden whitespace-nowrap font-extrabold text-xs !text-white transition-all duration-300 ease-out">
-          Call: +91 78020 77444
+          Call: +91 96010 55508
         </span>
       </a>
 

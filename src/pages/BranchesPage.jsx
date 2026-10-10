@@ -10,7 +10,7 @@ export default function BranchesPage() {
       type: 'Corporate Headquarters',
       role: 'a2z aaradhya',
       address: '144, 1st floor, a2z aaradhya, pramukh Park Soc, opp. Royal Plaza, Bapa Sitaram Chowk, Simada, Surat, 395010',
-      phone: '+91 78020 77444',
+      phone: '+91 96010 55508',
       badge: 'Head Office',
       badgeBg: 'bg-blue-600 text-white border-blue-700',
       isHeadOffice: true,

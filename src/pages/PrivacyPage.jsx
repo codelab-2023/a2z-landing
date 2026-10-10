@@ -132,9 +132,9 @@ export default function PrivacyPage() {
                 <Mail className="w-4 h-4" />
                 <span>support@a2z-aaradhya.com</span>
               </a>
-              <a href="tel:7802077444" className="inline-flex items-center gap-1.5 text-[#166B82] hover:underline">
+              <a href="tel:9601055508" className="inline-flex items-center gap-1.5 text-[#166B82] hover:underline">
                 <Phone className="w-4 h-4" />
-                <span>+91 78020 77444</span>
+                <span>+91 96010 55508</span>
               </a>
             </div>
           </div>

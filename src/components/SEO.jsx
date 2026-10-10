@@ -8,7 +8,7 @@ const siteConfig = {
   siteUrl: 'https://a2z-aaradhya.com',
   logoUrl: 'https://a2z-aaradhya.com/logo/a2z-aaradhya-logo.svg',
   defaultOgImage: 'https://a2z-aaradhya.com/og-image.png',
-  phone: '+91-7802077444',
+  phone: '+91-9601055508',
   email: 'support@a2z-aaradhya.com',
   branches: [
     {
@@ -17,7 +17,7 @@ const siteConfig = {
       city: 'Surat',
       state: 'Gujarat',
       postalCode: '395010',
-      phone: '+91-7802077444',
+      phone: '+91-9601055508',
     },
     {
       name: 'A2Z Aaradhya Katargam Branch',

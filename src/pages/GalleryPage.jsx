@@ -107,42 +107,31 @@ export default function GalleryPage() {
           ))}
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Gallery Grid - Pure Image Box Cards without content text */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredItems.map((item, idx) => (
             <AnimateOnScroll
               key={item.id}
               animation="fade-up"
               delay={idx * 60}
-              className="group relative bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer"
+              className="group relative bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer aspect-[4/3] sm:aspect-[16/11]"
               onClick={() => setActivePreview(item)}
             >
-              <div className="relative h-64 w-full overflow-hidden bg-slate-100">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  loading="lazy"
-                  className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-lg">
-                    <Maximize2 className="w-3.5 h-3.5" />
-                    <span>Click to Expand</span>
-                  </span>
-                </div>
-                <span className="absolute top-4 left-4 text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#166B82] shadow-sm">
-                  {item.category}
+              <img
+                src={item.image}
+                alt={item.title || "Gallery photo"}
+                loading="lazy"
+                className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-white/20 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-white/20 shadow-lg">
+                  <Maximize2 className="w-3.5 h-3.5" />
+                  <span>Click to Expand</span>
                 </span>
               </div>
-
-              <div className="p-6 space-y-2">
-                <h3 className="text-lg font-extrabold text-[#0B3B48] font-outfit group-hover:text-[#166B82] transition-colors leading-snug">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-slate-600 font-medium leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
+              <span className="absolute top-4 left-4 text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#166B82] shadow-sm">
+                {item.category}
+              </span>
             </AnimateOnScroll>
           ))}
         </div>
@@ -151,16 +140,16 @@ export default function GalleryPage() {
       {/* Lightbox / Image Preview Modal */}
       {activePreview && (
         <div
-          className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200"
           onClick={() => setActivePreview(null)}
         >
           <div
-            className="relative max-w-3xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200"
+            className="relative max-w-4xl w-full bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-white/10 flex items-center justify-center p-2"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setActivePreview(null)}
-              className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-black/60 text-white hover:bg-black transition-all"
+              className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-black/70 text-white hover:bg-black transition-all shadow-lg"
               aria-label="Close image preview"
             >
               <X className="w-5 h-5" />
@@ -168,22 +157,10 @@ export default function GalleryPage() {
 
             <img
               src={activePreview.image}
-              alt={activePreview.title}
+              alt={activePreview.title || "Preview"}
               loading="lazy"
-              className="w-full h-80 sm:h-96 object-cover"
+              className="w-full max-h-[82vh] object-contain rounded-2xl"
             />
-
-            <div className="p-6 sm:p-8 space-y-2 bg-white text-left">
-              <span className="text-[10px] font-extrabold text-[#166B82] uppercase tracking-wider">
-                {activePreview.category}
-              </span>
-              <h3 className="text-2xl font-extrabold text-[#0B3B48] font-outfit">
-                {activePreview.title}
-              </h3>
-              <p className="text-sm text-slate-600 font-medium leading-relaxed">
-                {activePreview.desc}
-              </p>
-            </div>
           </div>
         </div>
       )}
