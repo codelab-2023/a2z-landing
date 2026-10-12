@@ -20,6 +20,24 @@ export default function ServicesPage({ onOpenModal }) {
         ]}
       />
 
+      
+      {/* Header Section for On-Page SEO */}
+      <section className="bg-gradient-to-b from-white to-slate-50 border-b border-slate-200 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+          <AnimateOnScroll animation="fade-down" className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#166B82]/10 border border-[#166B82]/20 text-[#166B82] text-xs font-extrabold uppercase tracking-wider">
+            <span>Marketplace Services</span>
+          </AnimateOnScroll>
+
+          <AnimateOnScroll animation="fade-up" delay={50} as="h1" className="text-4xl sm:text-5xl font-extrabold text-[#0B3B48] font-outfit">
+            E-Commerce Account Management Services
+          </AnimateOnScroll>
+
+          <AnimateOnScroll animation="fade-up" delay={100} as="p" className="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto font-medium">
+            Scale your sales on Amazon, Flipkart, Myntra &amp; Meesho with dedicated account managers, ROI-driven PPC campaigns, and 360° cataloging solutions.
+          </AnimateOnScroll>
+        </div>
+      </section>
+
       {/* Main Interactive Services Component */}
       <ServicesSection onOpenModal={onOpenModal} />
 

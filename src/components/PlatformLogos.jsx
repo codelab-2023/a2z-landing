@@ -3,13 +3,13 @@ import React from 'react';
 import amazonLogoPng from '../images/platforms/amazon-official-partner-logo.webp';
 import flipkartLogoPng from '../images/platforms/flipkart-growth-specialist-logo.webp';
 import meeshoLogoPng from '../images/platforms/meesho-high-volume-partner-logo.webp';
-import myntraLogoPng from '../images/platforms/myntra-official-partner-logo.png';
+import myntraLogoPng from '../images/platforms/myntra-official-partner-logo.webp';
 
 // Platform Icons from src/images/platforms
 import amazonIconPng from '../images/platforms/amazon-seller-central-icon.webp';
 import flipkartIconPng from '../images/platforms/flipkart-seller-hub-icon.webp';
 import meeshoIconPng from '../images/platforms/meesho-supplier-panel-icon.webp';
-import myntraIconPng from '../images/platforms/myntra-seller-partner-icon.png';
+import myntraIconPng from '../images/platforms/myntra-seller-partner-icon.webp';
 
 // ── WORDMARK LOGOS ──────────────────────────────────────────
 export function AmazonLogo({ className = 'h-8 w-auto', style, ...props }) {
