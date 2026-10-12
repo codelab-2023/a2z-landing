@@ -3,7 +3,7 @@ import ServicesSection from '../components/ServicesSection';
 import FreeOfferBanner from '../components/FreeOfferBanner';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 import SEO from '../components/SEO';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Laptop } from 'lucide-react';
 import { AmazonIcon, MyntraIcon, FlipkartIcon, MeeshoIcon } from '../components/PlatformLogos';
 
 export default function ServicesPage({ onOpenModal }) {

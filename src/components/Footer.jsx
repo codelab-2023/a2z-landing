@@ -106,6 +106,15 @@ export default function Footer({ onOpenModal }) {
               <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">Meesho Sales Scaling</Link></li>
               <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">New Seller Registration</Link></li>
               <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">Account Suspension Recovery</Link></li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => onOpenModal('shopify')}
+                  className="hover:text-[#9ED6CD] transition-colors text-left flex items-center gap-1.5 cursor-pointer"
+                >
+                  Shopify Website Development
+                </button>
+              </li>
             </ul>
           </div>
 
