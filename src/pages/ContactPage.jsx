@@ -69,9 +69,9 @@ export default function ContactPage() {
   return (
     <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 space-y-10 sm:space-y-16">
       <SEO
-        title="Contact Us & Book Free Marketplace Account Audit | A2Z Aaradhya"
-        description="Get in touch with A2Z Aaradhya senior marketplace consultants. Call +91-9601055508 or schedule a free account growth audit for Amazon, Myntra, Flipkart & Meesho."
-        keywords="Contact A2Z Aaradhya, free account audit, Amazon consultation, marketplace support helpline, e-commerce agency contact"
+        title="Contact Us &amp; Book Free Account Strategy (GST Sellers &amp; New Brands) | A2Z Aaradhya"
+        description="Connect with A2Z Aaradhya senior marketplace consultants. Priority onboarding for GST registered businesses, manufacturers &amp; brands + complete setup support for new sellers. Call +91-9601055508."
+        keywords="Contact A2Z Aaradhya, marketplace consultation, Amazon account management with GST, Flipkart seller support, Meesho onboarding, GST seller agency contact, e-commerce support helpline, Surat Delhi Ahmedabad Rajkot offices"
         canonicalPath="/contact"
         breadcrumbs={[
           { name: 'Home', path: '/' },

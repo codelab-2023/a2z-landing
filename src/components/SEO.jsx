@@ -78,6 +78,7 @@ export default function SEO({
   ogType = 'website',
   ogImage,
   breadcrumbs = [],
+  faqs = [],
   noindex = false,
 }) {
   const location = useLocation();
@@ -260,6 +261,20 @@ export default function SEO({
       });
     }
 
+    if (faqs && faqs.length > 0) {
+      schemaGraph.push({
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      });
+    }
+
     const schemaData = {
       '@context': 'https://schema.org',
       '@graph': schemaGraph,
@@ -274,7 +289,7 @@ export default function SEO({
     }
     scriptTag.textContent = JSON.stringify(schemaData);
 
-  }, [fullTitle, description, keywords, canonicalUrl, ogType, image, currentPath, breadcrumbs, noindex]);
+  }, [fullTitle, description, keywords, canonicalUrl, ogType, image, currentPath, breadcrumbs, faqs, noindex]);
 
   return null;
 }

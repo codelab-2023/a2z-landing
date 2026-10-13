@@ -74,9 +74,9 @@ export default function BranchesPage() {
   return (
     <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 bg-white">
       <SEO
-        title="7 Regional Branches & Offices Across India | A2Z Aaradhya"
-        description="Find our regional branch offices in Surat (Simada, Katargam, Adajan, Bhatar), Ahmedabad, Rajkot, and Delhi for localized seller account management."
-        keywords="A2Z Aaradhya branches, Surat office, Ahmedabad branch, Rajkot branch, Delhi branch, e-commerce support centers"
+        title="7 Regional Branches &amp; Offices Across India (Surat, Ahmedabad, Rajkot, Delhi) | A2Z Aaradhya"
+        description="Visit A2Z Aaradhya regional branches in Surat (Simada, Katargam, Adajan, Bhatar), Ahmedabad, Rajkot &amp; Delhi. Localized marketplace management and on-ground support for GST registered sellers &amp; brands."
+        keywords="A2Z Aaradhya branches, Surat marketplace office, Ahmedabad Amazon agency, Rajkot Flipkart consultants, Delhi e-commerce agency Chandni Chowk, local GST seller support centers"
         canonicalPath="/branches"
         breadcrumbs={[
           { name: 'Home', path: '/' },
