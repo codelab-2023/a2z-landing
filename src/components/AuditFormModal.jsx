@@ -356,20 +356,18 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
                 </>
               )}
 
-              {/* GST Priority & Support Notice Banner right above Apply/Submit button */}
-              <div className="flex items-start gap-2.5 p-3 sm:p-3.5 bg-gradient-to-r from-emerald-50/90 via-teal-50/80 to-amber-50/70 border border-emerald-300 rounded-xl text-slate-800 text-xs shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+              {/* Mandatory GST Notice Banner right above Apply/Submit button */}
+              <div className="flex items-start gap-2.5 p-3 sm:p-3.5 bg-amber-50/90 border border-amber-300 rounded-xl text-amber-950 text-xs shadow-xs">
+                <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                 <div className="space-y-0.5 text-left">
                   <div className="flex items-center gap-1.5 flex-wrap">
-                    <span className="font-extrabold text-slate-900 text-xs">
-                      GST Holders Get 24-Hr Priority Onboarding
-                    </span>
-                    <span className="bg-emerald-600 text-white text-[10px] px-1.5 py-0.5 rounded font-black uppercase tracking-wider">
-                      Priority
+                    <span className="font-extrabold text-amber-950 text-xs">GST Number Compulsory (अनिवार्य)</span>
+                    <span className="bg-amber-200/90 text-amber-900 border border-amber-300 text-[10px] px-1.5 py-0.5 rounded font-black uppercase tracking-wide">
+                      MANDATORY
                     </span>
                   </div>
-                  <p className="text-[11.5px] text-slate-700 leading-snug font-medium">
-                    Agar aapke paas <strong>Active GST Number</strong> hai toh aapka seller account fast-track live hoga. <em>(Agar abhi GST nahi hai, toh hamari team aapka GST &amp; Account setup dono karwa degi.)</em>
+                  <p className="text-[11.5px] text-amber-900/95 leading-snug font-medium">
+                    Marketplace account management aur seller onboarding ke liye <strong>Active GST Number hona compulsory hai</strong>. GST ke bina koi bhi service provide nahi ki jayegi.
                   </p>
                 </div>
               </div>
