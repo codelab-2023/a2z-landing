@@ -10,9 +10,9 @@ export default function ServicesPage({ onOpenModal }) {
   return (
     <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 space-y-10 sm:space-y-16">
       <SEO
-        title="Marketplace Account Management Services (Amazon, Flipkart, Meesho, Myntra) | A2Z Aaradhya"
-        description="Comprehensive marketplace management services: Amazon FBA & PPC Ads, Flipkart PLA campaigns, Meesho high-volume scaling, Myntra fashion onboarding, product cataloging, and account reinstatement. 3 Months Free for New Sellers."
-        keywords="Amazon account management, Flipkart seller management, Meesho scaling, Myntra account management, cataloging, PPC management, seller reinstatement, 3 months free amazon management, A2Z Aaradhya services"
+        title="Marketplace Account Management Services for GST Sellers & New Brands | A2Z Aaradhya"
+        description="Comprehensive marketplace management for GST registered businesses, manufacturers & new sellers: Amazon FBA & PPC Ads, Flipkart PLA campaigns, Meesho scaling, Myntra onboarding & GST seller launch assistance. 3 Months Free Amazon Management."
+        keywords="GST seller account management, Amazon seller services with GST, Flipkart seller management, Meesho scaling, Myntra account management, new seller onboarding GST help, cataloging, PPC ads, A2Z Aaradhya services"
         canonicalPath="/services"
         breadcrumbs={[
           { name: 'Home', path: '/' },

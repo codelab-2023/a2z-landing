@@ -141,9 +141,9 @@ export default function Hero({ onOpenModal }) {
               </button>
             </div>
 
-            {/* 3 quick stats */}
+            {/* 4 quick stats */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 animate-slide-in-up animate-delay-500">
-              {['20K+ Accounts Managed', '70+ Expert Managers', '98% Client Retention'].map((txt, i) => (
+              {['20K+ Accounts Scaled', 'Priority Onboarding for GST Sellers', 'New Seller & GST Help Available', '98% Client Retention'].map((txt, i) => (
                 <div key={i} className="flex items-center gap-1.5 text-xs font-bold text-slate-600">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#166B82] shrink-0" />
                   {txt}

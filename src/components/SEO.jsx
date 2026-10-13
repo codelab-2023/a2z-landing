@@ -178,7 +178,7 @@ export default function SEO({
         '@id': `${siteConfig.siteUrl}/#website`,
         url: siteConfig.siteUrl,
         name: siteConfig.legalName,
-        description: "India's premier marketplace management agency for Amazon, Flipkart, Myntra & Meesho.",
+        description: "India's premier marketplace management agency for GST registered businesses and new sellers across Amazon, Flipkart, Myntra & Meesho.",
         publisher: {
           '@id': `${siteConfig.siteUrl}/#organization`,
         },

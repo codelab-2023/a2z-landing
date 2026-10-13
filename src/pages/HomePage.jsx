@@ -67,9 +67,9 @@ export default function HomePage({ onOpenModal }) {
   return (
     <div className="space-y-0">
       <SEO
-        title="A2Z Aaradhya | India's #1 E-Commerce Growth Partner (Amazon, Myntra, Flipkart, Meesho)"
-        description="Scale your Amazon, Myntra, Flipkart & Meesho sales with India's premier marketplace management agency. 7 Branches, 70+ Specialists, 20K+ Accounts Managed. Authorized Amazon Partner."
-        keywords="Amazon account management, Myntra account management, Flipkart account management, Meesho sales scaling, e-commerce agency India, Amazon authorized partner, A2Z Aaradhya"
+        title="A2Z Aaradhya | E-Commerce Account Management for GST Sellers &amp; New Brands (Amazon, Flipkart, Meesho, Myntra)"
+        description="Scale your Amazon, Flipkart, Myntra &amp; Meesho sales with India's #1 marketplace agency. Priority fast-track onboarding for GST registered sellers, manufacturers &amp; brands, plus new seller launch &amp; GST guidance. 7 Branches, 20K+ Accounts Scaled."
+        keywords="GST registered seller management, Amazon account management with GST, Flipkart seller growth, Meesho high volume scaling, Myntra brand onboarding, sell on Amazon with GST, start selling online without GST assistance, e-commerce agency India, Amazon PPC advertising, A2Z Aaradhya"
         canonicalPath="/"
         breadcrumbs={[
           { name: 'Home', path: '/' },
