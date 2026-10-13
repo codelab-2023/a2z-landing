@@ -7,7 +7,7 @@ const siteConfig = {
   legalName: 'A2Z Aaradhya',
   siteUrl: 'https://a2z-aaradhya.com',
   logoUrl: 'https://a2z-aaradhya.com/logo/a2z-aaradhya-logo.svg',
-  defaultOgImage: 'https://a2z-aaradhya.com/og-image.png',
+  defaultOgImage: 'https://a2z-aaradhya.com/og-image.png?v=2',
   phone: '+91-9601055508',
   email: 'support@a2z-aaradhya.com',
   branches: [
