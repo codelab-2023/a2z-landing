@@ -19,8 +19,6 @@ import { MyntraIcon, AmazonIcon, FlipkartIcon, MeeshoIcon } from '../components/
 export const top10Faqs = [
   // ── Q1: GST REQUIREMENT & NEW SELLERS ──
   {
-    tag: "GST & New Sellers",
-    tagColor: "bg-emerald-50 text-emerald-700 border-emerald-200",
     question: "Is an Active GST Number mandatory to sell on Amazon, Flipkart, Myntra, and Meesho? How can beginners start without one?",
     answer: `Yes, for inter-state commerce and full-scale selling across Amazon, Flipkart, Myntra, and Meesho, having an active GST certificate/number is legally mandatory under Indian tax regulations.
 
@@ -32,8 +30,6 @@ However, if you are a beginner, artisan, weaver, or manufacturer who does not ha
 
   // ── Q2: MYNTRA FASHION DETAILS ──
   {
-    tag: "Myntra Fashion Specialist",
-    tagColor: "bg-pink-50 text-[#FF3F6C] border-pink-200",
     question: "How does A2Z Aaradhya onboard and manage fashion & apparel brands on Myntra? (Requirements, PPMP & FBN)",
     answer: `A2Z Aaradhya is an official Myntra Fashion Growth Partner specializing in ethnic wear, sarees, kurtis, western wear, footwear, and accessories:
 • Mandatory Requirements: Active GSTIN, PAN, and Registered Trademark Certificate (Class 25 for apparel) OR an official Brand Authorization NOC from the brand owner, plus active bank account with cancelled cheque.
@@ -46,8 +42,6 @@ However, if you are a beginner, artisan, weaver, or manufacturer who does not ha
 
   // ── Q3: AMAZON 3 MONTHS FREE OFFER ──
   {
-    tag: "Amazon Authorized Partner",
-    tagColor: "bg-amber-50 text-amber-800 border-amber-200",
     question: "How do I claim 3 Months of 100% FREE Amazon Account Management?",
     answer: `The 3-Month FREE Amazon Account Management offer is an exclusive Amazon Authorized Partner initiative for businesses that launch their new Amazon Seller Central account through A2Z Aaradhya.
 
@@ -61,8 +55,6 @@ What is included 100% Free:
 
   // ── Q4: FLIPKART GROWTH & F-ASSURED ──
   {
-    tag: "Flipkart Growth Specialist",
-    tagColor: "bg-blue-50 text-blue-700 border-blue-200",
     question: "How do you scale sales on Flipkart, and what is the process to get the Flipkart Assured (f-Assured) badge?",
     answer: `Flipkart favors sellers with fast fulfillment speed and high inventory reliability. A2Z Aaradhya scales your Flipkart account through:
 • Seller Tier Upgrades: Advancing your tier from Bronze to Silver and Gold by maintaining >98% on-time dispatch and <1.5% seller cancellation rates.
@@ -72,8 +64,6 @@ What is included 100% Free:
 
   // ── Q5: MEESHO SCALING & 0% COMMISSION ──
   {
-    tag: "Meesho High-Volume Scaling",
-    tagColor: "bg-purple-50 text-purple-700 border-purple-200",
     question: "How does selling on Meesho work with 0% commission, and how do you handle high-volume bulk cataloging?",
     answer: `Meesho operates on a 0% commission model, allowing manufacturers, wholesalers, and traders to sell directly to tier-2 and tier-3 Indian consumers at competitive prices with high margin retention.
 
@@ -84,8 +74,6 @@ How A2Z Aaradhya scales your Meesho account:
 
   // ── Q6: DAILY ACCOUNT MANAGEMENT OPERATIONS ──
   {
-    tag: "Daily Operations & SOP",
-    tagColor: "bg-teal-50 text-[#166B82] border-teal-200",
     question: "What daily operational services does A2Z Aaradhya provide under Full Marketplace Account Management?",
     answer: `Our 70+ certified account managers operate as your dedicated e-commerce department on a day-to-day basis:
 • ROI-Driven PPC Advertising: Daily bid optimization, keyword harvesting, and negative keyword pruning to maintain target ACoS/ROAS.
@@ -96,8 +84,6 @@ How A2Z Aaradhya scales your Meesho account:
 
   // ── Q7: RETURN & RTO REDUCTION SYSTEM ──
   {
-    tag: "Return & RTO Control",
-    tagColor: "bg-rose-50 text-rose-700 border-rose-200",
     question: "How do you control and minimize high returns and RTO (Return to Origin) for fashion and marketplace products?",
     answer: `High returns and RTO severely erode seller profits. A2Z Aaradhya enforces a systematic 4-step Return Reduction Protocol:
 1. Precise Measurement Size Charts: Localized garment measurement charts (chest, waist, hip, length, fabric stretch percentage) to eliminate size confusion.
@@ -108,8 +94,6 @@ How A2Z Aaradhya scales your Meesho account:
 
   // ── Q8: TRADEMARK & BRAND REGISTRY FOR MANUFACTURERS ──
   {
-    tag: "Brand Registry & Trademark",
-    tagColor: "bg-indigo-50 text-indigo-700 border-indigo-200",
     question: "Can manufacturers, weavers, and wholesalers sell under their own brand without an existing registered trademark?",
     answer: `Yes, absolutely! Manufacturers and wholesalers from major textile and industrial hubs (Surat, Ahmedabad, Tirupur, Delhi, Jaipur) often produce high-quality goods but lack an established consumer brand.
 
@@ -122,8 +106,6 @@ This enables you to sell directly under your own private label with full pricing
 
   // ── Q9: PAYMENTS & FEE RECONCILIATION ──
   {
-    tag: "Payments & Reconciliation",
-    tagColor: "bg-emerald-50 text-emerald-800 border-emerald-200",
     question: "How do marketplace payouts work, and how does A2Z Aaradhya protect sellers against unfair deduction errors?",
     answer: `Marketplaces disburse payments directly into your registered bank account on a transparent weekly or bi-weekly cycle, deducting marketplace commissions, logistics/closing fees, and return penalties.
 
@@ -135,8 +117,6 @@ However, calculation discrepancies and weight overcharges are common. A2Z Aaradh
 
   // ── Q10: 7 BRANCHES & IN-PERSON SUPPORT ──
   {
-    tag: "Branches & Direct Support",
-    tagColor: "bg-cyan-50 text-cyan-800 border-cyan-200",
     question: "Where are A2Z Aaradhya physical offices located, and how can sellers meet your team for in-person support?",
     answer: `A2Z Aaradhya operates 7 physical corporate and regional branches across India with over 70 certified marketplace specialists:
 • Surat Corporate HQ: Simada (144, 1st floor, Pramukh Park Soc, opp. Royal Plaza, Bapa Sitaram Chowk)
@@ -288,6 +268,7 @@ export default function FaqPage({ onOpenModal }) {
           ) : (
             filteredFaqs.map((faq, idx) => {
               const isOpen = openIndex === idx;
+              const isMyntra = faq.question.includes('Myntra');
 
               return (
                 <AnimateOnScroll key={idx} animation="fade-up" delay={Math.min(idx * 30, 200)}>
