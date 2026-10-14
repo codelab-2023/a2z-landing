@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react';
-import { 
-  HelpCircle, 
-  Search, 
-  ChevronDown, 
-  Sparkles, 
-  CheckCircle2, 
-  ArrowRight, 
-  Phone, 
+import {
+  HelpCircle,
+  Search,
+  ChevronDown,
+  Sparkles,
+  CheckCircle2,
+  ArrowRight,
+  Phone,
   X,
   Store,
   Layers
@@ -78,7 +78,6 @@ What is included 100% Free:
     answer: `Meesho operates on a 0% commission model, allowing manufacturers, wholesalers, and traders to sell directly to tier-2 and tier-3 Indian consumers at competitive prices with high margin retention.
 
 How A2Z Aaradhya scales your Meesho account:
-• Bulk Catalog Uploads: Uploading hundreds of SKUs with automated title tagging, trending category attributes, and keyword placement.
 • Pricing Strategy: Formulating smart price points considering zero commission while accounting for packaging and courier returns.
 • Rapid Dispatch SLA: Managing daily packing queues to ensure dispatch within Meesho's strict 24-hour window, preventing cancellation penalties and safeguarding supplier scores.`,
   },
@@ -89,7 +88,6 @@ How A2Z Aaradhya scales your Meesho account:
     tagColor: "bg-teal-50 text-[#166B82] border-teal-200",
     question: "What daily operational services does A2Z Aaradhya provide under Full Marketplace Account Management?",
     answer: `Our 70+ certified account managers operate as your dedicated e-commerce department on a day-to-day basis:
-• Daily Order & Fulfillment: Generating shipping labels, downloading manifests, and coordinating courier pickups.
 • ROI-Driven PPC Advertising: Daily bid optimization, keyword harvesting, and negative keyword pruning to maintain target ACoS/ROAS.
 • Buy Box & Competitor Defense: Defending your Buy Box against unauthorized listing hijackers and monitoring competitor price drops.
 • Inventory Health Monitoring: Tracking fast-moving SKUs, restock alerts, stranded inventory, and warehouse inbound shipments.
@@ -163,8 +161,7 @@ export default function FaqPage({ onOpenModal }) {
     return top10Faqs.filter((faq) => {
       return (
         faq.question.toLowerCase().includes(query) ||
-        faq.answer.toLowerCase().includes(query) ||
-        faq.tag.toLowerCase().includes(query)
+        faq.answer.toLowerCase().includes(query)
       );
     });
   }, [searchQuery]);
@@ -291,18 +288,16 @@ export default function FaqPage({ onOpenModal }) {
           ) : (
             filteredFaqs.map((faq, idx) => {
               const isOpen = openIndex === idx;
-              const isMyntra = faq.tag.includes('Myntra');
 
               return (
                 <AnimateOnScroll key={idx} animation="fade-up" delay={Math.min(idx * 30, 200)}>
                   <div
-                    className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-                      isOpen
+                    className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isOpen
                         ? isMyntra
                           ? 'bg-white border-pink-400 shadow-lg ring-1 ring-pink-400/20'
                           : 'bg-white border-[#166B82]/60 shadow-lg ring-1 ring-[#166B82]/20'
                         : 'bg-white border-slate-200 hover:border-slate-300 shadow-xs'
-                    }`}
+                      }`}
                   >
                     <button
                       type="button"
@@ -311,28 +306,23 @@ export default function FaqPage({ onOpenModal }) {
                       aria-expanded={isOpen}
                     >
                       <div className="flex items-start sm:items-center gap-3.5">
-                        <span className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black shrink-0 transition-colors ${
-                          isOpen
+                        <span className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black shrink-0 transition-colors ${isOpen
                             ? isMyntra ? 'bg-[#FF3F6C] text-white' : 'bg-[#166B82] text-white'
                             : 'bg-slate-100 text-slate-600'
-                        }`}>
+                          }`}>
                           Q{idx + 1}
                         </span>
                         <div>
                           <span className="font-extrabold text-sm sm:text-base text-slate-900 block leading-snug">
                             {faq.question}
                           </span>
-                          <span className={`inline-block mt-1 text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md border ${faq.tagColor}`}>
-                            {faq.tag}
-                          </span>
                         </div>
                       </div>
                       <ChevronDown
-                        className={`w-5 h-5 shrink-0 mt-1 sm:mt-0 transition-transform duration-300 ${
-                          isOpen
+                        className={`w-5 h-5 shrink-0 mt-1 sm:mt-0 transition-transform duration-300 ${isOpen
                             ? isMyntra ? 'rotate-180 text-[#FF3F6C]' : 'rotate-180 text-[#166B82]'
                             : 'text-slate-400'
-                        }`}
+                          }`}
                       />
                     </button>
 
