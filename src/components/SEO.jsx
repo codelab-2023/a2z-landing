@@ -18,6 +18,8 @@ const siteConfig = {
       state: 'Gujarat',
       postalCode: '395010',
       phone: '+91-9601055508',
+      latitude: '21.2185',
+      longitude: '72.8797',
     },
     {
       name: 'A2Z Aaradhya Katargam Branch',
@@ -26,6 +28,8 @@ const siteConfig = {
       state: 'Gujarat',
       postalCode: '395004',
       phone: '+91-9898666517',
+      latitude: '21.2291',
+      longitude: '72.8306',
     },
     {
       name: 'A2Z Aaradhya Adajan Branch',
@@ -34,6 +38,8 @@ const siteConfig = {
       state: 'Gujarat',
       postalCode: '395009',
       phone: '+91-9737891687',
+      latitude: '21.1959',
+      longitude: '72.7933',
     },
     {
       name: 'A2Z Aaradhya Bhatar Branch',
@@ -42,6 +48,8 @@ const siteConfig = {
       state: 'Gujarat',
       postalCode: '395007',
       phone: '+91-9601055508',
+      latitude: '21.1633',
+      longitude: '72.8055',
     },
     {
       name: 'A2Z Aaradhya Rajkot Branch',
@@ -50,6 +58,8 @@ const siteConfig = {
       state: 'Gujarat',
       postalCode: '360004',
       phone: '+91-9898111669',
+      latitude: '22.2858',
+      longitude: '70.7712',
     },
     {
       name: 'A2Z Aaradhya Ahmedabad Branch',
@@ -58,6 +68,8 @@ const siteConfig = {
       state: 'Gujarat',
       postalCode: '382350',
       phone: '+91-9898666085',
+      latitude: '23.0475',
+      longitude: '72.6710',
     },
     {
       name: 'A2Z Aaradhya Delhi Branch',
@@ -66,6 +78,8 @@ const siteConfig = {
       state: 'Delhi',
       postalCode: '110006',
       phone: '+91-9662888600',
+      latitude: '28.6506',
+      longitude: '77.2303',
     },
   ],
 };
@@ -136,6 +150,12 @@ export default function SEO({
     if (description) setMetaTag('name', 'twitter:description', description);
     setMetaTag('name', 'twitter:image', image);
 
+    // Geo Meta Tags for Pan-India & Surat HQ Local SEO
+    setMetaTag('name', 'geo.region', 'IN-GJ');
+    setMetaTag('name', 'geo.placename', 'Surat, Gujarat, India');
+    setMetaTag('name', 'geo.position', '21.2185;72.8797');
+    setMetaTag('name', 'ICBM', '21.2185, 72.8797');
+
     // Canonical link
     let canonicalTag = document.querySelector('link[rel="canonical"]');
     if (!canonicalTag) {
@@ -158,6 +178,80 @@ export default function SEO({
           '@type': 'ImageObject',
           url: siteConfig.logoUrl,
           caption: 'A2Z Aaradhya',
+        },
+        image: siteConfig.defaultOgImage,
+        telephone: siteConfig.phone,
+        email: siteConfig.email,
+        priceRange: '₹₹',
+        areaServed: {
+          '@type': 'Country',
+          name: 'India',
+        },
+        knowsAbout: [
+          'Amazon Seller Central Account Management',
+          'Amazon Unnati Gold Partner',
+          'Flipkart Seller Hub Account Growth',
+          'Myntra Fashion Marketplace Onboarding',
+          'Meesho Supplier Panel Scaling',
+          'GST Registration for Online Sellers',
+          'E-Commerce Cataloging and Product Listing',
+          'Amazon PPC Sponsored Ads Optimization',
+          'Seller Account Suspension Reinstatement',
+          'Marketplace Logistics and Return Management',
+        ],
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'E-Commerce Marketplace Account Management Services',
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Amazon Account Management & PPC Advertising',
+                description: 'End-to-end seller central management, keyword research, sponsored ads optimization, and Brand Store design.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Flipkart Account Management & F-Assured Growth',
+                description: 'Complete Flipkart seller tier growth, PLA ads, promotional spike sales, and inventory management.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Myntra Partner Onboarding & Brand Growth',
+                description: 'Exclusive fashion portal onboarding, category approvals, curated cataloging, and M-Direct / JIT fulfillment.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Meesho High-Volume Catalog & Price Optimization',
+                description: 'Bulk catalog upload, Tier-2/3 market penetration, Price Recommendation Engine optimization, and zero penalty operations.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'New Seller Onboarding & Brand Registry',
+                description: 'GST compliance, brand trademark registration, barcode exemptions, and marketplace launch in under 7 days.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Account Health & Suspension Reinstatement',
+                description: 'POA (Plan of Action) appeals, ODR cleanup, policy compliance, and locked funds resolution.',
+              },
+            },
+          ],
         },
         contactPoint: {
           '@type': 'ContactPoint',
@@ -185,7 +279,7 @@ export default function SEO({
         },
         inLanguage: 'en-IN',
       },
-      // ProfessionalService / LocalBusiness Schema with 7 Branches & 4.9 Star Rating
+      // ProfessionalService / LocalBusiness Schema with 7 Branches & GeoCoordinates
       {
         '@type': 'ProfessionalService',
         '@id': `${siteConfig.siteUrl}/#localbusiness`,
@@ -210,6 +304,11 @@ export default function SEO({
           postalCode: siteConfig.branches[0].postalCode,
           addressCountry: 'IN',
         },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: siteConfig.branches[0].latitude,
+          longitude: siteConfig.branches[0].longitude,
+        },
         openingHoursSpecification: [
           {
             '@type': 'OpeningHoursSpecification',
@@ -222,6 +321,7 @@ export default function SEO({
           '@type': 'LocalBusiness',
           name: b.name,
           telephone: b.phone,
+          priceRange: '₹₹',
           address: {
             '@type': 'PostalAddress',
             streetAddress: b.address,
@@ -229,6 +329,11 @@ export default function SEO({
             addressRegion: b.state,
             postalCode: b.postalCode,
             addressCountry: 'IN',
+          },
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: b.latitude,
+            longitude: b.longitude,
           },
         })),
       },
@@ -246,17 +351,135 @@ export default function SEO({
           '@id': `${siteConfig.siteUrl}/#organization`,
         },
         inLanguage: 'en-IN',
+        speakable: {
+          '@type': 'SpeakableSpecification',
+          cssSelector: ['h1', 'p'],
+        },
       },
     ];
 
-    if (breadcrumbs && breadcrumbs.length > 0) {
+    // Compute automatic breadcrumbs if not provided
+    let effectiveBreadcrumbs = breadcrumbs;
+    if (!effectiveBreadcrumbs || effectiveBreadcrumbs.length === 0) {
+      if (currentPath === '/services') {
+        effectiveBreadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Marketplace Services', path: '/services' }];
+      } else if (currentPath === '/branches') {
+        effectiveBreadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Regional Branches', path: '/branches' }];
+      } else if (currentPath === '/contact') {
+        effectiveBreadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Contact Us', path: '/contact' }];
+      } else if (currentPath === '/about') {
+        effectiveBreadcrumbs = [{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }];
+      } else if (currentPath === '/about/team') {
+        effectiveBreadcrumbs = [{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }, { name: 'Executive Team', path: '/about/team' }];
+      } else if (currentPath === '/about/awards') {
+        effectiveBreadcrumbs = [{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }, { name: 'Awards & Recognition', path: '/about/awards' }];
+      } else if (currentPath === '/about/gallery') {
+        effectiveBreadcrumbs = [{ name: 'Home', path: '/' }, { name: 'About Us', path: '/about' }, { name: 'Office Gallery', path: '/about/gallery' }];
+      } else if (currentPath === '/faq') {
+        effectiveBreadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Frequently Asked Questions', path: '/faq' }];
+      } else if (currentPath === '/careers') {
+        effectiveBreadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Careers', path: '/careers' }];
+      } else if (currentPath === '/privacy') {
+        effectiveBreadcrumbs = [{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy' }];
+      }
+    }
+
+    if (effectiveBreadcrumbs && effectiveBreadcrumbs.length > 0) {
       schemaGraph.push({
         '@type': 'BreadcrumbList',
-        itemListElement: breadcrumbs.map((crumb, idx) => ({
+        itemListElement: effectiveBreadcrumbs.map((crumb, idx) => ({
           '@type': 'ListItem',
           position: idx + 1,
           name: crumb.name,
           item: `${siteConfig.siteUrl}${crumb.path === '/' ? '' : crumb.path}`,
+        })),
+      });
+    }
+
+    // Additional Service Schema on /services page
+    if (currentPath === '/services') {
+      schemaGraph.push({
+        '@type': 'ItemList',
+        name: 'A2Z Aaradhya Marketplace Account Management Services',
+        itemListElement: [
+          {
+            '@type': 'Service',
+            position: 1,
+            name: 'Amazon Account Management & PPC Advertising',
+            provider: { '@id': `${siteConfig.siteUrl}/#organization` },
+            serviceType: 'Amazon Seller Central Management',
+            areaServed: 'IN',
+          },
+          {
+            '@type': 'Service',
+            position: 2,
+            name: 'Flipkart Account Management & F-Assured Tier Growth',
+            provider: { '@id': `${siteConfig.siteUrl}/#organization` },
+            serviceType: 'Flipkart Seller Hub Management',
+            areaServed: 'IN',
+          },
+          {
+            '@type': 'Service',
+            position: 3,
+            name: 'Myntra Fashion Marketplace Onboarding & PPMP',
+            provider: { '@id': `${siteConfig.siteUrl}/#organization` },
+            serviceType: 'Myntra Partner Portal Management',
+            areaServed: 'IN',
+          },
+          {
+            '@type': 'Service',
+            position: 4,
+            name: 'Meesho High Volume Catalog & Tier-2/3 Growth',
+            provider: { '@id': `${siteConfig.siteUrl}/#organization` },
+            serviceType: 'Meesho Supplier Panel Management',
+            areaServed: 'IN',
+          },
+          {
+            '@type': 'Service',
+            position: 5,
+            name: 'New Seller Onboarding & Fast-Track Launch',
+            provider: { '@id': `${siteConfig.siteUrl}/#organization` },
+            serviceType: 'E-commerce Seller Setup',
+            areaServed: 'IN',
+          },
+          {
+            '@type': 'Service',
+            position: 6,
+            name: 'Account Health & Suspension Reinstatement',
+            provider: { '@id': `${siteConfig.siteUrl}/#organization` },
+            serviceType: 'Marketplace Account Appeals & POA',
+            areaServed: 'IN',
+          },
+        ],
+      });
+    }
+
+    // Additional ItemList Schema for Branches on /branches page
+    if (currentPath === '/branches') {
+      schemaGraph.push({
+        '@type': 'ItemList',
+        name: 'A2Z Aaradhya Regional Offices Across India',
+        itemListElement: siteConfig.branches.map((b, idx) => ({
+          '@type': 'ListItem',
+          position: idx + 1,
+          item: {
+            '@type': 'LocalBusiness',
+            name: b.name,
+            telephone: b.phone,
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: b.address,
+              addressLocality: b.city,
+              addressRegion: b.state,
+              postalCode: b.postalCode,
+              addressCountry: 'IN',
+            },
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: b.latitude,
+              longitude: b.longitude,
+            },
+          },
         })),
       });
     }
