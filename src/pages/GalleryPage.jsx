@@ -105,7 +105,10 @@ export default function GalleryPage() {
               <img
                 src={item.image}
                 alt={item.title || "Gallery photo"}
+                width="600"
+                height="400"
                 loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">

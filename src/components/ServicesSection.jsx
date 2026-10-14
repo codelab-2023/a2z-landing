@@ -15,39 +15,24 @@ import AnimateOnScroll from './AnimateOnScroll';
 export default function ServicesSection({ onOpenModal }) {
   const tabOrder = ['amazon', 'myntra', 'flipkart', 'meesho', 'registration', 'recovery'];
   const [activeTab, setActiveTab] = useState('amazon');
-  const [progress, setProgress] = useState(0);
   const intervalRef = useRef(null);
-  const progressRef = useRef(null);
   const DURATION = 7000; // 7 seconds
 
-  const resetTimer = useCallback((newTab) => {
+  const switchTab = useCallback((newTab) => {
     if (newTab) setActiveTab(newTab);
-    setProgress(0);
     clearInterval(intervalRef.current);
-    clearInterval(progressRef.current);
-
-    // Progress bar: update every 70ms → 100 steps in 7s
-    progressRef.current = setInterval(() => {
-      setProgress(prev => Math.min(prev + (70 / DURATION) * 100, 100));
-    }, 70);
-
-    // Tab change every 7s
     intervalRef.current = setInterval(() => {
       setActiveTab(prev => {
         const idx = tabOrder.indexOf(prev);
         return tabOrder[(idx + 1) % tabOrder.length];
       });
-      setProgress(0);
     }, DURATION);
   }, []);
 
   useEffect(() => {
-    resetTimer();
-    return () => {
-      clearInterval(intervalRef.current);
-      clearInterval(progressRef.current);
-    };
-  }, [resetTimer]);
+    switchTab();
+    return () => clearInterval(intervalRef.current);
+  }, [switchTab]);
 
   const services = {
     amazon: {
@@ -188,14 +173,14 @@ export default function ServicesSection({ onOpenModal }) {
             {/* Progress line */}
             <span className="absolute bottom-0 left-0 h-[3px] w-full bg-black/10 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
               {activeTab === 'amazon' && (
-                <span className="absolute top-0 left-0 h-full bg-white/70 rounded-full" style={{ width: `${progress}%` }} />
+                <span key="amazon-bar" className="absolute top-0 left-0 h-full bg-white/70 rounded-full service-tab-fill" />
               )}
             </span>
           </button>
 
           {/* Myntra */}
           <button
-            onClick={() => resetTimer('myntra')}
+            onClick={() => switchTab('myntra')}
             className={`relative px-2 sm:px-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center overflow-hidden ${
               activeTab === 'myntra'
                 ? 'bg-[#FF3F6C] text-white shadow-lg shadow-pink-500/25 scale-[1.02]'
@@ -211,14 +196,14 @@ export default function ServicesSection({ onOpenModal }) {
             </span>
             <span className="absolute bottom-0 left-0 h-[3px] w-full bg-black/10 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
               {activeTab === 'myntra' && (
-                <span className="absolute top-0 left-0 h-full bg-white/70 rounded-full" style={{ width: `${progress}%` }} />
+                <span key="myntra-bar" className="absolute top-0 left-0 h-full bg-white/70 rounded-full service-tab-fill" />
               )}
             </span>
           </button>
 
           {/* Flipkart */}
           <button
-            onClick={() => resetTimer('flipkart')}
+            onClick={() => switchTab('flipkart')}
             className={`relative px-2 sm:px-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center overflow-hidden ${
               activeTab === 'flipkart'
                 ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/25 scale-[1.02]'
@@ -234,14 +219,14 @@ export default function ServicesSection({ onOpenModal }) {
             </span>
             <span className="absolute bottom-0 left-0 h-[3px] w-full bg-black/10 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
               {activeTab === 'flipkart' && (
-                <span className="absolute top-0 left-0 h-full bg-white/70 rounded-full" style={{ width: `${progress}%` }} />
+                <span key="flipkart-bar" className="absolute top-0 left-0 h-full bg-white/70 rounded-full service-tab-fill" />
               )}
             </span>
           </button>
 
           {/* Meesho */}
           <button
-            onClick={() => resetTimer('meesho')}
+            onClick={() => switchTab('meesho')}
             className={`relative px-2 sm:px-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center overflow-hidden ${
               activeTab === 'meesho'
                 ? 'bg-pink-600 text-white shadow-lg shadow-pink-500/25 scale-[1.02]'
@@ -257,14 +242,14 @@ export default function ServicesSection({ onOpenModal }) {
             </span>
             <span className="absolute bottom-0 left-0 h-[3px] w-full bg-black/10 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
               {activeTab === 'meesho' && (
-                <span className="absolute top-0 left-0 h-full bg-white/70 rounded-full" style={{ width: `${progress}%` }} />
+                <span key="meesho-bar" className="absolute top-0 left-0 h-full bg-white/70 rounded-full service-tab-fill" />
               )}
             </span>
           </button>
 
           {/* New Seller */}
           <button
-            onClick={() => resetTimer('registration')}
+            onClick={() => switchTab('registration')}
             className={`relative px-2 sm:px-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center overflow-hidden ${
               activeTab === 'registration'
                 ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/25 scale-[1.02]'
@@ -280,14 +265,14 @@ export default function ServicesSection({ onOpenModal }) {
             </span>
             <span className="absolute bottom-0 left-0 h-[3px] w-full bg-black/10 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
               {activeTab === 'registration' && (
-                <span className="absolute top-0 left-0 h-full bg-white/70 rounded-full" style={{ width: `${progress}%` }} />
+                <span key="reg-bar" className="absolute top-0 left-0 h-full bg-white/70 rounded-full service-tab-fill" />
               )}
             </span>
           </button>
 
           {/* Account Reinstatement */}
           <button
-            onClick={() => resetTimer('recovery')}
+            onClick={() => switchTab('recovery')}
             className={`relative px-2 sm:px-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 flex items-center justify-center overflow-hidden ${
               activeTab === 'recovery'
                 ? 'bg-red-600 text-white shadow-lg shadow-red-500/25 scale-[1.02]'
@@ -303,7 +288,7 @@ export default function ServicesSection({ onOpenModal }) {
             </span>
             <span className="absolute bottom-0 left-0 h-[3px] w-full bg-black/10 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
               {activeTab === 'recovery' && (
-                <span className="absolute top-0 left-0 h-full bg-white/70 rounded-full" style={{ width: `${progress}%` }} />
+                <span key="rec-bar" className="absolute top-0 left-0 h-full bg-white/70 rounded-full service-tab-fill" />
               )}
             </span>
           </button>

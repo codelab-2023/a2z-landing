@@ -21,7 +21,7 @@ export const defaultFaqs = [
   },
   {
     question: "Which e-commerce platforms does A2Z Aaradhya manage?",
-    answer: "A2Z Aaradhya specializes in the Big 4 Indian marketplaces: Amazon India (Gold Partner), Flipkart (Growth Specialist), Myntra (Fashion Specialist), and Meesho (High-Volume Scaling), as well as custom Shopify D2C brand stores.",
+    answer: "A2Z Aaradhya specializes in the Big 4 Indian marketplaces: Amazon India (Gold Partner), Flipkart (Growth Specialist), Myntra (Fashion Specialist), and Meesho (High-Volume Scaling).",
   },
   {
     question: "Where are A2Z Aaradhya offices located for in-person meetings?",
@@ -109,26 +109,26 @@ export default function FaqSection({ onOpenModal }) {
         {/* Bottom CTA Box */}
         <AnimateOnScroll animation="fade-up" delay={250}>
           <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#0B3B48] to-[#166B82] text-white text-center space-y-4 shadow-xl">
-            <h3 className="text-xl sm:text-2xl font-extrabold font-outfit">
+            <h3 className="text-xl sm:text-2xl font-extrabold !text-white font-outfit drop-shadow-sm">
               Ready to Scale Your E-Commerce Sales?
             </h3>
-            <p className="text-slate-200 text-xs sm:text-sm max-w-xl mx-auto font-medium">
+            <p className="text-slate-100 text-xs sm:text-sm max-w-xl mx-auto font-medium">
               Whether you are an active GST registered manufacturer or launching your first marketplace store, our specialists are ready to help.
             </p>
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5 max-w-2xl mx-auto flex-wrap">
               <button
                 type="button"
                 onClick={() => onOpenModal && onOpenModal('audit')}
-                className="w-full sm:w-auto px-6 py-3.5 bg-white text-[#0B3B48] hover:bg-slate-100 font-extrabold text-xs sm:text-sm rounded-xl shadow-md transition-all cursor-pointer"
+                className="w-full sm:w-auto min-h-[48px] px-6 py-3.5 bg-white hover:bg-slate-100 text-[#0B3B48] font-black text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
               >
                 Schedule Free Account Strategy
               </button>
               <button
                 type="button"
                 onClick={() => onOpenModal && onOpenModal('3months')}
-                className="w-full sm:w-auto px-6 py-3.5 bg-[#FE6B03] hover:bg-[#e05e02] text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                className="w-full sm:w-auto min-h-[48px] px-6 py-3.5 bg-gradient-to-r from-amber-500 via-orange-500 to-[#FE6B03] hover:from-amber-600 hover:to-[#e05e02] text-white font-black text-xs sm:text-sm rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/35 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
               >
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-4 h-4 text-amber-200" />
                 <span>Apply for 3 Months FREE</span>
               </button>
             </div>

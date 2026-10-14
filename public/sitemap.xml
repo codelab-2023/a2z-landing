@@ -58,6 +58,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://a2z-aaradhya.com/faq</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://a2z-aaradhya.com/privacy</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>yearly</changefreq>

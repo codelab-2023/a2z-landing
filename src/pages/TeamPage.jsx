@@ -169,7 +169,10 @@ export default function TeamPage() {
                     <img
                       src={member.image}
                       alt={member.alt || member.name}
+                      width="400"
+                      height="400"
                       loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         e.currentTarget.style.display = 'none';
                         const fallbackEl = e.currentTarget.nextElementSibling;

@@ -18,6 +18,7 @@ import BranchesPage from './pages/BranchesPage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
+import FaqPage from './pages/FaqPage';
 
 export default function App() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -53,6 +54,8 @@ export default function App() {
             <Route path="/careers" element={<CareersPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/faq" element={<FaqPage onOpenModal={handleOpenModal} />} />
+            <Route path="/faqs" element={<Navigate to="/faq" replace />} />
 
             {/* 404 Catch-All */}
             {/* Redirect /cgi-bin legacy URLs to root */}

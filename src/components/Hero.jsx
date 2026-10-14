@@ -15,16 +15,6 @@ import {
 } from './PlatformLogos';
 
 export default function Hero({ onOpenModal }) {
-  const [liveOrders, setLiveOrders] = useState(1965);
-  const [liveSales, setLiveSales] = useState(781165);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLiveOrders((prev) => prev + Math.floor(Math.random() * 2) + 1);
-      setLiveSales((prev) => prev + Math.floor(Math.random() * 450) + 120);
-    }, 3500);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section className="relative pt-16 sm:pt-20 pb-0 flex flex-col overflow-hidden hero-light-bg">
@@ -198,95 +188,20 @@ export default function Hero({ onOpenModal }) {
               </div>
             </div>
 
-            {/* Main Dashboard Card */}
-            <div className="glass-card-light rounded-3xl px-5 sm:px-8 py-5 sm:py-6 border border-slate-200 shadow-2xl space-y-4 sm:space-y-5 relative z-10">
+            {/* Main Dashboard Card (Isolated state to prevent whole Hero re-renders) */}
+            <LiveDashboardCard onOpenModal={onOpenModal} />
 
-              {/* Card Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-[#166B82] text-white flex items-center justify-center">
-                    <Activity className="w-5 h-5 animate-pulse" />
-                  </div>
-                  <div>
-                    <p className="font-extrabold text-[#0B3B48] text-sm">Live Seller Dashboard</p>
-                    <p className="text-[11px] text-slate-400 font-medium">Active Revenue Stream</p>
-                  </div>
-                </div>
-                <span className="text-[10px] px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 font-extrabold flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  Live
-                </span>
-              </div>
-
-              {/* Metrics */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100">
-                  <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Revenue</p>
-                  <p className="text-2xl font-extrabold text-[#0B3B48] mt-1">
-                    ₹{liveSales.toLocaleString('en-IN')}
-                  </p>
-                  <p className="text-[11px] text-emerald-600 font-bold flex items-center gap-1 mt-0.5">
-                    <TrendingUp className="w-3 h-3" /> +24.8%
-                  </p>
-                </div>
-                <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100">
-                  <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Orders</p>
-                  <p className="text-2xl font-extrabold text-[#166B82] mt-1">
-                    {liveOrders.toLocaleString('en-IN')}
-                  </p>
-                  <p className="text-[11px] text-slate-400 font-medium mt-0.5">Units dispatched</p>
-                </div>
-              </div>
-
-              {/* SVG Chart */}
-              <div className="bg-white rounded-2xl px-4 pt-3 pb-2 border border-slate-100 shadow-inner">
-                <div className="flex items-center justify-between text-[10px] font-bold text-slate-400 mb-2">
-                  <span>30-Day Growth</span>
-                  <span className="text-[#166B82] font-extrabold">4.2× ROAS</span>
-                </div>
-                <svg className="w-full" height="72" viewBox="0 0 300 72" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient id="heroGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#166B82" stopOpacity="0.25" />
-                      <stop offset="100%" stopColor="#166B82" stopOpacity="0" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M0 65 C 60 63, 90 48, 140 34 S 200 12, 300 4" fill="none" stroke="#166B82" strokeWidth="3" strokeLinecap="round" />
-                  <path d="M0 65 C 60 63, 90 48, 140 34 S 200 12, 300 4 L 300 72 L 0 72 Z" fill="url(#heroGrad)" />
-                  <circle cx="300" cy="4" r="5" fill="#166B82">
-                    <animate attributeName="r" from="4" to="9" dur="1.5s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" from="1" to="0" dur="1.5s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx="300" cy="4" r="3.5" fill="#9ED6CD" />
-                </svg>
-              </div>
-
-              {/* Offer strip */}
-              <div className="flex items-center justify-between bg-amber-50 rounded-2xl px-4 py-3 border border-amber-100">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0">
-                    <Sparkles className="w-4 h-4" />
-                  </div>
-                  <p className="text-xs font-extrabold text-amber-900">3 Months FREE Management</p>
-                </div>
-                <button onClick={() => onOpenModal('3months')} className="text-[11px] font-extrabold bg-amber-500 hover:bg-amber-600 text-white px-3 py-1.5 rounded-xl transition-colors">
-                  Claim
-                </button>
-              </div>
-
-            </div>
           </div>
-
         </div>
       </div>
 
       {/* ── MARQUEE — Infinite seamless loop ── */}
-      <div className="w-full bg-white/95 border-t border-slate-200 py-4 overflow-hidden z-10">
+      <div className="w-full bg-white/95 border-t border-slate-200 py-4 overflow-hidden z-10 [contain:layout_paint]">
         <div className="animate-marquee">
           {/* Two identical halves — each half is wider than viewport for seamless loop */}
           {[0, 1].map((set) => (
             <div key={set} className="flex items-center shrink-0" style={{ gap: '1.5rem', padding: '0 0.75rem' }}>
-              {[0, 1, 2, 3].flatMap((i) => [
+              {[0, 1].flatMap((i) => [
                 <div key={`a-${set}-${i}`} className="flex items-center justify-center rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm shrink-0 overflow-hidden" style={{ height: '44px', minWidth: '120px', padding: '0 14px' }}>
                   <AmazonLogo className="object-contain" style={{ height: '60px', width: 'auto', maxWidth: '150px', transform: 'scale(1.6) translateY(4px)' }} />
                 </div>,
@@ -306,5 +221,96 @@ export default function Hero({ onOpenModal }) {
       </div>
 
     </section>
+  );
+}
+
+// Subcomponent: LiveDashboardCard — Isolated timer keeps main Hero 100% static & fast
+function LiveDashboardCard({ onOpenModal }) {
+  const [liveOrders, setLiveOrders] = useState(1965);
+  const [liveSales, setLiveSales] = useState(781165);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLiveOrders((prev) => prev + Math.floor(Math.random() * 2) + 1);
+      setLiveSales((prev) => prev + Math.floor(Math.random() * 450) + 120);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="glass-card-light rounded-3xl px-5 sm:px-8 py-5 sm:py-6 border border-slate-200 shadow-2xl space-y-4 sm:space-y-5 relative z-10 [contain:content]">
+      {/* Card Header */}
+      <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+        <div className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-xl bg-[#166B82] text-white flex items-center justify-center">
+            <Activity className="w-5 h-5 animate-pulse" />
+          </div>
+          <div>
+            <p className="font-extrabold text-[#0B3B48] text-sm">Live Seller Dashboard</p>
+            <p className="text-[11px] text-slate-400 font-medium">Active Revenue Stream</p>
+          </div>
+        </div>
+        <span className="text-[10px] px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 font-extrabold flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          Live
+        </span>
+      </div>
+
+      {/* Metrics */}
+      <div className="grid grid-cols-2 gap-4">
+        <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100">
+          <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Revenue</p>
+          <p className="text-2xl font-extrabold text-[#0B3B48] mt-1">
+            ₹{liveSales.toLocaleString('en-IN')}
+          </p>
+          <p className="text-[11px] text-emerald-600 font-bold flex items-center gap-1 mt-0.5">
+            <TrendingUp className="w-3 h-3" /> +24.8%
+          </p>
+        </div>
+        <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100">
+          <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Orders</p>
+          <p className="text-2xl font-extrabold text-[#166B82] mt-1">
+            {liveOrders.toLocaleString('en-IN')}
+          </p>
+          <p className="text-[11px] text-slate-400 font-medium mt-0.5">Units dispatched</p>
+        </div>
+      </div>
+
+      {/* SVG Chart */}
+      <div className="bg-white rounded-2xl px-4 pt-3 pb-2 border border-slate-100 shadow-inner">
+        <div className="flex items-center justify-between text-[10px] font-bold text-slate-400 mb-2">
+          <span>30-Day Growth</span>
+          <span className="text-[#166B82] font-extrabold">4.2× ROAS</span>
+        </div>
+        <svg className="w-full" height="72" viewBox="0 0 300 72" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="heroGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#166B82" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="#166B82" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <path d="M0 65 C 60 63, 90 48, 140 34 S 200 12, 300 4" fill="none" stroke="#166B82" strokeWidth="3" strokeLinecap="round" />
+          <path d="M0 65 C 60 63, 90 48, 140 34 S 200 12, 300 4 L 300 72 L 0 72 Z" fill="url(#heroGrad)" />
+          <circle cx="300" cy="4" r="5" fill="#166B82">
+            <animate attributeName="r" from="4" to="9" dur="1.5s" repeatCount="indefinite" />
+            <animate attributeName="opacity" from="1" to="0" dur="1.5s" repeatCount="indefinite" />
+          </circle>
+          <circle cx="300" cy="4" r="3.5" fill="#9ED6CD" />
+        </svg>
+      </div>
+
+      {/* Offer strip */}
+      <div className="flex items-center justify-between bg-amber-50 rounded-2xl px-4 py-3 border border-amber-100">
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0">
+            <Sparkles className="w-4 h-4" />
+          </div>
+          <p className="text-xs font-extrabold text-amber-900">3 Months FREE Management</p>
+        </div>
+        <button onClick={() => onOpenModal('3months')} className="text-[11px] font-extrabold bg-amber-500 hover:bg-amber-600 text-white px-3 py-1.5 rounded-xl transition-colors">
+          Claim
+        </button>
+      </div>
+    </div>
   );
 }

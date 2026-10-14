@@ -185,6 +185,7 @@ export default function AwardsSection() {
                     src={a.image}
                     alt={a.title}
                     loading={i === 0 ? "eager" : "lazy"}
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>

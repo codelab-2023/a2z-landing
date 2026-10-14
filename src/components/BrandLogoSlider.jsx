@@ -49,19 +49,22 @@ export default function BrandLogoSlider() {
     brandLogos[12], brandLogos[13], brandLogos[14]
   ];
 
-  // 4x sequence per track so track width is ~6000px+ (wider than any 4K display)
-  const track1Sequence = [...row1, ...row1, ...row1, ...row1];
-  const track2Sequence = [...row2, ...row2, ...row2, ...row2];
+  // 2x sequence per track (cuts DOM image count in half while maintaining seamless loop)
+  const track1Sequence = [...row1, ...row1];
+  const track2Sequence = [...row2, ...row2];
 
   const renderLogoCard = (item, key) => (
     <div
       key={key}
-      className="flex items-center justify-center p-2 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#166B82]/50 hover:shadow-md transition-all shrink-0 hover:scale-105 duration-300 group cursor-default min-w-[115px] sm:min-w-[160px] h-18 sm:h-24"
+      className="flex items-center justify-center p-2 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#166B82]/50 hover:shadow-md transition-all shrink-0 hover:scale-105 duration-300 group cursor-default min-w-[115px] sm:min-w-[160px] h-18 sm:h-24 [contain:layout_paint]"
     >
       <img
         src={item.logo}
         alt={item.name}
+        width="145"
+        height="80"
         loading="lazy"
+        decoding="async"
         onError={(e) => {
           e.currentTarget.style.display = 'none';
           const parent = e.currentTarget.parentElement;
@@ -70,7 +73,7 @@ export default function BrandLogoSlider() {
             if (fallback) fallback.classList.remove('hidden');
           }
         }}
-        className="h-12 sm:h-20 max-w-[95px] sm:max-w-[145px] w-full object-contain transition-transform duration-300 group-hover:scale-110 filter drop-shadow-xs"
+        className="h-12 sm:h-20 max-w-[95px] sm:max-w-[145px] w-full object-contain transition-transform duration-300 group-hover:scale-110"
       />
 
       <div className="fallback-badge hidden flex-col items-center">

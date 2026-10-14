@@ -18,7 +18,10 @@ export default function Footer({ onOpenModal }) {
               <img
                 src={LogoSvg}
                 alt="A2Z Aaradhya Logo"
+                width="160"
+                height="48"
                 loading="lazy"
+                decoding="async"
                 className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
               />
               <div className="flex flex-col">
@@ -175,6 +178,8 @@ export default function Footer({ onOpenModal }) {
             <Link to="/privacy" className="hover:text-[#9ED6CD] transition-colors">Terms of Service</Link>
             <span>•</span>
             <Link to="/privacy" className="hover:text-[#9ED6CD] transition-colors">NDA Compliance</Link>
+            <span>•</span>
+            <Link to="/faq" className="hover:text-[#9ED6CD] transition-colors font-semibold">FAQs</Link>
           </div>
         </div>
 

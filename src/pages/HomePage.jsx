@@ -8,7 +8,6 @@ import AnimateOnScroll from '../components/AnimateOnScroll';
 import SEO from '../components/SEO';
 import ReviewsSlider from '../components/ReviewsSlider';
 import BrandLogoSlider from '../components/BrandLogoSlider';
-import FaqSection, { defaultFaqs } from '../components/FaqSection';
 import EcommerceDashboardImg from '../images/dashboard/ecommerce-growth-dashboard.webp';
 import {
   ArrowRight, Building2, Layers, ChevronRight
@@ -75,7 +74,6 @@ export default function HomePage({ onOpenModal }) {
         breadcrumbs={[
           { name: 'Home', path: '/' },
         ]}
-        faqs={defaultFaqs}
       />
 
       {/* Hero Section */}
@@ -92,7 +90,10 @@ export default function HomePage({ onOpenModal }) {
               <img
                 src={EcommerceDashboardImg}
                 alt="A2Z Aaradhya E-commerce Growth Dashboard across Amazon, Myntra, Flipkart & Meesho"
+                width="640"
+                height="420"
                 loading="lazy"
+                decoding="async"
                 className="w-full aspect-[16/10] sm:aspect-auto sm:h-[420px] object-cover object-[38%_center] lg:object-center group-hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -206,9 +207,6 @@ export default function HomePage({ onOpenModal }) {
 
       {/* Brand & Marketplaces We Have Scaled Slider */}
       <BrandLogoSlider />
-
-      {/* Frequently Asked Questions (FAQ) Section with Rich Schema */}
-      <FaqSection onOpenModal={onOpenModal} />
 
       {/* Client Reviews Slider — just above footer */}
       <ReviewsSlider />
