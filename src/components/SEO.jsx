@@ -193,6 +193,11 @@ export default function SEO({
           'Flipkart Seller Hub Account Growth',
           'Myntra Fashion Marketplace Onboarding',
           'Meesho Supplier Panel Scaling',
+          'Social Media Management & Performance Marketing',
+          'Instagram Reels Production & Meta Ads Funnels',
+          'Website Development & E-Commerce Engineering',
+          'Shopify & WooCommerce Custom Store Development',
+          'Amazon Brand Store Design & A+ Content (EBC)',
           'GST Registration for Online Sellers',
           'E-Commerce Cataloging and Product Listing',
           'Amazon PPC Sponsored Ads Optimization',
@@ -201,7 +206,7 @@ export default function SEO({
         ],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: 'E-Commerce Marketplace Account Management Services',
+          name: 'A2Z Aaradhya E-Commerce & Digital Growth Services',
           itemListElement: [
             {
               '@type': 'Offer',
@@ -209,6 +214,14 @@ export default function SEO({
                 '@type': 'Service',
                 name: 'Amazon Account Management & PPC Advertising',
                 description: 'End-to-end seller central management, keyword research, sponsored ads optimization, and Brand Store design.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Myntra Partner Onboarding & Fashion Brand Growth',
+                description: 'Fashion portal onboarding, category approvals, curated cataloging, and M-Direct / JIT fulfillment.',
               },
             },
             {
@@ -223,14 +236,6 @@ export default function SEO({
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
-                name: 'Myntra Partner Onboarding & Brand Growth',
-                description: 'Exclusive fashion portal onboarding, category approvals, curated cataloging, and M-Direct / JIT fulfillment.',
-              },
-            },
-            {
-              '@type': 'Offer',
-              itemOffered: {
-                '@type': 'Service',
                 name: 'Meesho High-Volume Catalog & Price Optimization',
                 description: 'Bulk catalog upload, Tier-2/3 market penetration, Price Recommendation Engine optimization, and zero penalty operations.',
               },
@@ -239,8 +244,32 @@ export default function SEO({
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'Service',
-                name: 'New Seller Onboarding & Brand Registry',
-                description: 'GST compliance, brand trademark registration, barcode exemptions, and marketplace launch in under 7 days.',
+                name: 'Social Media Management & Performance Marketing',
+                description: 'Viral Instagram reels, Meta and Facebook advertising funnels, brand aesthetic curation, content calendars, and community engagement.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Custom Website Development & E-Commerce Engineering',
+                description: 'Fast, secure business websites, high-converting Shopify and WooCommerce stores, booking portals, custom web apps, and AI-powered solutions.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Amazon Brand Store & A+ Content (EBC) Design',
+                description: 'Custom multi-page Brand Storefront design, premium A+ Enhanced Brand Content modules, lifestyle infographics, and brand story carousels.',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'New Seller Onboarding & 3 Months Free Management',
+                description: 'GST compliance, brand trademark registration, barcode exemptions, and marketplace launch with 3 months free management.',
               },
             },
             {
@@ -248,7 +277,7 @@ export default function SEO({
               itemOffered: {
                 '@type': 'Service',
                 name: 'Account Health & Suspension Reinstatement',
-                description: 'POA (Plan of Action) appeals, ODR cleanup, policy compliance, and locked funds resolution.',
+                description: 'Professional POA (Plan of Action) appeals, ODR cleanup, policy compliance, and locked funds resolution.',
               },
             },
           ],
@@ -400,7 +429,7 @@ export default function SEO({
     if (currentPath === '/services') {
       schemaGraph.push({
         '@type': 'ItemList',
-        name: 'A2Z Aaradhya Marketplace Account Management Services',
+        name: 'A2Z Aaradhya E-Commerce & Digital Growth Services',
         itemListElement: [
           {
             '@type': 'Service',
@@ -413,17 +442,17 @@ export default function SEO({
           {
             '@type': 'Service',
             position: 2,
-            name: 'Flipkart Account Management & F-Assured Tier Growth',
+            name: 'Myntra Fashion Marketplace Onboarding & PPMP',
             provider: { '@id': `${siteConfig.siteUrl}/#organization` },
-            serviceType: 'Flipkart Seller Hub Management',
+            serviceType: 'Myntra Partner Portal Management',
             areaServed: 'IN',
           },
           {
             '@type': 'Service',
             position: 3,
-            name: 'Myntra Fashion Marketplace Onboarding & PPMP',
+            name: 'Flipkart Account Management & F-Assured Tier Growth',
             provider: { '@id': `${siteConfig.siteUrl}/#organization` },
-            serviceType: 'Myntra Partner Portal Management',
+            serviceType: 'Flipkart Seller Hub Management',
             areaServed: 'IN',
           },
           {
@@ -437,17 +466,41 @@ export default function SEO({
           {
             '@type': 'Service',
             position: 5,
-            name: 'New Seller Onboarding & Fast-Track Launch',
+            name: 'Social Media Management & Performance Marketing',
             provider: { '@id': `${siteConfig.siteUrl}/#organization` },
-            serviceType: 'E-commerce Seller Setup',
+            serviceType: 'Social Media Marketing & Meta Ads Management',
             areaServed: 'IN',
           },
           {
             '@type': 'Service',
             position: 6,
-            name: 'Account Health & Suspension Reinstatement',
+            name: 'Website Development & Custom E-Commerce Engineering',
             provider: { '@id': `${siteConfig.siteUrl}/#organization` },
-            serviceType: 'Marketplace Account Appeals & POA',
+            serviceType: 'Web Development & Shopify / WooCommerce Solutions',
+            areaServed: 'IN',
+          },
+          {
+            '@type': 'Service',
+            position: 7,
+            name: 'Amazon Brand Store & A+ Content (EBC) Design',
+            provider: { '@id': `${siteConfig.siteUrl}/#organization` },
+            serviceType: 'Amazon Brand Registry & Storefront Architecture',
+            areaServed: 'IN',
+          },
+          {
+            '@type': 'Service',
+            position: 8,
+            name: 'New Seller Onboarding & 3 Months Free Management',
+            provider: { '@id': `${siteConfig.siteUrl}/#organization` },
+            serviceType: 'E-commerce Seller Setup & Free Management',
+            areaServed: 'IN',
+          },
+          {
+            '@type': 'Service',
+            position: 9,
+            name: 'Account Health, Suspension & PoA Reinstatement',
+            provider: { '@id': `${siteConfig.siteUrl}/#organization` },
+            serviceType: 'Marketplace Account Appeals & POA Recovery',
             areaServed: 'IN',
           },
         ],

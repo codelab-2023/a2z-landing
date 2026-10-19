@@ -14,10 +14,10 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
     phone: '',
     city: '',
     product: '',
-    marketplace: 'Amazon',
+    marketplace: '1. Amazon Account Management',
     monthlySales: 'Under ₹1 Lakh',
     serviceNeeded: 'Full Account Management',
-    websiteType: 'E-commerce Store (WooCommerce)',
+    websiteType: '1. Business / Company websites',
     projectDetails: '',
     botTrap: '', // Honeypot field
   });
@@ -74,18 +74,21 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
     fireConfetti();
 
     let msg = '';
-    if ((modalType === 'shopify' || modalType === 'wordpress')) {
-      msg = `Hello A2Z Aaradhya,\nI would like to enquire about your *Shopify Website Development* service.\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}\n• Website Type: ${formData.websiteType || 'Custom Website'}${formData.projectDetails ? `\n• Project Details: ${formData.projectDetails}` : ''}\n\nKindly get in touch with me with pricing and timeline details.`;
+    const isWebDev = (modalType === 'shopify' || modalType === 'wordpress' || modalType === 'webdev');
+    if (isWebDev) {
+      msg = `Hello A2Z Aaradhya,\nI would like to enquire about your *Website Development* service.\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}\n• Website Category: ${formData.websiteType || '1. Business / Company websites'}${formData.projectDetails ? `\n• Project Details: ${formData.projectDetails}` : ''}\n\nKindly share quotation and timeline details.`;
+    } else if (modalType === 'social') {
+      msg = `Hello A2Z Aaradhya,\nI would like to enquire about your *Social Media Management* service.\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}\n• Requirement: Instagram / Facebook Page Growth, Viral Reels & Meta Ads\n\nKindly share service packages and strategy details.`;
+    } else if (modalType === 'brandstore') {
+      msg = `Hello A2Z Aaradhya,\nI would like to enquire about your *Amazon Brand Store & A+ Content* design service.\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}${formData.product ? `\n• Product Category: ${formData.product}` : ''}\n\nKindly get in touch with me.`;
     } else if (modalType === '3months') {
       msg = `Hello A2Z Aaradhya,\nI would like to open a new Amazon Seller Account through A2Z Aaradhya and apply for the 3 Months FREE Management offer.\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}${formData.product ? `\n• Product / Category: ${formData.product}` : ''}\n\nKindly get in touch with me at your earliest convenience.`;
     } else {
-      msg = `Hello A2Z Aaradhya,\nI would like to enquire about your Account Management / Audit service.\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}${formData.product ? `\n• Product / Category: ${formData.product}` : ''}${formData.marketplace ? `\n• Marketplace: ${formData.marketplace}` : ''}\n\nKindly get in touch with me at your earliest convenience.`;
+      msg = `Hello A2Z Aaradhya,\nI would like to enquire about your Service / Account Management.\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}${formData.product ? `\n• Product / Category: ${formData.product}` : ''}${formData.marketplace ? `\n• Service Required: ${formData.marketplace}` : ''}\n\nKindly get in touch with me at your earliest convenience.`;
     }
 
-    // Only Shopify / Website Development form leads go to +91 98252 54810. All other forms go to default +91 96010 55508.
-    const targetPhone = (modalType === 'shopify' || modalType === 'wordpress')
-      ? '919825254810'
-      : '919601055508';
+    // Website Development leads go to +91 98252 54810. All other leads go to +91 96010 04405.
+    const targetPhone = isWebDev ? '919825254810' : '919601004405';
 
     window.open(`https://wa.me/${targetPhone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
     setSubmittedMedium('WhatsApp');
@@ -102,10 +105,10 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
       phone: '',
       city: '',
       product: '',
-      marketplace: 'Amazon',
+      marketplace: '1. Amazon Account Management',
       monthlySales: 'Under ₹1 Lakh',
       serviceNeeded: 'Full Account Management',
-      websiteType: 'E-commerce Store (WooCommerce)',
+      websiteType: '1. Business / Company websites',
       projectDetails: '',
       botTrap: '',
     });
@@ -148,10 +151,20 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
           <div className="space-y-6">
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-100 border border-cyan-200 text-cyan-800 text-xs font-extrabold">
-                {(modalType === 'shopify' || modalType === 'wordpress') ? (
+                {(modalType === 'shopify' || modalType === 'wordpress' || modalType === 'webdev') ? (
                   <>
                     <Laptop className="w-3.5 h-3.5 text-cyan-600" />
-                    <span>Shopify & E-Commerce Web Development</span>
+                    <span>Website Development (7 Specialized Solutions)</span>
+                  </>
+                ) : modalType === 'social' ? (
+                  <>
+                    <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
+                    <span>Social Media Management & Growth</span>
+                  </>
+                ) : modalType === 'brandstore' ? (
+                  <>
+                    <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
+                    <span>Amazon Brand Store & A+ Content</span>
                   </>
                 ) : modalType === '3months' ? (
                   <>
@@ -161,22 +174,30 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
                 ) : (
                   <>
                     <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
-                    <span>Free Account Audit</span>
+                    <span>Free Account Audit & Service Enquiry</span>
                   </>
                 )}
               </div>
 
               <h3 className="text-2xl font-extrabold text-slate-900 font-outfit">
-                {(modalType === 'shopify' || modalType === 'wordpress')
-                  ? 'Build Your Custom Shopify Website'
+                {(modalType === 'shopify' || modalType === 'wordpress' || modalType === 'webdev')
+                  ? 'Build Your Custom Website or E-Commerce Store'
+                  : modalType === 'social'
+                  ? 'Scale Your Brand with Social Media Management'
+                  : modalType === 'brandstore'
+                  ? 'Design Your Amazon Brand Store & A+ Content'
                   : modalType === '3months'
                   ? 'Apply for 3 Months FREE Amazon Management'
                   : 'Get Your Instant Marketplace Growth Plan'}
               </h3>
 
               <p className="text-xs text-slate-500 font-medium leading-relaxed">
-                {(modalType === 'shopify' || modalType === 'wordpress')
-                  ? 'Get a fast, mobile-friendly, and high-converting Shopify store customized to scale your D2C brand and sales.'
+                {(modalType === 'shopify' || modalType === 'wordpress' || modalType === 'webdev')
+                  ? 'Custom business websites, high-converting e-commerce stores, tools & booking portals engineered for growth.'
+                  : modalType === 'social'
+                  ? 'End-to-end Instagram & Facebook page growth, viral reels production, content calendar, and high-ROI Meta ad campaigns.'
+                  : modalType === 'brandstore'
+                  ? 'Elevate your brand presence on Amazon with immersive multi-page storefronts, A+ EBC modules, and lifestyle visuals.'
                   : modalType === '3months'
                   ? 'This offer is valid only for sellers who register their new Amazon Seller Account through A2Z Aaradhya. Complete setup + 3 months management — absolutely free.'
                   : 'Fill in your details below. Our senior platform manager will contact you within 15 minutes.'}
@@ -276,25 +297,26 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
                 </div>
               </div>
 
-              {/* WordPress Specific Fields */}
-              {(modalType === 'shopify' || modalType === 'wordpress') ? (
+              {/* Website Development Specific Fields */}
+              {(modalType === 'shopify' || modalType === 'wordpress' || modalType === 'webdev') ? (
                 <>
                   <div className="space-y-1">
                     <label className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
                       <Globe className="w-3.5 h-3.5 text-cyan-600" />
-                      Website Type Required *
+                      Select Website Category Needed *
                     </label>
                     <select
                       value={formData.websiteType}
                       onChange={(e) => setFormData({ ...formData, websiteType: e.target.value })}
                       className="w-full py-3 px-4 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm font-bold focus:outline-none focus:border-cyan-600"
                     >
-                      <option value="Shopify D2C Brand Store (Full Setup)">Shopify D2C Brand Store (Full Setup)</option>
-                      <option value="Custom Shopify Theme & Store Design">Custom Shopify Theme & Store Design</option>
-                      <option value="Dropshipping Store Setup">Dropshipping Store Setup</option>
-                      <option value="Shopify Payment & Courier Logistics Setup">Shopify Payment & Courier Logistics Setup</option>
-                      <option value="Website Migration to Shopify">Website Migration to Shopify</option>
-                      <option value="WordPress / WooCommerce Store">WordPress / WooCommerce Store</option>
+                      <option value="1. Business / Company websites">1. Business / Company websites</option>
+                      <option value="2. E-commerce">2. E-commerce (Shopify / WooCommerce / Custom)</option>
+                      <option value="3. Booking aur Appointment">3. Booking aur Appointment</option>
+                      <option value="4. Content aur Community">4. Content aur Community</option>
+                      <option value="5. Web Apps aur Tools">5. Web Apps aur Tools</option>
+                      <option value="6. AI-powered websites">6. AI-powered websites</option>
+                      <option value="7. Personal aur Special">7. Personal aur Special</option>
                     </select>
                   </div>
 
@@ -333,23 +355,27 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
                     </div>
                   )}
 
-                  {/* Primary Marketplace - Only for Audit form */}
+                  {/* Primary Service / Marketplace - Exactly 9 services line to line */}
                   {modalType !== '3months' && (
                     <div className="space-y-1">
                       <label className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
                         <ShoppingBag className="w-3.5 h-3.5 text-cyan-600" />
-                        Primary Marketplace
+                        Select Service / Platform Required *
                       </label>
                       <select
                         value={formData.marketplace}
                         onChange={(e) => setFormData({ ...formData, marketplace: e.target.value })}
                         className="w-full py-3 px-4 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm font-bold focus:outline-none focus:border-cyan-600"
                       >
-                        <option value="Amazon">Amazon India</option>
-                        <option value="Flipkart">Flipkart</option>
-                        <option value="Meesho">Meesho</option>
-                        <option value="All Three">All 3 Platforms</option>
-                        <option value="Account Reinstatement">Account Reinstatement</option>
+                        <option value="1. Amazon Account Management">1. Amazon Account Management</option>
+                        <option value="2. Myntra Account Management">2. Myntra Account Management</option>
+                        <option value="3. Flipkart Account Management">3. Flipkart Account Management</option>
+                        <option value="4. Meesho Account Management">4. Meesho Account Management</option>
+                        <option value="5. Social Media Management">5. Social Media Management</option>
+                        <option value="6. Website Development">6. Website Development</option>
+                        <option value="7. Amazon Brand Store">7. Amazon Brand Store</option>
+                        <option value="8. New Seller Setup">8. New Seller Setup (3 Months Free)</option>
+                        <option value="9. Account Reinstatement">9. Account Reinstatement</option>
                       </select>
                     </div>
                   )}
@@ -382,8 +408,12 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
                 >
                   <WhatsAppIcon className="w-5 h-5 fill-white" />
                   <span>
-                    {(modalType === 'shopify' || modalType === 'wordpress')
-                      ? 'Get Shopify Store Quote & Connect on WhatsApp'
+                    {(modalType === 'shopify' || modalType === 'wordpress' || modalType === 'webdev')
+                      ? 'Get Website Quote & Connect on WhatsApp'
+                      : modalType === 'social'
+                      ? 'Get Social Media Growth Plan on WhatsApp'
+                      : modalType === 'brandstore'
+                      ? 'Get Brand Store Quote & Connect on WhatsApp'
                       : modalType === '3months'
                       ? 'Apply Now — Connect via WhatsApp'
                       : 'Submit & Connect on WhatsApp'}

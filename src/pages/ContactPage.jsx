@@ -17,7 +17,7 @@ export default function ContactPage() {
     name: '',
     phone: '',
     city: '',
-    marketplace: 'Amazon',
+    marketplace: '1. Amazon Account Management',
     message: '',
     botTrap: '',
   });
@@ -58,8 +58,10 @@ export default function ContactPage() {
       return;
     }
 
+    const isWeb = formData.marketplace?.includes('Website Development');
+    const targetPhone = isWeb ? '919825254810' : '919601004405';
     const msg = `Hello A2Z Aaradhya,\nI would like to schedule a Free Account Strategy for ${formData.marketplace}!\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}${cleanMsg ? `\n• Message: ${cleanMsg}` : ''}\n\nPlease get in touch with me.`;
-    window.open(`https://wa.me/919601055508?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/${targetPhone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
     try {
       confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
     } catch (err) { }
@@ -306,7 +308,7 @@ export default function ContactPage() {
                         type="tel"
                         required
                         maxLength={16}
-                        placeholder="e.g. 9601055508"
+                        placeholder="e.g. 9601004405"
                         value={formData.phone}
                         onChange={(e) => {
                           setErrorMsg('');
@@ -334,18 +336,21 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-slate-700">Target Marketplace</label>
+                    <label className="text-xs font-bold text-slate-700">Target Marketplace / Service *</label>
                     <select
                       value={formData.marketplace}
                       onChange={(e) => setFormData({ ...formData, marketplace: e.target.value })}
                       className="w-full py-3 px-4 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm font-bold focus:outline-none focus:border-[#166B82]"
                     >
-                      <option value="Amazon">Amazon India Account Management</option>
-                      <option value="Myntra">Myntra Account Management &amp; Onboarding</option>
-                      <option value="Flipkart">Flipkart Management</option>
-                      <option value="Meesho">Meesho Sales Scaling</option>
-                      <option value="New Seller (3 Months Free)">New Seller Registration (3 Months FREE Offer)</option>
-                      <option value="Suspension">Account Suspension &amp; PoA Recovery</option>
+                      <option value="1. Amazon Account Management">1. Amazon Account Management</option>
+                      <option value="2. Myntra Account Management">2. Myntra Account Management</option>
+                      <option value="3. Flipkart Account Management">3. Flipkart Account Management</option>
+                      <option value="4. Meesho Account Management">4. Meesho Account Management</option>
+                      <option value="5. Social Media Management">5. Social Media Management</option>
+                      <option value="6. Website Development">6. Website Development</option>
+                      <option value="7. Amazon Brand Store">7. Amazon Brand Store</option>
+                      <option value="8. New Seller Setup (3 Months Free Offer)">8. New Seller Setup (3 Months Free Offer)</option>
+                      <option value="9. Account Reinstatement (Suspension & PoA Recovery)">9. Account Reinstatement (Suspension & PoA Recovery)</option>
                     </select>
                   </div>
 

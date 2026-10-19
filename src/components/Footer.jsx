@@ -102,22 +102,16 @@ export default function Footer({ onOpenModal }) {
           {/* Services Links */}
           <div className="space-y-3">
             <h4 className="text-sm font-extrabold text-white uppercase tracking-wider">Services</h4>
-            <ul className="space-y-2.5">
-              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">Amazon Account Management</Link></li>
-              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">Myntra Account Management</Link></li>
-              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">Flipkart Account Management</Link></li>
-              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">Meesho Sales Scaling</Link></li>
-              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">New Seller Registration</Link></li>
-              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors">Account Suspension Recovery</Link></li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => onOpenModal('shopify')}
-                  className="hover:text-[#9ED6CD] transition-colors text-left flex items-center gap-1.5 cursor-pointer"
-                >
-                  Shopify Website Development
-                </button>
-              </li>
+            <ul className="space-y-2">
+              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors text-xs font-semibold">1. Amazon Account Management</Link></li>
+              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors text-xs font-semibold">2. Myntra Account Management</Link></li>
+              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors text-xs font-semibold">3. Flipkart Account Management</Link></li>
+              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors text-xs font-semibold">4. Meesho Account Management</Link></li>
+              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors text-xs font-semibold">5. Social Media Management</Link></li>
+              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors text-xs font-semibold">6. Website Development</Link></li>
+              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors text-xs font-semibold">7. Amazon Brand Store</Link></li>
+              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors text-xs font-semibold">8. New Seller Setup</Link></li>
+              <li><Link to="/services" className="hover:text-[#9ED6CD] transition-colors text-xs font-semibold">9. Account Reinstatement</Link></li>
             </ul>
           </div>
 
