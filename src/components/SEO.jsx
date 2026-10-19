@@ -325,6 +325,29 @@ export default function SEO({
           bestRating: '5',
           worstRating: '1',
         },
+        review: [
+          {
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Rajesh Patel' },
+            datePublished: '2026-08-15',
+            reviewBody: 'A2Z Aaradhya scaled our Amazon and Flipkart sales from 50 orders/day to over 600 orders/day. Best e-commerce account management agency in India.',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          },
+          {
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Vikas Sharma' },
+            datePublished: '2026-09-10',
+            reviewBody: 'Their website development and social media marketing team built our Shopify store and scaled our Meta ads profitably. Highly recommended!',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          },
+          {
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Pooja Agarwal' },
+            datePublished: '2026-09-28',
+            reviewBody: 'Great Myntra onboarding and Amazon A+ content design. Transparent reporting and dedicated branch managers.',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+          },
+        ],
         address: {
           '@type': 'PostalAddress',
           streetAddress: siteConfig.branches[0].address,

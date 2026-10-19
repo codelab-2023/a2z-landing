@@ -20,12 +20,24 @@ export const defaultFaqs = [
     answer: "The 3-month FREE management offer is an exclusive Amazon Authorized Partner initiative for sellers who open their new Amazon Seller Central account through A2Z Aaradhya. Complete account registration, initial cataloging, and 3 months of hands-on account management are provided completely free.",
   },
   {
-    question: "Which e-commerce platforms does A2Z Aaradhya manage?",
-    answer: "A2Z Aaradhya specializes in the Big 4 Indian marketplaces: Amazon India (Gold Partner), Flipkart (Growth Specialist), Myntra (Fashion Specialist), and Meesho (High-Volume Scaling).",
+    question: "Which e-commerce and digital growth platforms does A2Z Aaradhya manage?",
+    answer: "A2Z Aaradhya provides end-to-end management for Amazon India (Unnati Gold Partner), Flipkart (Growth Specialist), Myntra (Fashion Partner), and Meesho (High-Volume Partner), alongside full-service Custom Website Development, Social Media Management, and Amazon Brand Storefront design.",
+  },
+  {
+    question: "Does A2Z Aaradhya develop custom websites, Shopify and WooCommerce e-commerce stores?",
+    answer: "Yes! We build high-converting websites across 7 categories: Corporate/Company websites, E-commerce stores (Shopify, WooCommerce, custom carts), Booking & Appointment systems, Content & Community platforms, custom Web Apps, AI-powered automated websites, and Personal/Creator portfolios. All websites are ultra-fast, 100% mobile responsive, and SEO-optimized for Google ranking.",
+  },
+  {
+    question: "How does your Social Media Management and Meta Ads service scale e-commerce brands?",
+    answer: "Our social media team builds high-ROI customer acquisition engines: viral Instagram reels production, aesthetic brand curation, active community management, content calendars, and targeted Meta (Instagram & Facebook) ad funnels designed to scale sales profitably.",
+  },
+  {
+    question: "What is included in Amazon Brand Store and A+ Content (EBC) design?",
+    answer: "We craft custom multi-page Amazon Brand Stores, premium A+ Enhanced Brand Content modules, brand story carousels, comparison matrices, and lifestyle infographics that elevate your brand perception and maximize conversion rates.",
   },
   {
     question: "Where are A2Z Aaradhya offices located for in-person meetings?",
-    answer: "We have 7 physical branches across India: 4 offices in Surat (Simada Corporate HQ, Katargam, Adajan, Bhatar), Ahmedabad (Nikol), Rajkot (150ft Ring Road), and Delhi (Chandni Chowk). Sellers are welcome to visit our offices or connect with us on WhatsApp.",
+    answer: "We have 7 physical branches across India: 4 offices in Surat (Simada Corporate HQ, Katargam, Adajan, Bhatar), Ahmedabad (Nikol), Rajkot (150ft Ring Road), and Delhi (Chandni Chowk). Sellers are welcome to visit our offices or connect with us on WhatsApp at +91 96010 55508.",
   },
 ];
 

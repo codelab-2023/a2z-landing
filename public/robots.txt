@@ -1,7 +1,21 @@
 User-agent: *
+Allow: /
 Disallow: /cgi-bin/
 Disallow: /cgi-bin
 Disallow: /*.map$
+
+User-agent: Googlebot
+Allow: /
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.png$
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
 Allow: /
 
 # Sitemap index

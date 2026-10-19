@@ -3,6 +3,7 @@ import ServicesSection from '../components/ServicesSection';
 import FreeOfferBanner from '../components/FreeOfferBanner';
 import AnimateOnScroll from '../components/AnimateOnScroll';
 import SEO from '../components/SEO';
+import { defaultFaqs } from '../components/FaqSection';
 import { ArrowRight, Laptop, Share2, Globe, Store } from 'lucide-react';
 import { AmazonIcon, MyntraIcon, FlipkartIcon, MeeshoIcon } from '../components/PlatformLogos';
 
@@ -18,6 +19,7 @@ export default function ServicesPage({ onOpenModal }) {
           { name: 'Home', path: '/' },
           { name: 'Marketplace Services', path: '/services' },
         ]}
+        faqs={defaultFaqs}
       />
 
       
