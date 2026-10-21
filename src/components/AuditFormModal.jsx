@@ -87,8 +87,8 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
       msg = `Hello A2Z Aaradhya,\nI would like to enquire about your Service / Account Management.\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}${formData.product ? `\n• Product / Category: ${formData.product}` : ''}${formData.marketplace ? `\n• Service Required: ${formData.marketplace}` : ''}\n\nKindly get in touch with me at your earliest convenience.`;
     }
 
-    // Website Development leads go to +91 98252 54810. All other leads go to +91 96010 04405.
-    const targetPhone = isWebDev ? '919825254810' : '919601004405';
+    // Website Development leads go to +91 98252 54810. All other leads go to +91 97378 91687.
+    const targetPhone = isWebDev ? '919825254810' : '919737891687';
 
     window.open(`https://wa.me/${targetPhone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
     setSubmittedMedium('WhatsApp');

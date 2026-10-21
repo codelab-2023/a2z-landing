@@ -8,7 +8,7 @@ import AnimateOnScroll from '../components/AnimateOnScroll';
 import SEO from '../components/SEO';
 import ReviewsSlider from '../components/ReviewsSlider';
 import BrandLogoSlider from '../components/BrandLogoSlider';
-import FaqSection, { defaultFaqs } from '../components/FaqSection';
+import { defaultFaqs } from '../components/FaqSection';
 import EcommerceDashboardImg from '../images/dashboard/ecommerce-growth-dashboard.webp';
 import {
   ArrowRight, Building2, Layers, ChevronRight, Share2, Globe, Store, UserPlus, ShieldAlert
@@ -274,9 +274,6 @@ export default function HomePage({ onOpenModal }) {
 
       {/* Brand & Marketplaces We Have Scaled Slider */}
       <BrandLogoSlider />
-
-      {/* Frequently Asked Questions Section (Google Ranking & SERP Schema) */}
-      <FaqSection onOpenModal={onOpenModal} />
 
       {/* Client Reviews Slider — just above footer */}
       <ReviewsSlider />

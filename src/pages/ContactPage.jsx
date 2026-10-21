@@ -59,7 +59,7 @@ export default function ContactPage() {
     }
 
     const isWeb = formData.marketplace?.includes('Website Development');
-    const targetPhone = isWeb ? '919825254810' : '919601004405';
+    const targetPhone = isWeb ? '919825254810' : '919737891687';
     const msg = `Hello A2Z Aaradhya,\nI would like to schedule a Free Account Strategy for ${formData.marketplace}!\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}${cleanMsg ? `\n• Message: ${cleanMsg}` : ''}\n\nPlease get in touch with me.`;
     window.open(`https://wa.me/${targetPhone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
     try {
@@ -308,7 +308,7 @@ export default function ContactPage() {
                         type="tel"
                         required
                         maxLength={16}
-                        placeholder="e.g. 9601004405"
+                        placeholder="e.g. 9737891687"
                         value={formData.phone}
                         onChange={(e) => {
                           setErrorMsg('');
