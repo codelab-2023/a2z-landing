@@ -134,7 +134,7 @@ export default function TeamPage() {
       <SEO
         title="Executive Leadership & Branch Managers Team | A2Z Aaradhya"
         description="Meet the leadership team and branch managers of A2Z Aaradhya, guiding 70+ certified e-commerce specialists across 7 regional branches in India."
-        keywords="A2Z Aaradhya team, Purveg Gajera, Pinal Kakadiya, e-commerce account managers, marketplace specialists"
+        keywords="A2Z Aaradhya team, Purveg Gajera, Pinal Kakadiya, best ecommerce service provider company leaders, e-commerce account managers, marketplace specialists"
         canonicalPath="/about/team"
         breadcrumbs={[
           { name: 'Home', path: '/' },

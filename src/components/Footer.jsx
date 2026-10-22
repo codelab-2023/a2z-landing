@@ -42,11 +42,11 @@ export default function Footer({ onOpenModal }) {
             {/* Helpline & Social Links */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
-                href="tel:9601055508"
+                href="tel:9737891687"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#166B82] hover:bg-[#0F5265] text-white font-extrabold text-xs transition-all shadow-md"
               >
                 <Phone className="w-3.5 h-3.5" />
-                +91 96010 55508
+                +91 97378 91687
               </a>
 
               <div className="flex items-center gap-2">
@@ -87,7 +87,7 @@ export default function Footer({ onOpenModal }) {
                   <Youtube className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://wa.me/919601055508"
+                  href="https://wa.me/919737891687"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
@@ -142,8 +142,8 @@ export default function Footer({ onOpenModal }) {
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-[#9ED6CD] shrink-0" />
-                <a href="tel:9601055508" className="text-white font-extrabold hover:text-[#9ED6CD] transition-colors text-xs">
-                  +91 96010 55508
+                <a href="tel:9737891687" className="text-white font-extrabold hover:text-[#9ED6CD] transition-colors text-xs">
+                  +91 97378 91687
                 </a>
               </li>
               <li className="flex items-center gap-2">

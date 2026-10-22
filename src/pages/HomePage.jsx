@@ -123,9 +123,9 @@ export default function HomePage({ onOpenModal }) {
   return (
     <div className="space-y-0">
       <SEO
-        title="A2Z Aaradhya | E-Commerce Account Management, Website Development & Social Media Growth Agency"
-        description="India's #1 Growth Partner. Scale on Amazon, Flipkart, Myntra & Meesho. Custom Website Development (Shopify/WooCommerce), Social Media Marketing & Meta Ads, Brand Store Design & 3 Months Free Management for new sellers."
-        keywords="GST registered seller management, Amazon account management with GST, Flipkart seller growth, Meesho high volume scaling, Myntra brand onboarding, website development agency, ecommerce website design, shopify store development, social media marketing agency, instagram reels marketing, amazon brand store design, a+ content design, sell on Amazon with GST, start selling online without GST assistance, e-commerce agency India, Amazon PPC advertising, A2Z Aaradhya"
+        title="A2Z Aaradhya | Best E-Commerce Service Provider Company in India | Amazon & Flipkart Growth"
+        description="A2Z Aaradhya is India's best e-commerce service provider company and Amazon Unnati Gold Partner. 20,000+ seller accounts scaled across Amazon, Flipkart, Myntra & Meesho, Shopify web development & Meta ads across 7 branches in India."
+        keywords="best ecommerce service provider company, best ecommerce service provider in india, top ecommerce management agency, amazon seller central account management, amazon ppc ads optimization agency, flipkart seller growth agency, meesho high volume cataloging, myntra fashion brand onboarding, custom shopify store development india, meta ads agency for ecommerce, amazon a+ content brand store design, sell on amazon with gst, 3 months free amazon management, ecommerce agency surat ahmedabad rajkot delhi, A2Z Aaradhya"
         canonicalPath="/"
         breadcrumbs={[
           { name: 'Home', path: '/' },

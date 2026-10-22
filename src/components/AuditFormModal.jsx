@@ -267,7 +267,7 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
                     type="tel"
                     required
                     maxLength={16}
-                    placeholder="e.g. 9601055508"
+                    placeholder="e.g. 9737891687"
                     value={formData.phone}
                     onChange={(e) => {
                       setErrorMsg('');

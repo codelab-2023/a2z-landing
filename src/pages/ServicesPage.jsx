@@ -11,9 +11,9 @@ export default function ServicesPage({ onOpenModal }) {
   return (
     <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 space-y-10 sm:space-y-16">
       <SEO
-        title="Marketplace Management, Website Development & Social Media Services | A2Z Aaradhya"
-        description="Complete growth services for sellers & businesses: Amazon FBA & PPC Ads, Myntra Onboarding, Flipkart PLA, Meesho Scaling, Custom Website Development (Shopify/WooCommerce), Social Media Marketing & Meta Ads, Amazon Brand Stores, and 3 Months Free New Seller Management."
-        keywords="marketplace account management, website development agency, ecommerce website design, shopify store design, woocommerce agency, social media management, meta ads agency, instagram reels management, amazon brand store design, a+ content ebc, amazon ppc ads, flipkart seller management, meesho scaling, myntra onboarding, A2Z Aaradhya services"
+        title="Best E-Commerce Services in India | Amazon, Flipkart, Shopify & Meta Ads | A2Z Aaradhya"
+        description="Comprehensive solutions by India's best e-commerce service provider company: Amazon & Flipkart account management, Myntra onboarding, Meesho scaling, Shopify web development, and Meta ads."
+        keywords="best ecommerce service provider, ecommerce services india, amazon fba management, amazon ppc advertising agency, flipkart f-assured growth, meesho bulk cataloging, myntra fashion onboarding, shopify custom store design, woocommerce development, meta ads lead funnels, amazon brand store a+ content, seller account suspension poa reinstatement, A2Z Aaradhya services"
         canonicalPath="/services"
         breadcrumbs={[
           { name: 'Home', path: '/' },

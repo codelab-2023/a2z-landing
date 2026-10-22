@@ -72,8 +72,8 @@ export default function ContactPage() {
     <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 space-y-10 sm:space-y-16">
       <SEO
         title="Contact Us &amp; Book Free Account Strategy (GST Sellers &amp; New Brands) | A2Z Aaradhya"
-        description="Connect with A2Z Aaradhya senior marketplace consultants. Priority onboarding for GST registered businesses, manufacturers &amp; brands + complete setup support for new sellers. Call +91-9601055508."
-        keywords="Contact A2Z Aaradhya, marketplace consultation, Amazon account management with GST, Flipkart seller support, Meesho onboarding, GST seller agency contact, e-commerce support helpline, Surat Delhi Ahmedabad Rajkot offices"
+        description="Connect with A2Z Aaradhya senior marketplace consultants. Priority onboarding for GST registered businesses, manufacturers &amp; brands + complete setup support for new sellers. Call +91-9737891687."
+        keywords="Contact A2Z Aaradhya, best ecommerce service provider company contact, marketplace consultation, Amazon account management with GST, Flipkart seller support, Meesho onboarding, GST seller agency contact, e-commerce support helpline, Surat Delhi Ahmedabad Rajkot offices"
         canonicalPath="/contact"
         breadcrumbs={[
           { name: 'Home', path: '/' },
@@ -112,7 +112,7 @@ export default function ContactPage() {
 
               <div className="space-y-3">
                 <a
-                  href="tel:9601055508"
+                  href="tel:9737891687"
                   className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#166B82] transition-all group"
                 >
                   <div className="w-11 h-11 rounded-xl bg-[#166B82] text-white flex items-center justify-center font-bold shrink-0">
@@ -121,7 +121,7 @@ export default function ContactPage() {
                   <div>
                     <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Direct Phone / WhatsApp</span>
                     <div className="text-lg font-extrabold text-[#0B3B48] font-outfit group-hover:text-[#166B82]">
-                      +91 96010 55508
+                      +91 97378 91687
                     </div>
                   </div>
                 </a>
@@ -229,7 +229,7 @@ export default function ContactPage() {
 
               {/* WhatsApp Community Direct Action Banner */}
               <a
-                href="https://wa.me/919601055508?text=Hello%20A2Z%20Aaradhya,%20I%20want%20to%20get%20e-commerce%20growth%20updates!"
+                href="https://wa.me/919737891687?text=Hello%20A2Z%20Aaradhya,%20I%20want%20to%20get%20e-commerce%20growth%20updates!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-[#166B82] hover:from-emerald-700 hover:to-[#0F5265] text-white shadow-sm hover:shadow-md transition-all group"
@@ -423,7 +423,7 @@ export default function ContactPage() {
 
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                   <a
-                    href={`https://wa.me/919601055508?text=${encodeURIComponent(`Hello A2Z Aaradhya, I just submitted a contact request for ${formData.marketplace}! Name: ${formData.name}, Phone: ${formData.phone}, City: ${formData.city}`)}`}
+                    href={`https://wa.me/919737891687?text=${encodeURIComponent(`Hello A2Z Aaradhya, I just submitted a contact request for ${formData.marketplace}! Name: ${formData.name}, Phone: ${formData.phone}, City: ${formData.city}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl shadow-md text-sm transition-all"

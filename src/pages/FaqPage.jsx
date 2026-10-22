@@ -125,7 +125,7 @@ However, calculation discrepancies and weight overcharges are common. A2Z Aaradh
 • Rajkot Regional Branch: 150ft Ring Road (N-1307 Twin Star, near Nana Mava Circle)
 • Delhi Regional Branch: Chandni Chowk (serving North India textile, apparel, and wholesale hubs)
 
-Sellers, manufacturers, and brand owners are welcome to visit any branch during business hours (Mon–Sat, 9:30 AM – 7:00 PM) for face-to-face account reviews, or call our direct helpline at +91 96010 55508.`,
+Sellers, manufacturers, and brand owners are welcome to visit any branch during business hours (Mon–Sat, 9:30 AM – 7:00 PM) for face-to-face account reviews, or call our direct helpline at +91 97378 91687.`,
   },
 ];
 
@@ -155,7 +155,7 @@ export default function FaqPage({ onOpenModal }) {
       <SEO
         title="Top 10 Frequently Asked Questions (FAQ) | Myntra, Amazon, Flipkart, Meesho & GST Seller Guide - A2Z Aaradhya"
         description="Top 10 most important questions and answers about selling on Myntra, Amazon, Flipkart & Meesho: GST requirements, Myntra PPMP/FBN onboarding, 3 Months Free Amazon Management, return reduction, and trademark registry."
-        keywords="Myntra seller FAQ, Myntra onboarding requirements, GST for Amazon Flipkart, Myntra PPMP FBN difference, ecommerce seller account management questions, A2Z Aaradhya FAQ"
+        keywords="Myntra seller FAQ, best ecommerce service provider company FAQ, Myntra onboarding requirements, GST for Amazon Flipkart, Myntra PPMP FBN difference, ecommerce seller account management questions, A2Z Aaradhya FAQ"
         canonicalPath="/faq"
         breadcrumbs={[
           { name: 'Home', path: '/' },
@@ -349,7 +349,7 @@ export default function FaqPage({ onOpenModal }) {
                 <span>Apply for 3 Months FREE</span>
               </button>
               <a
-                href="https://wa.me/919601055508?text=Hello%20A2Z%20Aaradhya,%20I%20have%20questions%20about%20marketplace%20account%20management."
+                href="https://wa.me/919737891687?text=Hello%20A2Z%20Aaradhya,%20I%20have%20questions%20about%20marketplace%20account%20management."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto min-h-[48px] px-6 py-3.5 bg-[#25D366] hover:bg-[#1faa53] text-white font-black text-xs sm:text-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"

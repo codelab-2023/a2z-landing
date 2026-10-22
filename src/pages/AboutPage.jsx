@@ -10,9 +10,9 @@ export default function AboutPage({ onOpenModal }) {
   return (
     <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 space-y-10 sm:space-y-16">
       <SEO
-        title="About Us - India's Premier Marketplace Growth Agency for GST Sellers &amp; Brands | A2Z Aaradhya"
+        title="About A2Z Aaradhya | India's Best E-Commerce Service Provider Company"
         description="Learn about A2Z Aaradhya: ISO-certified and Official Amazon Unnati Gold Partner. 70+ specialists and 7 branches helping 20,000+ GST registered sellers and new brands scale on Amazon, Flipkart, Myntra &amp; Meesho."
-        keywords="About A2Z Aaradhya, GST seller growth agency, Amazon Unnati Gold Partner, marketplace management company India, e-commerce agency Surat Delhi Ahmedabad Rajkot"
+        keywords="About A2Z Aaradhya, best ecommerce service provider company, GST seller growth agency, Amazon Unnati Gold Partner, marketplace management company India, e-commerce agency Surat Delhi Ahmedabad Rajkot, ecommerce account manager consultants"
         canonicalPath="/about"
         breadcrumbs={[
           { name: 'Home', path: '/' },

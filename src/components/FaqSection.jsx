@@ -37,7 +37,7 @@ export const defaultFaqs = [
   },
   {
     question: "Where are A2Z Aaradhya offices located for in-person meetings?",
-    answer: "We have 7 physical branches across India: 4 offices in Surat (Simada Corporate HQ, Katargam, Adajan, Bhatar), Ahmedabad (Nikol), Rajkot (150ft Ring Road), and Delhi (Chandni Chowk). Sellers are welcome to visit our offices or connect with us on WhatsApp at +91 96010 55508.",
+    answer: "We have 7 physical branches across India: 4 offices in Surat (Simada Corporate HQ, Katargam, Adajan, Bhatar), Ahmedabad (Nikol), Rajkot (150ft Ring Road), and Delhi (Chandni Chowk). Sellers are welcome to visit our offices or connect with us on WhatsApp at +91 97378 91687.",
   },
 ];
 

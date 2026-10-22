@@ -4,6 +4,7 @@ Disallow: /cgi-bin/
 Disallow: /cgi-bin
 Disallow: /*.map$
 
+# Google Search & Google AI
 User-agent: Googlebot
 Allow: /
 Allow: /*.js$
@@ -12,11 +13,42 @@ Allow: /*.webp$
 Allow: /*.svg$
 Allow: /*.png$
 
-User-agent: Googlebot-Image
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI / ChatGPT / SearchGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Perplexity AI Search
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Apple Intelligence & Bing
+User-agent: Applebot-Extended
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-# Sitemap index
+# Amazon Marketplace Bot
+User-agent: Amazonbot
+Allow: /
+
+# Sitemaps & AI Context Endpoints
 Sitemap: https://a2z-aaradhya.com/sitemap.xml
+# LLMs Machine-Readable Summary
+# LLMs-Txt: https://a2z-aaradhya.com/llms.txt
