@@ -90,6 +90,24 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
     // Website Development leads go to +91 98252 54810. All other leads go to +91 97378 91687.
     const targetPhone = isWebDev ? '919825254810' : '919737891687';
 
+    // Meta Pixel Lead Event Tracking
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead', {
+        content_name: modalType || 'Audit / Enquiry Modal',
+        content_category: formData.marketplace || formData.websiteType || 'Ecommerce Management',
+        currency: 'INR',
+        value: 0,
+      });
+    }
+
+    // Google Analytics Lead Event Tracking
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'generate_lead', {
+        event_category: 'Form',
+        event_label: modalType || 'Audit / Enquiry Modal',
+      });
+    }
+
     window.open(`https://wa.me/${targetPhone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
     setSubmittedMedium('WhatsApp');
     setSubmitted(true);

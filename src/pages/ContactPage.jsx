@@ -61,6 +61,24 @@ export default function ContactPage() {
     const isWeb = formData.marketplace?.includes('Website Development');
     const targetPhone = isWeb ? '919825254810' : '919737891687';
     const msg = `Hello A2Z Aaradhya,\nI would like to schedule a Free Account Strategy for ${formData.marketplace}!\n\n• Name: ${cleanName}\n• Phone: ${cleanPhone}\n• City: ${cleanCity}${cleanMsg ? `\n• Message: ${cleanMsg}` : ''}\n\nPlease get in touch with me.`;
+    // Meta Pixel Lead Event Tracking
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Lead', {
+        content_name: 'Contact Page Strategy Form',
+        content_category: formData.marketplace || 'Marketplace Consultation',
+        currency: 'INR',
+        value: 0,
+      });
+    }
+
+    // Google Analytics Lead Event Tracking
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'generate_lead', {
+        event_category: 'Form',
+        event_label: 'Contact Page Strategy Form',
+      });
+    }
+
     window.open(`https://wa.me/${targetPhone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
     try {
       confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
