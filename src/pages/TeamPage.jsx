@@ -162,7 +162,7 @@ export default function TeamPage() {
                 key={member.id}
                 animation="fade-up"
                 delay={idx * 35}
-                className="overflow-hidden rounded-[18px] border border-[#cfe3ea] bg-[#d8edf3] shadow-[0_8px_18px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_30px_rgba(15,23,42,0.12)]"
+                className="overflow-hidden rounded-[18px] border border-[#cfe3ea] dark:border-slate-800 bg-[#d8edf3] dark:bg-[#0B1120] shadow-[0_8px_18px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_30px_rgba(15,23,42,0.12)]"
               >
                 <div className={`relative aspect-square w-full overflow-hidden bg-gradient-to-br ${member.tone}`}>
                   {member.image ? (
@@ -192,10 +192,10 @@ export default function TeamPage() {
 
                 <div className="flex min-h-[102px] items-center justify-center px-4 py-4 text-center">
                   <div>
-                    <h3 className="text-[1.3rem] font-bold text-[#0B3B48] font-outfit leading-relaxed">
+                    <h3 className="text-[1.3rem] font-bold text-[#0B3B48] dark:text-white font-outfit leading-relaxed">
                       {member.name}
                     </h3>
-                    <p className="mt-1 text-[1rem] font-medium text-[#1f6f86] leading-relaxed">
+                    <p className="mt-1 text-[1rem] font-medium text-[#1f6f86] dark:text-cyan-400 leading-relaxed">
                       {member.role}
                     </p>
                   </div>

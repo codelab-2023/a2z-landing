@@ -184,14 +184,14 @@ export default function ContactPage() {
                   href="https://www.instagram.com/a2z_aaradhya_pvt.ltd?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 p-3 rounded-2xl border border-pink-100 bg-gradient-to-br from-pink-50/80 to-white hover:border-pink-300 hover:shadow-sm transition-all group"
+                  className="flex items-center gap-2.5 p-3 rounded-2xl border border-pink-100 dark:border-slate-800 bg-gradient-to-br from-pink-50/80 to-white dark:from-[#0E1726] dark:to-[#0A0F1D] hover:border-pink-300 dark:hover:border-pink-500/40 hover:shadow-sm transition-all group"
                 >
                   <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-110 transition-transform">
                     <Instagram className="w-4 h-4" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="text-xs font-extrabold text-slate-900 block truncate">Instagram</span>
-                    <span className="text-[10px] text-pink-600 font-bold block truncate">A2Z Aaradhya</span>
+                    <span className="text-xs font-extrabold text-slate-900 dark:text-white block truncate">Instagram</span>
+                    <span className="text-[10px] text-pink-600 dark:text-pink-400 font-bold block truncate">A2Z Aaradhya</span>
                   </div>
                 </a>
 
@@ -200,14 +200,14 @@ export default function ContactPage() {
                   href="https://www.facebook.com/a2zaaradhya"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 p-3 rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50/80 to-white hover:border-blue-300 hover:shadow-sm transition-all group"
+                  className="flex items-center gap-2.5 p-3 rounded-2xl border border-blue-100 dark:border-slate-800 bg-gradient-to-br from-blue-50/80 to-white dark:from-[#0E1726] dark:to-[#0A0F1D] hover:border-blue-300 dark:hover:border-blue-500/40 hover:shadow-sm transition-all group"
                 >
                   <div className="w-9 h-9 rounded-xl bg-[#1877F2] text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-110 transition-transform">
                     <Facebook className="w-4 h-4" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="text-xs font-extrabold text-slate-900 block truncate">Facebook</span>
-                    <span className="text-[10px] text-blue-600 font-bold block truncate">A2Z Aaradhya</span>
+                    <span className="text-xs font-extrabold text-slate-900 dark:text-white block truncate">Facebook</span>
+                    <span className="text-[10px] text-blue-600 dark:text-blue-400 font-bold block truncate">A2Z Aaradhya</span>
                   </div>
                 </a>
 
@@ -216,14 +216,14 @@ export default function ContactPage() {
                   href="https://www.linkedin.com/company/a2z-aaradhya-pvt-ltd"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 p-3 rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50/80 to-white hover:border-sky-300 hover:shadow-sm transition-all group"
+                  className="flex items-center gap-2.5 p-3 rounded-2xl border border-sky-100 dark:border-slate-800 bg-gradient-to-br from-sky-50/80 to-white dark:from-[#0E1726] dark:to-[#0A0F1D] hover:border-sky-300 dark:hover:border-sky-500/40 hover:shadow-sm transition-all group"
                 >
                   <div className="w-9 h-9 rounded-xl bg-[#0A66C2] text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-110 transition-transform">
                     <Linkedin className="w-4 h-4" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="text-xs font-extrabold text-slate-900 block truncate">LinkedIn</span>
-                    <span className="text-[10px] text-[#0A66C2] font-bold block truncate">A2Z Aaradhya</span>
+                    <span className="text-xs font-extrabold text-slate-900 dark:text-white block truncate">LinkedIn</span>
+                    <span className="text-[10px] text-[#0A66C2] dark:text-sky-400 font-bold block truncate">A2Z Aaradhya</span>
                   </div>
                 </a>
 
@@ -232,14 +232,14 @@ export default function ContactPage() {
                   href="https://www.youtube.com/@a2zaaradhya"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 p-3 rounded-2xl border border-red-100 bg-gradient-to-br from-red-50/80 to-white hover:border-red-300 hover:shadow-sm transition-all group"
+                  className="flex items-center gap-2.5 p-3 rounded-2xl border border-red-100 dark:border-slate-800 bg-gradient-to-br from-red-50/80 to-white dark:from-[#0E1726] dark:to-[#0A0F1D] hover:border-red-300 dark:hover:border-red-500/40 hover:shadow-sm transition-all group"
                 >
                   <div className="w-9 h-9 rounded-xl bg-[#FF0000] text-white flex items-center justify-center shadow-xs shrink-0 group-hover:scale-110 transition-transform">
                     <Youtube className="w-4 h-4" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <span className="text-xs font-extrabold text-slate-900 block truncate">YouTube</span>
-                    <span className="text-[10px] text-red-600 font-bold block truncate">@A2ZAaradhya</span>
+                    <span className="text-xs font-extrabold text-slate-900 dark:text-white block truncate">YouTube</span>
+                    <span className="text-[10px] text-red-600 dark:text-red-400 font-bold block truncate">@A2ZAaradhya</span>
                   </div>
                 </a>
 
@@ -386,17 +386,17 @@ export default function ContactPage() {
                 </div>
 
                 {/* Mandatory GST Notice Banner */}
-                <div className="flex items-start gap-2.5 p-3.5 bg-amber-50/90 border border-amber-300 rounded-xl text-amber-950 text-xs shadow-xs">
-                  <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 p-3.5 bg-amber-50/90 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700/60 rounded-xl text-amber-950 dark:text-amber-200 text-xs shadow-xs">
+                  <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
                   <div className="space-y-0.5 text-left">
                     <div className="flex items-center gap-1.5 flex-wrap">
-                      <span className="font-extrabold text-amber-950 text-xs">GST Number Compulsory (अनिवार्य)</span>
-                      <span className="bg-amber-200/90 text-amber-900 border border-amber-300 text-[10px] px-1.5 py-0.5 rounded font-black uppercase tracking-wide">
+                      <span className="font-extrabold text-amber-950 dark:text-amber-200 text-xs">GST Number Compulsory (अनिवार्य)</span>
+                      <span className="bg-amber-200/90 dark:bg-amber-900/70 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700 text-[10px] px-1.5 py-0.5 rounded font-black uppercase tracking-wide">
                         MANDATORY
                       </span>
                     </div>
-                    <p className="text-[11.5px] text-amber-900/95 leading-snug font-medium">
-                      Marketplace account management aur seller onboarding ke liye <strong>Active GST Number hona compulsory hai</strong>. GST ke bina koi bhi service provide nahi ki jayegi.
+                    <p className="text-[11.5px] text-amber-900/95 dark:text-amber-200/90 leading-snug font-medium">
+                      Marketplace account management aur seller onboarding ke liye <strong className="text-amber-950 dark:text-amber-100">Active GST Number hona compulsory hai</strong>. GST ke bina koi bhi service provide nahi ki jayegi.
                     </p>
                   </div>
                 </div>

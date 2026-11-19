@@ -7,7 +7,6 @@ import {
   ShieldAlert, 
   CheckCircle2, 
   ArrowRight,
-  Zap,
   Share2,
   Globe,
   Store,
@@ -446,23 +445,6 @@ export default function ServicesSection({ onOpenModal }) {
   return (
     <section id="services" className="py-6 sm:py-24 relative overflow-hidden bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Heading */}
-        <AnimateOnScroll animation="fade-up" className="text-center max-w-3xl mx-auto mb-8 sm:mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-100 border border-cyan-200 text-cyan-800 text-xs font-bold uppercase tracking-wider">
-            <Zap className="w-4 h-4 text-cyan-600" />
-            <span>Complete 360° Digital & Marketplace Solutions</span>
-          </div>
-          
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-outfit">
-            Services Built to Win on Every Platform
-          </h2>
-          
-          <p className="text-slate-600 text-xs sm:text-lg">
-            From marketplace management & brand stores to viral social media marketing and bespoke website engineering — explore our dedicated platform teams.
-          </p>
-        </AnimateOnScroll>
-
         {/* ─── MOBILE ACCORDION VIEW (Direct details below clicked button) ─── */}
         <div className="block lg:hidden space-y-3 mb-10">
           {tabList.map((tab) => {

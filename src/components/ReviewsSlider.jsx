@@ -128,19 +128,19 @@ export default function ReviewsSlider() {
   ];
 
   return (
-    <section className="py-6 sm:py-20 bg-gradient-to-b from-slate-50 to-white border-y border-slate-200 overflow-hidden">
+    <section className="py-6 sm:py-20 bg-gradient-to-b from-slate-50 to-white dark:from-[#0A0F1A] dark:to-[#111827] border-y border-slate-200 dark:border-slate-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Heading */}
         <AnimateOnScroll animation="fade-up" className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-extrabold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 text-amber-800 dark:text-amber-300 text-xs font-extrabold uppercase tracking-wider">
             <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
             <span>Client Reviews & Success Stories</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B3B48] font-outfit">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B3B48] dark:text-white font-outfit">
             What Our Sellers Say About Us
           </h2>
-          <p className="text-slate-500 text-sm font-medium">
+          <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">
             Real success stories from 20,000+ seller accounts who scaled their e-commerce business with A2Z Aaradhya.
           </p>
         </AnimateOnScroll>
@@ -155,8 +155,8 @@ export default function ReviewsSlider() {
                 key={`${rev.id}-${pos}`}
                 style={{ transition: 'all 0.5s cubic-bezier(0.16,1,0.3,1)' }}
                 className={`rounded-3xl p-7 border ${isCenter
-                    ? 'bg-white border-[#166B82]/25 shadow-2xl shadow-[#166B82]/10 scale-105'
-                    : 'bg-slate-50 border-slate-200 shadow-sm opacity-60 scale-95'
+                    ? 'bg-white dark:bg-slate-900 border-[#166B82]/25 dark:border-[#166B82]/50 shadow-2xl shadow-[#166B82]/10 scale-105'
+                    : 'bg-slate-50 dark:bg-slate-900/60 border-slate-200 dark:border-slate-800 shadow-sm opacity-60 scale-95'
                   }`}
               >
                 <ReviewCard rev={rev} />
@@ -174,7 +174,7 @@ export default function ReviewsSlider() {
         >
           <div
             key={current}
-            className="bg-white rounded-3xl p-5 sm:p-7 border border-[#166B82]/25 shadow-xl animate-fade-in"
+            className="bg-white dark:bg-slate-900 rounded-3xl p-5 sm:p-7 border border-[#166B82]/25 dark:border-[#166B82]/50 shadow-xl animate-fade-in"
           >
             <ReviewCard rev={reviews[current]} />
           </div>
@@ -184,7 +184,7 @@ export default function ReviewsSlider() {
         <div className="flex items-center justify-center gap-4">
           <button
             onClick={prev}
-            className="w-11 h-11 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-500 hover:text-[#166B82] hover:border-[#166B82]/40 hover:shadow-lg transition-all duration-200 active:scale-95"
+            className="w-11 h-11 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md flex items-center justify-center text-slate-500 dark:text-slate-300 hover:text-[#166B82] dark:hover:text-[#38BDF8] hover:border-[#166B82]/40 hover:shadow-lg transition-all duration-200 active:scale-95"
             aria-label="Previous review"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -199,7 +199,7 @@ export default function ReviewsSlider() {
                 style={{ transition: 'all 0.3s ease' }}
                 className={`rounded-full ${idx === current
                     ? 'w-7 h-2.5 bg-[#166B82]'
-                    : 'w-2.5 h-2.5 bg-slate-300 hover:bg-slate-400'
+                    : 'w-2.5 h-2.5 bg-slate-300 dark:bg-slate-700 hover:bg-slate-400'
                   }`}
                 aria-label={`Go to review ${idx + 1}`}
               />
@@ -208,7 +208,7 @@ export default function ReviewsSlider() {
 
           <button
             onClick={next}
-            className="w-11 h-11 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-500 hover:text-[#166B82] hover:border-[#166B82]/40 hover:shadow-lg transition-all duration-200 active:scale-95"
+            className="w-11 h-11 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-md flex items-center justify-center text-slate-500 dark:text-slate-300 hover:text-[#166B82] dark:hover:text-[#38BDF8] hover:border-[#166B82]/40 hover:shadow-lg transition-all duration-200 active:scale-95"
             aria-label="Next review"
           >
             <ChevronRight className="w-5 h-5" />
@@ -229,19 +229,19 @@ function ReviewCard({ rev }) {
         ))}
       </div>
 
-      <Quote className="w-7 h-7 text-[#166B82]/15" />
+      <Quote className="w-7 h-7 text-[#166B82]/15 dark:text-[#166B82]/30" />
 
-      <p className="text-slate-700 text-sm leading-relaxed font-medium">
+      <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed font-medium">
         "{rev.review}"
       </p>
 
-      <div className="flex items-center gap-3 pt-2 border-t border-slate-100">
+      <div className="flex items-center gap-3 pt-2 border-t border-slate-100 dark:border-slate-800">
         <div className={`w-10 h-10 rounded-full ${rev.color} text-white flex items-center justify-center font-extrabold text-sm shrink-0`}>
           {rev.initials}
         </div>
         <div>
-          <div className="font-extrabold text-[#0B3B48] text-sm">{rev.name}</div>
-          <div className="text-[11px] text-slate-500 font-medium">{rev.city} · {rev.platform}</div>
+          <div className="font-extrabold text-[#0B3B48] dark:text-white text-sm">{rev.name}</div>
+          <div className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">{rev.city} · {rev.platform}</div>
         </div>
       </div>
     </div>

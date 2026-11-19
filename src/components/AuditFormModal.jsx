@@ -223,10 +223,10 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
 
               {/* Eligibility Notice for 3 Months */}
               {modalType === '3months' && (
-                <div className="flex items-start gap-2.5 p-3.5 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 font-semibold">
+                <div className="flex items-start gap-2.5 p-3.5 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-700/60 rounded-xl text-xs text-amber-900 dark:text-amber-200 font-semibold">
                   <span className="text-base leading-none mt-0.5">⚠️</span>
                   <span>
-                    <strong className="font-extrabold">Eligibility Condition:</strong> This 3-month FREE offer applies only when your new Amazon Seller Account is opened through A2Z Aaradhya. Existing accounts are not eligible for this offer.
+                    <strong className="font-extrabold text-amber-950 dark:text-amber-100">Eligibility Condition:</strong> This 3-month FREE offer applies only when your new Amazon Seller Account is opened through A2Z Aaradhya. Existing accounts are not eligible for this offer.
                   </span>
                 </div>
               )}
@@ -401,17 +401,17 @@ export default function AuditFormModal({ isOpen, onClose, modalType }) {
               )}
 
               {/* Mandatory GST Notice Banner right above Apply/Submit button */}
-              <div className="flex items-start gap-2.5 p-3 sm:p-3.5 bg-amber-50/90 border border-amber-300 rounded-xl text-amber-950 text-xs shadow-xs">
-                <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 p-3 sm:p-3.5 bg-amber-50/90 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700/60 rounded-xl text-amber-950 dark:text-amber-200 text-xs shadow-xs">
+                <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
                 <div className="space-y-0.5 text-left">
                   <div className="flex items-center gap-1.5 flex-wrap">
-                    <span className="font-extrabold text-amber-950 text-xs">GST Number Compulsory (अनिवार्य)</span>
-                    <span className="bg-amber-200/90 text-amber-900 border border-amber-300 text-[10px] px-1.5 py-0.5 rounded font-black uppercase tracking-wide">
+                    <span className="font-extrabold text-amber-950 dark:text-amber-200 text-xs">GST Number Compulsory (अनिवार्य)</span>
+                    <span className="bg-amber-200/90 dark:bg-amber-900/70 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700 text-[10px] px-1.5 py-0.5 rounded font-black uppercase tracking-wide">
                       MANDATORY
                     </span>
                   </div>
-                  <p className="text-[11.5px] text-amber-900/95 leading-snug font-medium">
-                    Marketplace account management aur seller onboarding ke liye <strong>Active GST Number hona compulsory hai</strong>. GST ke bina koi bhi service provide nahi ki jayegi.
+                  <p className="text-[11.5px] text-amber-900/95 dark:text-amber-200/90 leading-snug font-medium">
+                    Marketplace account management aur seller onboarding ke liye <strong className="text-amber-950 dark:text-amber-100">Active GST Number hona compulsory hai</strong>. GST ke bina koi bhi service provide nahi ki jayegi.
                   </p>
                 </div>
               </div>

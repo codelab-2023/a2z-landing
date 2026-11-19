@@ -190,7 +190,7 @@ export default function FaqPage({ onOpenModal }) {
           <AnimateOnScroll animation="fade-up" delay={120} className="pt-2">
             <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[11px] font-extrabold text-slate-700">
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-pink-50 border border-pink-200 text-[#FF3F6C]">
-                <MyntraIcon className="w-4 h-4 bg-white rounded-md p-0.5" />
+                <MyntraIcon className="w-4 h-4 object-contain" />
                 <span>Myntra Fashion Partner</span>
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900">

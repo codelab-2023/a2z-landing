@@ -23,6 +23,20 @@
     })();
   </script>
 
+  <!-- Instant Dark Mode Init (Defaults to dark mode on startup with zero white flash) -->
+  <script>
+    (function () {
+      try {
+        var d = localStorage.getItem('a2z-dark');
+        if (d !== 'false') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4Y0N86KZ4"></script>
   <script>
@@ -67,17 +81,18 @@
   <meta http-equiv="Content-Language" content="en-IN" />
 
   <!-- Search Engine Optimization (SEO) & AI Search (GEO) Core Tags -->
-  <title>A2Z Aaradhya | Best E-Commerce Service Provider Company in India | Amazon &amp; Flipkart Account Management</title>
+  <title>A2Z Aaradhya | Best E-Commerce Management, Website Development &amp; Social Media Marketing Agency</title>
   <meta name="description"
-    content="A2Z Aaradhya is India's best e-commerce service provider company and official Amazon Unnati Gold Partner. Expert Amazon, Flipkart, Myntra &amp; Meesho account management, Shopify website development, Meta ads &amp; GST seller onboarding with 7 branches across India." />
+    content="A2Z Aaradhya is India's leading e-commerce service provider company, Shopify &amp; WooCommerce website development agency, and Meta ads / social media marketing partner. Amazon Unnati Gold Partner managing 20,000+ sellers with 7 branches across India." />
   <meta name="keywords"
-    content="best ecommerce service provider company, best ecommerce service provider in india, top ecommerce management agency, ecommerce service provider for amazon and flipkart, GST registered seller management, Amazon account management with GST, Flipkart seller growth India, Meesho high volume scaling, Myntra fashion onboarding, website development agency, ecommerce website design, shopify store development, social media management, meta ads agency, instagram reels marketing, amazon brand store design, a+ content design, sell on Amazon with GST, start selling online without GST assistance, e-commerce agency for manufacturers and traders, Amazon PPC advertising, A+ cataloging, A2Z Aaradhya" />
+    content="website development company in surat, best shopify store development india, ecommerce website design, custom react website development, woocommerce store developers, social media marketing agency surat, meta ads agency india, facebook ads for ecommerce, viral instagram reels production, performance marketing agency, influencer marketing agency india, best ecommerce service provider company, amazon seller central management, flipkart seller growth, meesho cataloging, myntra fashion onboarding, amazon ppc advertising, A2Z Aaradhya" />
   <meta name="author" content="A2Z Aaradhya" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://a2z-aaradhya.com/" />
 
-  <!-- AI Models (LLMs) Context Endpoint -->
+  <!-- AI Models (LLMs / GEO) Context Endpoints for Perplexity, ChatGPT, Claude & Gemini -->
   <link rel="alternate" type="text/markdown" href="https://a2z-aaradhya.com/llms.txt" title="A2Z Aaradhya AI Knowledge Context" />
+  <link rel="alternate" type="text/plain" href="https://a2z-aaradhya.com/llms-full.txt" title="A2Z Aaradhya Full AI Knowledge Base" />
 
   <!-- Geo Meta Tags for Pan-India & Surat HQ Local SEO -->
   <meta name="geo.region" content="IN-GJ" />

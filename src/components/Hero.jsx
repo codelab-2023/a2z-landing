@@ -19,16 +19,17 @@ export default function Hero({ onOpenModal }) {
   return (
     <section className="relative pt-16 sm:pt-20 pb-0 flex flex-col overflow-hidden hero-light-bg">
 
-      {/* Background glows */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#9ED6CD]/20 rounded-full blur-[130px] pointer-events-none animate-pulse-glow" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#166B82]/10 rounded-full blur-[110px] pointer-events-none animate-pulse-glow" style={{ animationDelay: '2s' }} />
+      {/* Background glows - GPU optimized: High-res blur on desktop, zero-overhead gradient on mobile */}
+      <div className="hidden sm:block absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#9ED6CD]/20 rounded-full blur-[130px] pointer-events-none animate-pulse-glow [contain:strict]" />
+      <div className="hidden sm:block absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#166B82]/10 rounded-full blur-[110px] pointer-events-none animate-pulse-glow [contain:strict]" style={{ animationDelay: '2s' }} />
+      <div className="sm:hidden absolute top-4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-[radial-gradient(circle,rgba(22,107,130,0.18)_0%,transparent_70%)] pointer-events-none" />
 
       {/* Main content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-8 sm:pt-12 lg:pt-14 pb-8 sm:pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-40 w-full pt-8 sm:pt-12 lg:pt-14 pb-8 sm:pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
 
           {/* ── LEFT COLUMN ── */}
-          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left relative z-40">
 
             {/* Trust Badge */}
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-[#166B82]/20 shadow-sm text-xs font-bold animate-slide-in-up">
@@ -45,8 +46,8 @@ export default function Hero({ onOpenModal }) {
             </div>
 
             {/* Headline */}
-            <div className="animate-slide-in-up animate-delay-100">
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-[#0B3B48] leading-[1.12]">
+            <div className="animate-slide-in-up animate-delay-100 relative z-40">
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-[#0B3B48] leading-[1.12] relative z-40">
                 Grow Your Brand on{' '}
                 <span className="bg-gradient-to-r from-[#166B82] to-[#9ED6CD] bg-clip-text text-transparent">
                   Every Marketplace
@@ -62,7 +63,7 @@ export default function Hero({ onOpenModal }) {
             {/* 4 Main Brand Logo Cards - Uniform Pill Shapes & Prominent Logos */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3.5 animate-slide-in-up animate-delay-300">
               {/* Amazon Card */}
-              <div className="bg-white rounded-full border border-slate-200/90 shadow-sm hover:shadow-md flex items-center justify-center w-[calc(50%-5px)] sm:w-[152px] h-[48px] sm:h-[54px] transition-all duration-300 overflow-hidden shrink-0">
+              <div className="bg-white hero-brand-pill rounded-full border border-slate-200/90 shadow-sm hover:shadow-md flex items-center justify-center w-[calc(50%-5px)] sm:w-[152px] h-[48px] sm:h-[54px] transition-all duration-300 overflow-hidden shrink-0">
                 <AmazonLogo
                   className="object-contain"
                   style={{
@@ -75,8 +76,9 @@ export default function Hero({ onOpenModal }) {
               </div>
 
               {/* Myntra Card */}
-              <div className="bg-white rounded-full border border-slate-200/90 shadow-sm hover:shadow-md flex items-center justify-center w-[calc(50%-5px)] sm:w-[152px] h-[48px] sm:h-[54px] transition-all duration-300 overflow-hidden shrink-0">
+              <div className="bg-white hero-brand-pill rounded-full border border-slate-200/90 shadow-sm hover:shadow-md flex items-center justify-center w-[calc(50%-5px)] sm:w-[152px] h-[48px] sm:h-[54px] transition-all duration-300 overflow-hidden shrink-0">
                 <MyntraLogo
+                  textColor="text-[#282C3F]"
                   className="object-contain"
                   style={{
                     height: '28px',
@@ -87,7 +89,7 @@ export default function Hero({ onOpenModal }) {
               </div>
 
               {/* Flipkart Card */}
-              <div className="bg-white rounded-full border border-slate-200/90 shadow-sm hover:shadow-md flex items-center justify-center w-[calc(50%-5px)] sm:w-[152px] h-[48px] sm:h-[54px] transition-all duration-300 overflow-hidden shrink-0">
+              <div className="bg-white hero-brand-pill rounded-full border border-slate-200/90 shadow-sm hover:shadow-md flex items-center justify-center w-[calc(50%-5px)] sm:w-[152px] h-[48px] sm:h-[54px] transition-all duration-300 overflow-hidden shrink-0">
                 <FlipkartLogo
                   className="object-contain"
                   style={{
@@ -100,7 +102,7 @@ export default function Hero({ onOpenModal }) {
               </div>
 
               {/* Meesho Card */}
-              <div className="bg-white rounded-full border border-slate-200/90 shadow-sm hover:shadow-md flex items-center justify-center w-[calc(50%-5px)] sm:w-[152px] h-[48px] sm:h-[54px] transition-all duration-300 overflow-hidden shrink-0">
+              <div className="bg-white hero-brand-pill rounded-full border border-slate-200/90 shadow-sm hover:shadow-md flex items-center justify-center w-[calc(50%-5px)] sm:w-[152px] h-[48px] sm:h-[54px] transition-all duration-300 overflow-hidden shrink-0">
                 <MeeshoLogo
                   className="object-contain"
                   style={{
@@ -196,27 +198,35 @@ export default function Hero({ onOpenModal }) {
       </div>
 
       {/* ── MARQUEE — Infinite seamless loop ── */}
-      <div className="w-full bg-white/95 border-t border-slate-200 py-4 overflow-hidden z-10 [contain:layout_paint]">
-        <div className="animate-marquee">
-          {/* Two identical halves — each half is wider than viewport for seamless loop */}
-          {[0, 1].map((set) => (
-            <div key={set} className="flex items-center shrink-0" style={{ gap: '1.5rem', padding: '0 0.75rem' }}>
-              {[0, 1].flatMap((i) => [
-                <div key={`a-${set}-${i}`} className="flex items-center justify-center rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm shrink-0 overflow-hidden" style={{ height: '44px', minWidth: '120px', padding: '0 14px' }}>
-                  <AmazonLogo className="object-contain" style={{ height: '60px', width: 'auto', maxWidth: '150px', transform: 'scale(1.6) translateY(4px)' }} />
-                </div>,
-                <div key={`my-${set}-${i}`} className="flex items-center justify-center rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm shrink-0 overflow-hidden" style={{ height: '44px', minWidth: '120px', padding: '0 14px' }}>
-                  <MyntraLogo className="object-contain" style={{ height: '28px', width: 'auto', maxWidth: '130px' }} />
-                </div>,
-                <div key={`f-${set}-${i}`} className="flex items-center justify-center rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm shrink-0 overflow-hidden" style={{ height: '44px', minWidth: '120px', padding: '0 14px' }}>
-                  <FlipkartLogo className="object-contain" style={{ height: '58px', width: 'auto', maxWidth: '150px', transform: 'scale(1.6)' }} />
-                </div>,
-                <div key={`m-${set}-${i}`} className="flex items-center justify-center rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-sm shrink-0 overflow-hidden" style={{ height: '44px', minWidth: '120px', padding: '0 12px' }}>
-                  <MeeshoLogo className="object-contain" style={{ height: '24px', width: 'auto', maxWidth: '100px' }} />
-                </div>,
-              ])}
-            </div>
-          ))}
+      <div className="w-full marquee-strip-bg border-t border-slate-200 py-4" style={{ zIndex: 10 }}>
+        {/* mask-image fades both edges smoothly */}
+        <div
+          className="overflow-hidden w-full"
+          style={{
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
+            maskImage: 'linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%)',
+          }}
+        >
+          <div className="animate-marquee flex shrink-0">
+            {[0, 1].map((set) => (
+              <div key={set} className="flex items-center shrink-0 pr-6 gap-6">
+                {[0, 1, 2, 3, 4, 5].flatMap((i) => [
+                  <div key={`a-${set}-${i}`} className="flex items-center justify-center rounded-xl marquee-logo-pill border border-slate-200/80 shadow-sm shrink-0 overflow-hidden" style={{ height: '44px', minWidth: '120px', padding: '0 14px' }}>
+                    <AmazonLogo className="object-contain" style={{ height: '60px', width: 'auto', maxWidth: '150px', transform: 'scale(1.6) translateY(4px)' }} />
+                  </div>,
+                  <div key={`my-${set}-${i}`} className="flex items-center justify-center rounded-xl marquee-logo-pill border border-slate-200/80 shadow-sm shrink-0 overflow-hidden" style={{ height: '44px', minWidth: '120px', padding: '0 14px' }}>
+                    <MyntraLogo textColor="text-[#282C3F]" className="object-contain" style={{ height: '28px', width: 'auto', maxWidth: '130px' }} />
+                  </div>,
+                  <div key={`f-${set}-${i}`} className="flex items-center justify-center rounded-xl marquee-logo-pill border border-slate-200/80 shadow-sm shrink-0 overflow-hidden" style={{ height: '44px', minWidth: '120px', padding: '0 14px' }}>
+                    <FlipkartLogo className="object-contain" style={{ height: '58px', width: 'auto', maxWidth: '150px', transform: 'scale(1.6)' }} />
+                  </div>,
+                  <div key={`m-${set}-${i}`} className="flex items-center justify-center rounded-xl marquee-logo-pill border border-slate-200/80 shadow-sm shrink-0 overflow-hidden" style={{ height: '44px', minWidth: '120px', padding: '0 12px' }}>
+                    <MeeshoLogo className="object-contain" style={{ height: '24px', width: 'auto', maxWidth: '100px' }} />
+                  </div>,
+                ])}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FloatingCTA from './components/FloatingCTA';
 import AuditFormModal from './components/AuditFormModal';
+import { ThemeProvider } from './contexts/ThemeContext';
+import ThemeOverlay from './components/ThemeOverlay';
 
 // Critical Homepage imported eagerly for instant First Contentful Paint
 import HomePage from './pages/HomePage';
@@ -48,8 +50,11 @@ export default function App() {
   };
 
   return (
+    <ThemeProvider>
     <Router>
       <ScrollToTop />
+      {/* 🎨 Theme Overlay — renders snowfall / other effects */}
+      <ThemeOverlay />
       <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans selection:bg-[#166B82] selection:text-white flex flex-col justify-between">
         
         {/* Header Navigation */}
@@ -94,5 +99,6 @@ export default function App() {
         <FloatingCTA onOpenModal={handleOpenModal} />
       </div>
     </Router>
+    </ThemeProvider>
   );
 }

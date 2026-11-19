@@ -65,7 +65,7 @@ export default function TrustStats() {
       value: "20K+",
       label: "Total Accounts Managed",
       sub: "Onboarded & scaled across India's top marketplaces",
-      iconBg: 'bg-[#EBF7F6]',
+      iconBg: 'bg-white',
       iconColor: 'text-[#166B82]',
       valuColor: 'text-[#166B82]',
     },
@@ -74,7 +74,7 @@ export default function TrustStats() {
       value: "600+",
       label: "Active Accounts Managed",
       sub: "Daily optimized for top sales, ads & ranking",
-      iconBg: 'bg-[#EBF7F6]',
+      iconBg: 'bg-white',
       iconColor: 'text-[#166B82]',
       valuColor: 'text-[#166B82]',
     },
@@ -83,16 +83,16 @@ export default function TrustStats() {
       value: "70+",
       label: "Dedicated Platform Experts",
       sub: "Certified specialists for Amazon, Flipkart & Myntra",
-      iconBg: 'bg-amber-50',
-      iconColor: 'text-amber-700',
-      valuColor: 'text-amber-700',
+      iconBg: 'bg-white',
+      iconColor: 'text-[#166B82]',
+      valuColor: 'text-[#166B82]',
     },
     {
       icon: MapPin,
       value: "7+",
       label: "Regional Branches in India",
       sub: "Local on-ground seller support across retail hubs",
-      iconBg: 'bg-[#EBF7F6]',
+      iconBg: 'bg-white',
       iconColor: 'text-[#166B82]',
       valuColor: 'text-[#166B82]',
     },
@@ -122,23 +122,23 @@ export default function TrustStats() {
                 <div className="glass-card-light glass-card-light-hover rounded-2xl p-4 sm:p-6 border border-slate-200 h-full flex flex-col justify-between shadow-xs">
                   {/* Top: Icon + Verified Badge */}
                   <div className="flex items-center justify-between mb-4 sm:mb-6">
-                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl ${s.iconBg} border border-slate-200/60 flex items-center justify-center shadow-xs shrink-0`}>
-                      <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${s.iconColor}`} />
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl ${s.iconBg} dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-center shadow-xs shrink-0`}>
+                      <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${s.iconColor} dark:text-white`} />
                     </div>
-                    <span className="text-[9.5px] sm:text-[11px] font-extrabold px-2.5 py-0.5 rounded-full bg-[#EBF7F6] text-[#166B82] border border-[#166b82]/15 tracking-wide font-body">
+                    <span className="text-[9.5px] sm:text-[11px] font-extrabold px-2.5 py-0.5 rounded-full bg-[#EBF7F6] dark:bg-cyan-500/20 text-[#166B82] dark:text-cyan-300 border border-[#166b82]/15 dark:border-cyan-500/30 tracking-wide font-body">
                       Verified
                     </span>
                   </div>
 
                   {/* Bottom: Number + Label + Subtitle (tight typography, no huge gaps) */}
                   <div>
-                    <div className={`text-3xl sm:text-4xl font-heading font-extrabold ${s.valuColor} tracking-tight leading-none`}>
+                    <div className={`text-3xl sm:text-4xl font-heading font-extrabold ${s.valuColor} dark:text-cyan-400 tracking-tight leading-none`}>
                       <AnimatedCounter value={s.value} />
                     </div>
-                    <div className="font-body font-bold text-[#0B3B48] text-sm sm:text-base mt-2.5 leading-snug">
+                    <div className="font-body font-bold text-[#0B3B48] dark:text-white text-sm sm:text-base mt-2.5 leading-snug">
                       {s.label}
                     </div>
-                    <p className="text-xs sm:text-[13px] text-slate-600 font-medium mt-1 leading-normal">
+                    <p className="text-xs sm:text-[13px] text-slate-600 dark:text-slate-400 font-medium mt-1 leading-normal">
                       {s.sub}
                     </p>
                   </div>

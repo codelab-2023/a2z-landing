@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sparkles, Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
+import { Sparkles, Menu, X, ArrowRight, ChevronDown, Moon, Sun } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const LogoSvg = '/logo/a2z-aaradhya-logo.svg';
 
@@ -11,6 +12,7 @@ export default function Navbar({ onOpenModal }) {
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const aboutMenuTimer = useRef(null);
   const location = useLocation();
+  const { darkMode, toggleDarkMode } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,8 +96,6 @@ export default function Navbar({ onOpenModal }) {
               fetchpriority="high"
               className="h-11 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="absolute top-1 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-white animate-ping" />
-            <span className="absolute top-1 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-white" />
           </div>
         </Link>
 
@@ -141,7 +141,7 @@ export default function Navbar({ onOpenModal }) {
 
             {aboutMenuOpen && (
               <div
-                className="absolute left-0 top-full mt-3 w-56 rounded-2xl border border-slate-200 bg-white/95 shadow-[0_18px_45px_rgba(15,23,42,0.12)] backdrop-blur-sm p-2 z-50"
+                className="absolute left-0 top-full mt-3 w-56 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#0A0F1D]/95 shadow-[0_18px_45px_rgba(15,23,42,0.12)] dark:shadow-[0_18px_45px_rgba(0,0,0,0.5)] backdrop-blur-sm p-2 z-50"
                 onMouseEnter={openAboutMenu}
                 onMouseLeave={closeAboutMenu}
               >
@@ -151,8 +151,8 @@ export default function Navbar({ onOpenModal }) {
                     to={item.path}
                     onClick={() => setAboutMenuOpen(false)}
                     className={`block rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors ${isActive(item.path)
-                      ? 'bg-[#166B82]/10 text-[#166B82]'
-                      : 'text-slate-700 hover:bg-slate-100 hover:text-[#166B82]'
+                      ? 'bg-[#166B82]/10 dark:bg-cyan-500/20 text-[#166B82] dark:text-cyan-300 font-bold'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/80 hover:text-[#166B82] dark:hover:text-white'
                       }`}
                   >
                     {item.label}
@@ -189,6 +189,15 @@ export default function Navbar({ onOpenModal }) {
 
         {/* Action CTA Buttons */}
         <div className="hidden md:flex items-center gap-3">
+          {/* 🌙 Dark / Light Mode Toggle */}
+          <button
+            onClick={toggleDarkMode}
+            title={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            className="p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm"
+          >
+            {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4" />}
+          </button>
+
           <button
             onClick={() => onOpenModal('3months')}
             className="px-5 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 font-extrabold text-sm transition-all flex items-center gap-1.5 shadow-sm"
@@ -208,6 +217,13 @@ export default function Navbar({ onOpenModal }) {
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden flex items-center gap-2">
+          {/* 🌙 Dark mode toggle for mobile */}
+          <button
+            onClick={toggleDarkMode}
+            className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
+          >
+            {darkMode ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5" />}
+          </button>
           <button
             onClick={() => onOpenModal('audit')}
             className="text-xs font-extrabold bg-[#166B82] text-white px-3 py-1.5 rounded-lg shadow-sm"
@@ -258,18 +274,16 @@ export default function Navbar({ onOpenModal }) {
               <button
                 type="button"
                 onClick={() => setMobileAboutOpen((prev) => !prev)}
-                className={`w-full flex items-center justify-between px-3 py-2 rounded-lg font-bold text-sm transition-all ${
-                  isActive('/about')
-                    ? 'bg-[#166B82]/10 text-[#166B82]'
-                    : 'text-slate-800 hover:bg-slate-50'
-                }`}
+                className={`w-full flex items-center justify-between px-3 py-2 rounded-lg font-bold text-sm transition-all ${isActive('/about')
+                  ? 'bg-[#166B82]/10 text-[#166B82]'
+                  : 'text-slate-800 hover:bg-slate-50'
+                  }`}
                 aria-expanded={mobileAboutOpen}
               >
                 <span>About</span>
                 <ChevronDown
-                  className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${
-                    mobileAboutOpen ? 'rotate-180 text-[#166B82]' : ''
-                  }`}
+                  className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${mobileAboutOpen ? 'rotate-180 text-[#166B82]' : ''
+                    }`}
                 />
               </button>
 
@@ -280,11 +294,10 @@ export default function Navbar({ onOpenModal }) {
                       key={item.path}
                       to={item.path}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`block px-3 py-2 rounded-lg font-semibold text-sm transition-colors ${
-                        isActive(item.path)
-                          ? 'bg-[#166B82]/15 text-[#166B82] font-bold'
-                          : 'text-slate-700 hover:text-[#166B82] hover:bg-slate-100'
-                      }`}
+                      className={`block px-3 py-2 rounded-lg font-semibold text-sm transition-colors ${isActive(item.path)
+                        ? 'bg-[#166B82]/15 dark:bg-cyan-500/20 text-[#166B82] dark:text-cyan-300 font-bold'
+                        : 'text-slate-700 dark:text-slate-300 hover:text-[#166B82] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                        }`}
                     >
                       {item.label}
                     </Link>

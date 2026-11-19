@@ -56,7 +56,7 @@ export default function BrandLogoSlider() {
   const renderLogoCard = (item, key) => (
     <div
       key={key}
-      className="flex items-center justify-center p-2 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#166B82]/50 hover:shadow-md transition-all shrink-0 hover:scale-105 duration-300 group cursor-default min-w-[115px] sm:min-w-[160px] h-18 sm:h-24 [contain:layout_paint]"
+      className="client-brand-card flex items-center justify-center p-2 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-[#166B82]/50 hover:shadow-md transition-all shrink-0 hover:scale-105 duration-300 group cursor-default min-w-[115px] sm:min-w-[160px] h-18 sm:h-24 [contain:layout_paint]"
     >
       <img
         src={item.logo}
@@ -84,32 +84,32 @@ export default function BrandLogoSlider() {
   );
 
   return (
-    <section className="py-5 sm:py-20 bg-gradient-to-b from-white via-slate-50 to-white border-y border-slate-200 overflow-hidden relative">
+    <section className="py-5 sm:py-20 bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#0A0F1A] dark:via-[#111827] dark:to-[#0A0F1A] border-y border-slate-200 dark:border-slate-800 overflow-hidden relative">
 
       {/* Subtle ambient glows */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-[#166B82]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-[#166B82]/5 dark:bg-[#166B82]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-amber-500/5 dark:bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3 sm:space-y-4 mb-8 sm:mb-12">
-        <AnimateOnScroll animation="fade-down" className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-[#166B82]/10 border border-[#166B82]/20 text-[#166B82] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider">
+        <AnimateOnScroll animation="fade-down" className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-[#166B82]/10 dark:bg-[#166B82]/20 border border-[#166B82]/20 dark:border-[#166B82]/40 text-[#166B82] dark:text-[#7DD3E8] text-[11px] sm:text-xs font-extrabold uppercase tracking-wider">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Client Portfolio &amp; Trusted Partners</span>
         </AnimateOnScroll>
 
-        <AnimateOnScroll animation="fade-up" delay={50} as="h2" className="text-2xl sm:text-4xl font-extrabold text-[#0B3B48] font-outfit">
+        <AnimateOnScroll animation="fade-up" delay={50} as="h2" className="text-2xl sm:text-4xl font-extrabold text-[#0B3B48] dark:text-white font-outfit">
           Brand &amp; Marketplaces We Have Scaled
         </AnimateOnScroll>
 
-        <AnimateOnScroll animation="fade-up" delay={100} as="p" className="text-slate-600 text-xs sm:text-base max-w-2xl mx-auto font-medium">
-          Trusted by <span className="font-bold text-[#166B82]">20,000+ Indian sellers and marketplace brands</span> across all major e-commerce categories.
+        <AnimateOnScroll animation="fade-up" delay={100} as="p" className="text-slate-600 dark:text-slate-300 text-xs sm:text-base max-w-2xl mx-auto font-medium">
+          Trusted by <span className="font-bold text-[#166B82] dark:text-[#38BDF8]">20,000+ Indian sellers and marketplace brands</span> across all major e-commerce categories.
         </AnimateOnScroll>
       </div>
 
       {/* 2-Row Infinite Scrolling Logo Marquees (100% seamless, non-stop loop) */}
       <div className="relative w-full overflow-hidden space-y-3 sm:space-y-4">
-        {/* Left & Right gradient fade masks (Compact on mobile so logos remain visible) */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
+        {/* Left & Right gradient fade masks */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-32 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-[#0A0F1A] dark:via-[#0A0F1A]/80 z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-32 bg-gradient-to-l from-white via-white/80 to-transparent dark:from-[#0A0F1A] dark:via-[#0A0F1A]/80 z-10" />
 
         {/* Row 1: Right to Left (Continuous) */}
         <div className="flex overflow-hidden w-full">

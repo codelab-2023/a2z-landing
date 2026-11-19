@@ -12,7 +12,7 @@ export default function BranchesPage() {
       address: '144, 1st floor, a2z aaradhya, pramukh Park Soc, opp. Royal Plaza, Bapa Sitaram Chowk, Simada, Surat, 395010',
       phone: '+91 78020 77444',
       badge: 'Head Office',
-      badgeBg: 'bg-blue-600 text-white border-blue-700',
+      badgeBg: 'bg-blue-600 text-white border-blue-700 dark:bg-cyan-600 dark:text-white dark:border-cyan-500',
       isHeadOffice: true,
     },
     {
@@ -22,7 +22,7 @@ export default function BranchesPage() {
       address: '307, Elephanta Business Hub, Opp. Hari Darshan No Khado, Dabholi, Katargam, Surat - 395004',
       phone: '+91 98986 66517',
       badge: 'Surat Branch',
-      badgeBg: 'bg-blue-100 text-blue-800 border-blue-200',
+      badgeBg: 'bg-blue-100 text-blue-800 border-blue-200 dark:bg-blue-950/60 dark:text-blue-300 dark:border-blue-800/60',
     },
     {
       city: 'Surat Adajan',
@@ -31,7 +31,7 @@ export default function BranchesPage() {
       address: '303-3rd floor, Millionaire Business Park, TGB Circle, TGB, Adajan Gam, Adajan, Surat, Gujarat 395009',
       phone: '+91 97378 91687',
       badge: 'Surat Branch',
-      badgeBg: 'bg-pink-100 text-pink-800 border-pink-200',
+      badgeBg: 'bg-pink-100 text-pink-800 border-pink-200 dark:bg-pink-950/60 dark:text-pink-300 dark:border-pink-800/60',
     },
     {
       city: 'Surat Bhatar',
@@ -40,7 +40,7 @@ export default function BranchesPage() {
       address: '302-303, 3rd Floor, Meghana Complex, Olive Circle, Nr. Bharat Patrol Pump, U-M Road, Bhatar, Surat - 395007',
       phone: '+91 96010 55508',
       badge: 'Surat Branch',
-      badgeBg: 'bg-orange-100 text-orange-800 border-orange-200',
+      badgeBg: 'bg-orange-100 text-orange-800 border-orange-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800/60',
     },
     {
       city: 'Rajkot',
@@ -49,7 +49,7 @@ export default function BranchesPage() {
       address: 'N-1307 Twin star, near Nana mava circle, 150 feet ring road, Rajkot - 360004',
       phone: '+91 98981 11669',
       badge: 'Rajkot Branch',
-      badgeBg: 'bg-amber-100 text-amber-800 border-amber-200',
+      badgeBg: 'bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800/60',
     },
     {
       city: 'Ahmedabad',
@@ -58,7 +58,7 @@ export default function BranchesPage() {
       address: '607, Blueberry, Nr. Bhojaldham Residency, Gurukul Circle, Nikol, Ahmedabad - 382350',
       phone: '+91 98986 66085',
       badge: 'Ahmedabad Branch',
-      badgeBg: 'bg-emerald-100 text-emerald-800 border-emerald-200',
+      badgeBg: 'bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800/60',
     },
     {
       city: 'Delhi',
@@ -67,12 +67,12 @@ export default function BranchesPage() {
       address: 'Gali Paranthe Wali Inside the Street Kinari Bazaar Chandni Chowk, near Ram Chandra , Old Delhi, Delhi, 110006',
       phone: '+91 96628 88600',
       badge: 'Delhi Branch',
-      badgeBg: 'bg-purple-100 text-purple-800 border-purple-200',
+      badgeBg: 'bg-purple-100 text-purple-800 border-purple-200 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-800/60',
     },
   ];
 
   return (
-    <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 bg-white">
+    <div className="pt-16 sm:pt-28 pb-10 sm:pb-20 bg-white dark:bg-[#030712] transition-colors">
       <SEO
         title="7 Branches Across India | Best E-Commerce Service Provider Company | A2Z Aaradhya"
         description="Visit A2Z Aaradhya regional branches in Surat (Simada, Katargam, Adajan, Bhatar), Ahmedabad, Rajkot &amp; Delhi. Localized marketplace management and on-ground support for GST registered sellers &amp; brands."
@@ -85,20 +85,20 @@ export default function BranchesPage() {
       />
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 text-center space-y-6">
         <AnimateOnScroll animation="fade-down">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#166B82]/10 border border-[#166B82]/20 text-[#166B82]">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#166B82]/10 dark:bg-cyan-950/30 border border-[#166B82]/20 dark:border-cyan-500/30 text-[#166B82] dark:text-cyan-400">
             <MapPin className="h-4 w-4" />
             <span className="text-xs font-extrabold uppercase tracking-wider">Our Presence</span>
           </div>
         </AnimateOnScroll>
 
         <AnimateOnScroll animation="fade-up" delay={100}>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B3B48]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B3B48] dark:text-white">
             Regional Offices Across India
           </h1>
         </AnimateOnScroll>
 
         <AnimateOnScroll animation="fade-up" delay={200}>
-          <p className="max-w-2xl mx-auto text-lg text-slate-600 font-medium">
+          <p className="max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-300 font-medium">
             Providing localized support, account management, and on-ground operations across India's leading seller hubs. Our dedicated teams ensure seamless marketplace integration and seller success.
           </p>
         </AnimateOnScroll>
@@ -109,17 +109,17 @@ export default function BranchesPage() {
           {branches[0]?.isHeadOffice && (
             <AnimateOnScroll
               animation="fade-up"
-              className="w-full max-w-[420px] rounded-[22px] border-[2px] border-[#4da7c8] bg-white p-5 shadow-[0_10px_30px_rgba(22,107,130,0.08)]"
+              className="w-full max-w-[420px] rounded-[22px] border-[2px] border-[#4da7c8] dark:border-cyan-500/40 bg-white dark:bg-[#070C16] p-5 shadow-[0_10px_30px_rgba(22,107,130,0.08)] dark:shadow-none"
             >
               <div className="flex items-center justify-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#27A5D2] text-white shadow-md">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#27A5D2] dark:bg-cyan-950/60 dark:border dark:border-cyan-500/30 text-white dark:text-cyan-400 shadow-md">
                   <MapPin className="h-6 w-6" />
                 </div>
               </div>
 
               <div className="mt-4 text-center">
-                <div className="text-[18px] font-extrabold text-[#0B3B48]">{branches[0].city}</div>
-                <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#166B82]">
+                <div className="text-[18px] font-extrabold text-[#0B3B48] dark:text-white">{branches[0].city}</div>
+                <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#166B82] dark:text-cyan-400">
                   {branches[0].type}
                 </div>
               </div>
@@ -132,27 +132,27 @@ export default function BranchesPage() {
 
               <div className="mt-5 space-y-4">
                 <div>
-                  <div className="mb-1 flex items-center justify-center gap-2 text-[11px] font-bold text-[#0B3B48]">
-                    <Building2 className="h-3.5 w-3.5 text-[#166B82]" />
+                  <div className="mb-1 flex items-center justify-center gap-2 text-[11px] font-bold text-[#0B3B48] dark:text-white">
+                    <Building2 className="h-3.5 w-3.5 text-[#166B82] dark:text-cyan-400" />
                     Office Details:
                   </div>
-                  <div className="text-center text-[12px] font-medium text-[#166B82]">{branches[0].role}</div>
+                  <div className="text-center text-[12px] font-medium text-[#166B82] dark:text-cyan-300">{branches[0].role}</div>
                 </div>
 
                 <div>
-                  <div className="mb-1 flex items-center justify-center gap-2 text-[11px] font-bold text-[#0B3B48]">
-                    <Globe className="h-3.5 w-3.5 text-[#166B82]" />
+                  <div className="mb-1 flex items-center justify-center gap-2 text-[11px] font-bold text-[#0B3B48] dark:text-white">
+                    <Globe className="h-3.5 w-3.5 text-[#166B82] dark:text-cyan-400" />
                     Office Address:
                   </div>
-                  <p className="text-center text-[11px] leading-5 text-slate-600">{branches[0].address}</p>
+                  <p className="text-center text-[11px] leading-5 text-slate-600 dark:text-slate-300 font-medium">{branches[0].address}</p>
                 </div>
               </div>
 
-              <div className="mt-6 border-t border-slate-200 pt-4 text-center">
+              <div className="mt-6 border-t border-slate-200 dark:border-slate-800 pt-4 text-center">
                 <div className="flex items-center justify-center gap-2.5">
-                  <Phone className="h-4.5 w-4.5 text-[#166B82]" />
-                  <span className="font-bold text-sm text-[#0B3B48]">Helpline:</span>
-                  <a href={`tel:${branches[0].phone.replace(/\s+/g, '')}`} className="text-base font-extrabold text-[#166B82] hover:text-[#0B3B48] hover:underline tracking-wide">
+                  <Phone className="h-4.5 w-4.5 text-[#166B82] dark:text-cyan-400" />
+                  <span className="font-bold text-sm text-[#0B3B48] dark:text-white">Helpline:</span>
+                  <a href={`tel:${branches[0].phone.replace(/\s+/g, '')}`} className="text-base font-extrabold text-[#166B82] dark:text-cyan-400 hover:text-[#0B3B48] dark:hover:text-cyan-300 hover:underline tracking-wide">
                     {branches[0].phone}
                   </a>
                 </div>
@@ -167,15 +167,15 @@ export default function BranchesPage() {
               key={idx}
               animation="fade-up"
               delay={idx * 80}
-              className="rounded-[22px] border border-[#d6e7ee] bg-white p-5 shadow-[0_10px_22px_rgba(15,23,42,0.04)]"
+              className="rounded-[22px] border border-[#d6e7ee] dark:border-slate-700 bg-white dark:bg-[#070C16] p-5 shadow-[0_10px_22px_rgba(15,23,42,0.04)] dark:shadow-none hover:border-[#166B82]/40 hover:dark:border-cyan-500/30 transition-all duration-300"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#cfe3ea] bg-[#edf9fd] text-[#166B82]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#cfe3ea] dark:border-cyan-500/30 bg-[#edf9fd] dark:bg-cyan-950/40 text-[#166B82] dark:text-cyan-400 shrink-0">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="text-[18px] font-extrabold text-[#0B3B48]">{branch.city}</div>
-                  <div className="text-[10px] font-semibold uppercase tracking-[0.1em] text-slate-500">{branch.type}</div>
+                  <div className="text-[18px] font-extrabold text-[#0B3B48] dark:text-white">{branch.city}</div>
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.1em] text-slate-500 dark:text-slate-400">{branch.type}</div>
                 </div>
               </div>
 
@@ -187,27 +187,27 @@ export default function BranchesPage() {
 
               <div className="mt-5 space-y-3">
                 <div>
-                  <div className="mb-1 flex items-center gap-2 text-[11px] font-bold text-[#0B3B48]">
-                    <Building2 className="h-3.5 w-3.5 text-[#166B82]" />
+                  <div className="mb-1 flex items-center gap-2 text-[11px] font-bold text-[#0B3B48] dark:text-white">
+                    <Building2 className="h-3.5 w-3.5 text-[#166B82] dark:text-cyan-400" />
                     Focus Area:
                   </div>
-                  <div className="pl-5 text-[11px] font-medium text-slate-600">{branch.role}</div>
+                  <div className="pl-5 text-[11px] font-medium text-slate-600 dark:text-slate-200">{branch.role}</div>
                 </div>
 
                 <div>
-                  <div className="mb-1 flex items-center gap-2 text-[11px] font-bold text-[#0B3B48]">
-                    <Globe className="h-3.5 w-3.5 text-[#166B82]" />
+                  <div className="mb-1 flex items-center gap-2 text-[11px] font-bold text-[#0B3B48] dark:text-white">
+                    <Globe className="h-3.5 w-3.5 text-[#166B82] dark:text-cyan-400" />
                     Office Address:
                   </div>
-                  <p className="pl-5 text-[11px] leading-5 text-slate-600">{branch.address}</p>
+                  <p className="pl-5 text-[11px] leading-5 text-slate-600 dark:text-slate-300">{branch.address}</p>
                 </div>
               </div>
 
-              <div className="mt-5 border-t border-slate-200 pt-3.5">
+              <div className="mt-5 border-t border-slate-200 dark:border-slate-800 pt-3.5">
                 <div className="flex items-center gap-2">
-                  <Phone className="h-4 w-4 text-[#166B82] shrink-0" />
-                  <span className="font-bold text-xs text-[#0B3B48]">Helpline:</span>
-                  <a href={`tel:${branch.phone.replace(/\s+/g, '')}`} className="text-[14px] font-extrabold text-[#166B82] hover:text-[#0B3B48] hover:underline tracking-wide">
+                  <Phone className="h-4 w-4 text-[#166B82] dark:text-cyan-400 shrink-0" />
+                  <span className="font-bold text-xs text-[#0B3B48] dark:text-white">Helpline:</span>
+                  <a href={`tel:${branch.phone.replace(/\s+/g, '')}`} className="text-[14px] font-extrabold text-[#166B82] dark:text-cyan-400 hover:text-[#0B3B48] dark:hover:text-cyan-300 hover:underline tracking-wide">
                     {branch.phone}
                   </a>
                 </div>

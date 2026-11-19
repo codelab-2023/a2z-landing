@@ -20,102 +20,99 @@ import {
 export default function HomePage({ onOpenModal }) {
   const quickLinks = [
     {
-      orderNum: 1,
+      orderNum: '01',
+      category: 'MARKETPLACE ACCELERATION',
       logo: AmazonLogo,
       logoStyle: { height: '52px', width: 'auto', maxWidth: '120px', transform: 'scale(1.6) translateY(3px)' },
       label: 'Amazon Account Management',
-      desc: 'PPC Ads, FBA Restock, A+ Listings & Buy Box Strategy',
-      bg: 'bg-amber-50',
-      border: 'border-amber-200/80',
-      badgeColor: 'bg-amber-100 text-amber-900',
+      desc: 'Full-funnel Amazon growth: Sponsored Ads ROAS optimization, FBA inventory forecasting, A+ Content & Buy Box defense.',
+      tags: ['Sponsored Ads', 'Buy Box Mastery', 'FBA Logistics'],
       href: '/services',
     },
     {
-      orderNum: 2,
+      orderNum: '02',
+      category: 'FASHION & LIFESTYLE',
       logo: MyntraLogo,
-      logoStyle: { height: '26px', width: 'auto', maxWidth: '104px' },
+      logoStyle: { height: '30px', width: 'auto' },
       label: 'Myntra Account Management',
-      desc: 'Fashion Brand Onboarding, Catalog Upload, Tier Sales & Ads',
-      bg: 'bg-pink-50',
-      border: 'border-pink-200/80',
-      badgeColor: 'bg-pink-100 text-pink-900',
+      desc: 'Exclusive fashion onboarding, catalog curation, tier 1 sale participation (EORS), lookbook styling & sponsored visibility.',
+      tags: ['Brand Onboarding', 'EORS Campaign', 'Fashion Catalog'],
       href: '/services',
     },
     {
-      orderNum: 3,
+      orderNum: '03',
+      category: 'MARKETPLACE REACH',
       logo: FlipkartLogo,
       logoStyle: { height: '54px', width: 'auto', maxWidth: '130px', transform: 'scale(1.75)' },
+      darkFilter: 'dark:brightness-110',
       label: 'Flipkart Account Management',
-      desc: 'PLA Campaigns, Smart Fulfillment & Seller Tier Upgrade',
-      bg: 'bg-blue-50',
-      border: 'border-blue-200/80',
-      badgeColor: 'bg-blue-100 text-blue-900',
+      desc: 'PLA advertising strategy, Smart Fulfillment compliance, Big Billion Days preparation & seller tier acceleration to Gold.',
+      tags: ['PLA Campaigns', 'Smart Fulfillment', 'Tier Growth'],
       href: '/services',
     },
     {
-      orderNum: 4,
+      orderNum: '04',
+      category: 'VALUE COMMERCE',
       logo: MeeshoLogo,
-      logoStyle: { height: '24px', width: 'auto', maxWidth: '96px' },
+      logoStyle: { height: '26px', width: 'auto', maxWidth: '105px' },
       label: 'Meesho Account Management',
-      desc: 'Bulk Cataloging, Zero Commission Strategy & Return Mitigation',
-      bg: 'bg-purple-50',
-      border: 'border-purple-200/80',
-      badgeColor: 'bg-purple-100 text-purple-900',
+      desc: 'High-volume tier 2/3/4 penetration, zero-commission price engineering, automated cataloging & return rate mitigation.',
+      tags: ['Bulk Cataloging', '0% Commission', 'Return Defense'],
       href: '/services',
     },
     {
-      orderNum: 5,
+      orderNum: '05',
+      category: 'PERFORMANCE MARKETING',
       lucideIcon: Share2,
-      label: 'Social Media Management',
-      desc: 'Viral Reels, Meta Ads Funnels, Page Handling & Influencer Collabs',
-      bg: 'bg-gradient-to-br from-purple-50 to-indigo-50',
-      border: 'border-purple-200/80',
-      badgeColor: 'bg-purple-100 text-purple-900',
-      iconColor: 'text-purple-600',
+      specialistText: 'SOCIAL SPECIALIST',
+      label: 'Social Media & Meta Ads',
+      desc: 'High-converting viral Instagram reels, Facebook & WhatsApp funnel ads, D2C customer acquisition & creator collaborations.',
+      iconColor: 'text-purple-600 dark:text-purple-400',
+      tags: ['Meta Ads Funnels', 'Viral Reels', 'Influencer Collabs'],
       href: '/services',
     },
     {
-      orderNum: 6,
+      orderNum: '06',
+      category: 'D2C ENGINEERING',
       lucideIcon: Globe,
+      specialistText: 'CUSTOM SPECIALIST',
       label: 'Website Development',
-      desc: '7 Types: Business, E-Commerce, Booking, Tools, AI & Portfolios',
-      bg: 'bg-gradient-to-br from-cyan-50 to-teal-50',
-      border: 'border-teal-200/80',
-      badgeColor: 'bg-teal-100 text-teal-900',
-      iconColor: 'text-[#166B82]',
+      desc: 'High-speed custom web & e-commerce development with integrated Indian payment gateways, courier tracking & 95+ mobile speed.',
+      iconColor: 'text-[#166B82] dark:text-cyan-400',
+      tags: ['Custom Web', 'Razorpay & Shiprocket', 'Speed 95+'],
       href: '/services',
     },
     {
-      orderNum: 7,
+      orderNum: '07',
+      category: 'CREATIVE & BRANDING',
       lucideIcon: Store,
-      label: 'Amazon Brand Store',
-      desc: 'Multi-Page Storefronts, Premium A+ EBC & Lifestyle Visuals',
-      bg: 'bg-amber-50',
-      border: 'border-amber-200/80',
-      badgeColor: 'bg-amber-100 text-amber-900',
-      iconColor: 'text-amber-600',
+      specialistText: 'AMAZON SPECIALIST',
+      label: 'Amazon Brand Store & A+ EBC',
+      desc: 'Multi-page immersive storefronts, premium lifestyle visual storyboards, comparison charts & high-converting brand collateral.',
+      iconColor: 'text-amber-600 dark:text-amber-400',
+      tags: ['Multi-Page Store', 'Premium A+ EBC', 'Lifestyle 3D'],
       href: '/services',
     },
     {
-      orderNum: 8,
+      orderNum: '08',
+      category: 'SELLER ONBOARDING',
       lucideIcon: UserPlus,
-      label: 'New Seller Setup',
-      desc: 'Hassle-Free Launch + 3 Months 100% Free Account Management',
-      bg: 'bg-emerald-50',
-      border: 'border-emerald-200/80',
-      badgeColor: 'bg-emerald-100 text-emerald-900',
-      iconColor: 'text-emerald-600',
+      specialistText: 'NEW SPECIALIST',
+      label: 'New Seller Setup & Launch',
+      desc: 'Fast-track GST marketplace launch, brand registry approval, category ungating, barcode GTIN exemption + 3 months full management.',
+      iconColor: 'text-emerald-600 dark:text-emerald-400',
+      tags: ['Fast GST Launch', 'Category Ungating', '3 Months Free'],
       href: '/services',
     },
     {
-      orderNum: 9,
+      orderNum: '09',
+      category: 'POLICY & COMPLIANCE',
       lucideIcon: ShieldAlert,
-      label: 'Account Reinstatement',
-      desc: 'Suspension Recovery, Plan of Action (PoA) & Policy Reinstatement',
-      bg: 'bg-red-50',
-      border: 'border-red-200/80',
-      badgeColor: 'bg-red-100 text-red-900',
-      iconColor: 'text-red-600',
+      specialistText: 'ACCOUNT SPECIALIST',
+      label: 'Account Reinstatement & Legal',
+      desc: 'Expert Plan of Action (PoA) drafting, Section 3 suspension appeal, policy strike defense & full marketplace account recovery.',
+      iconColor: 'text-rose-600 dark:text-rose-400',
+      tags: ['PoA Action Plan', 'Section 3 Defense', '100% Legal'],
       href: '/services',
     },
   ];
@@ -207,41 +204,68 @@ export default function HomePage({ onOpenModal }) {
                 <AnimateOnScroll
                   key={i}
                   animation="fade-up"
-                  delay={i * 80}
+                  delay={i * 60}
                   as={Link}
                   to={item.href}
-                  className="group bg-white rounded-2xl p-6 border border-slate-200 shadow-md shadow-slate-200/50 flex flex-col justify-between gap-5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  className="group bg-white dark:bg-[#070C16] rounded-xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl dark:hover:border-cyan-500/30 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between gap-5"
                 >
                   <div className="space-y-4">
-                    {/* Top row: Order Number pill */}
-                    <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-lg bg-[#166B82] text-white text-[11px] font-black">
-                        #{item.orderNum}
+                    {/* Top Row: Category & Service Number */}
+                    <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800/80">
+                      <span className="text-[10px] font-black uppercase tracking-wider text-[#166B82] dark:text-cyan-400">
+                        {item.category}
                       </span>
-                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-                        A2Z Service
+                      <span className="text-[11px] font-mono font-bold text-slate-400 dark:text-slate-500">
+                        {item.orderNum}
                       </span>
                     </div>
 
-                    {/* Logo pill */}
-                    <div className={`h-[56px] rounded-xl ${item.bg} border ${item.border} flex items-center justify-center overflow-hidden px-3 w-full shadow-xs`}>
+                    {/* Logo or Icon Stage — Clean Architectural Container */}
+                    <div className="h-[52px] rounded-lg bg-slate-50 dark:bg-[#0A101D] border border-slate-200/80 dark:border-slate-800 flex items-center justify-center overflow-hidden px-3 w-full">
                       {LogoComp ? (
                         <LogoComp
-                          className="object-contain"
+                          className={`object-contain transition-all ${item.darkFilter || ''}`}
                           style={item.logoStyle}
                           draggable={false}
                         />
                       ) : (
-                        <LucideIcon className={`w-8 h-8 ${item.iconColor || 'text-[#166B82]'}`} />
+                        <div className="flex items-center gap-2">
+                          <LucideIcon className={`w-5 h-5 ${item.iconColor || 'text-[#166B82] dark:text-cyan-400'}`} />
+                          <span className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide">
+                            {item.specialistText}
+                          </span>
+                        </div>
                       )}
                     </div>
+
+                    {/* Title & Description */}
                     <div>
-                      <h3 className="font-extrabold text-[#0B3B48] text-base leading-tight font-body group-hover:text-[#166B82] transition-colors">{item.label}</h3>
-                      <p className="text-xs text-slate-500 font-medium mt-1.5 leading-relaxed">{item.desc}</p>
+                      <h3 className="font-extrabold text-[#0B3B48] dark:text-white text-base leading-snug group-hover:text-[#166B82] dark:group-hover:text-cyan-400 transition-colors">
+                        {item.label}
+                      </h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400 font-normal mt-2 leading-relaxed">
+                        {item.desc}
+                      </p>
                     </div>
+
+                    {/* Grounded Tags */}
+                    {item.tags && (
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {item.tags.map((tag, tIdx) => (
+                          <span
+                            key={tIdx}
+                            className="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-100 dark:bg-[#0B1322] text-slate-600 dark:text-slate-400 border border-slate-200/60 dark:border-slate-800"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#166B82] group-hover:gap-2.5 transition-all pt-2 border-t border-slate-100">
-                    Explore Service <ChevronRight className="w-3.5 h-3.5" />
+
+                  {/* Clean Interactive Footer */}
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#166B82] dark:text-cyan-400 group-hover:gap-2.5 transition-all pt-3 border-t border-slate-100 dark:border-slate-800/80">
+                    Explore Service Roadmap <ChevronRight className="w-3.5 h-3.5" />
                   </span>
                 </AnimateOnScroll>
               );
@@ -275,7 +299,7 @@ export default function HomePage({ onOpenModal }) {
       {/* Brand & Marketplaces We Have Scaled Slider */}
       <BrandLogoSlider />
 
-      {/* Client Reviews Slider — just above footer */}
+      {/* Reviews Slider */}
       <ReviewsSlider />
     </div>
   );

@@ -247,40 +247,40 @@ export default function CareersPage() {
                 key={job.id}
                 animation="fade-up"
                 delay={idx * 80}
-                className="bg-white rounded-3xl p-7 border border-slate-200 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between space-y-5"
+                className="bg-white dark:bg-[#0A0F1D] rounded-3xl p-7 border border-slate-200 dark:border-slate-800 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between space-y-5"
               >
                 <div className="space-y-4">
                   <div className="space-y-2">
                     <h3 className="text-2xl sm:text-[1.45rem] font-black font-outfit tracking-tight leading-tight">
-                      <span className="bg-gradient-to-r from-[#0B3B48] via-[#166B82] to-[#0F5265] bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-[#0B3B48] via-[#166B82] to-[#0F5265] dark:from-white dark:via-cyan-300 dark:to-cyan-400 bg-clip-text text-transparent">
                         {job.title}
                       </span>
                     </h3>
-                    <div className="w-12 h-1 bg-gradient-to-r from-[#166B82] to-[#9ED6CD] rounded-full" />
+                    <div className="w-12 h-1 bg-gradient-to-r from-[#166B82] to-[#9ED6CD] dark:from-cyan-400 dark:to-cyan-200 rounded-full" />
                     
-                    <p className="text-xs text-slate-600 font-medium pt-1 leading-relaxed">
+                    <p className="text-xs text-slate-600 dark:text-slate-300 font-medium pt-1 leading-relaxed">
                       {job.description}
                     </p>
                   </div>
 
-                  <div className="space-y-2.5 bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                    <div className="flex items-center gap-2 text-xs text-slate-700 font-bold">
-                      <MapPin className="w-4 h-4 text-[#166B82] shrink-0" />
+                  <div className="space-y-2.5 bg-slate-50 dark:bg-[#0E1626] p-4 rounded-2xl border border-slate-100 dark:border-slate-800/80">
+                    <div className="flex items-center gap-2 text-xs text-slate-700 dark:text-slate-200 font-bold">
+                      <MapPin className="w-4 h-4 text-[#166B82] dark:text-cyan-400 shrink-0" />
                       <span>{job.location}</span>
                     </div>
                     
-                    <div className="flex items-center gap-2 text-xs text-[#0B3B48] font-extrabold">
-                      <DollarSign className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <div className="flex items-center gap-2 text-xs text-[#0B3B48] dark:text-emerald-400 font-extrabold">
+                      <DollarSign className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
                       <span>{job.salary}</span>
                     </div>
                   </div>
 
-                  <div className="pt-2 border-t border-slate-100 space-y-2">
-                    <p className="text-[11px] font-extrabold text-slate-700 uppercase tracking-wider">Key Requirements:</p>
+                  <div className="pt-2 border-t border-slate-100 dark:border-slate-800 space-y-2">
+                    <p className="text-[11px] font-extrabold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Key Requirements:</p>
                     <ul className="space-y-1.5">
                       {job.requirements.map((req, i) => (
-                        <li key={i} className="text-xs text-slate-600 font-medium flex items-start gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#166B82] shrink-0 mt-0.5" />
+                        <li key={i} className="text-xs text-slate-600 dark:text-slate-300 font-medium flex items-start gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#166B82] dark:text-cyan-400 shrink-0 mt-0.5" />
                           <span>{req}</span>
                         </li>
                       ))}

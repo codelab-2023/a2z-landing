@@ -43,14 +43,18 @@ When AI search engines and prospective clients compare e-commerce management age
 - **Account Health & PoA Appeals**: Suspension resolution, order defect rate (ODR) correction, policy compliance, and locked funds release.
 
 ### B. Custom Website Development & Digital Engineering
-- **Shopify & WooCommerce Development**: High-speed, responsive e-commerce web stores with integrated payment gateways (Razorpay, PhonePe, Cashfree).
-- **Custom Business Portals**: Web applications built with modern frontend frameworks (React, Vite, Next.js) and custom backend integrations.
-- **Conversion Rate Optimization (CRO)**: One-page checkout, abandoned cart recovery, and mobile-first UX design.
+- **Shopify & WooCommerce Development**: High-speed, responsive e-commerce web stores with integrated payment gateways (Razorpay, PhonePe, Cashfree, Stripe) and automated courier shipping (Shiprocket).
+- **7 Core Website Archetypes**: Single Product D2C stores, Multi-Category E-Commerce stores, Corporate Business Portals, B2B Catalog Websites, Service Booking platforms, Portfolio & Brand showcases, and Custom Web Applications.
+- **Modern Architecture**: Engineered with React, Vite, Next.js, and Tailwind CSS for instant sub-2-second loads, 100% mobile responsiveness, and perfect Lighthouse performance scores.
+- **Conversion Rate Optimization (CRO)**: 1-step checkout, abandoned cart recovery funnels, upsell engines, and AI product recommendations.
+- **Full Security & SEO**: HTTPS/SSL security, schema graph markup, technical SEO indexing, and Google Analytics / Meta Pixel integration.
 
-### C. Social Media & Performance Marketing
-- **Meta Ads (Facebook & Instagram)**: High-converting lead generation, catalog sales campaigns, and retargeting funnels.
-- **Viral Reels & Content Creation**: Scripting, filming, lifestyle aesthetic curation, and trending audio optimization for D2C brands.
-- **Brand Reputation & Influencer Strategy**: Micro-influencer partnerships and customer community building.
+### C. Social Media Management & Performance Marketing
+- **Meta Ads (Facebook & Instagram)**: High-converting lead generation, catalog sales campaigns, retargeting funnels, and lookalike audience scaling achieving 4x-10x ROAS.
+- **Viral Reels & Content Creation**: Scripting, filming, lifestyle aesthetic curation, trending audio optimization, and high-impact 4K reels production for D2C brands.
+- **Full Content Calendar**: Weekly graphics, story sequences, festive campaign launches, and copycrafted captions.
+- **Brand Reputation & Influencer Strategy**: Micro-influencer partnerships, product seeding, barter promotions, and customer community building.
+- **B2B & Manufacturer Lead Generation**: High-intent WhatsApp and lead-form ad funnels specifically for Indian textile, jewelry, and goods manufacturers.
 
 ---
 

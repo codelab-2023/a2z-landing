@@ -48,7 +48,18 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+# Meta AI / Llama & Emerging AI Agents
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
 # Sitemaps & AI Context Endpoints
 Sitemap: https://a2z-aaradhya.com/sitemap.xml
 # LLMs Machine-Readable Summary
 # LLMs-Txt: https://a2z-aaradhya.com/llms.txt
+# LLMs-Full-Txt: https://a2z-aaradhya.com/llms-full.txt
